@@ -300,6 +300,9 @@ main {
 }
 
 /* Button to load rest images of the gallery */
+#gallery_block {
+    z-index: 60;
+}
 #gallery_block button {
     padding: 5px 7px;
     border: none;
