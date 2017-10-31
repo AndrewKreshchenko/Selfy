@@ -1,0 +1,127 @@
+.topnav .icon {
+   display: none;
+}
+.topnav {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    overflow: hidden;
+    z-index: 20;
+}
+.languages img {
+    width: 40px;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+.languages img:hover {
+    box-shadow: 0 0 3px 3px #fff;
+}
+.languages {
+    top: 0;
+    right: 0;
+    float: right;
+    position: fixed;
+    text-align: center;
+    padding: 14px 16px;
+    z-index: 25;
+}
+.topnav a {
+    float: left;
+    background-color: #555;
+    color: #f2f2f2;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    -webkit-transition: background-color 1s; /* For Safari 3.1 to 6.0 */
+    transition: background-color 1s;
+}
+.topnav a:not(.languages):focus {
+    background-color: #de3e52;
+    color: #fff;
+}
+.topnav a:not(.languages):hover {
+    background-color: #de3e52;
+    color: #fff;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+.topnav a:not(.languages):active {
+    background-color: #de3e52;
+    color: #fff;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+.topnav a:not(.languages):after {
+    background-color: #777;
+}
+
+@media screen and (min-width: 768px) {
+    .topnav {        
+        background-color: #555;
+    }
+}
+
+@media screen and (max-width: 767px) {
+	.topnav {
+    	width: 45px;
+        display: block;
+    	/*-webkit-transition: width 1s; /* For Safari 3.1 to 6.0 */
+    	/*transition: width 1s;*/
+    }
+    .topnav .languages a {
+        float: right;
+        position: top right;
+        text-align: center;
+        padding: 14px 16px;
+        background-color: #555;
+    }
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+    .topnav a.icon {
+        position: fixed;
+        float: left;
+        display: block;
+    }
+    .topnav.responsive {
+        position: fixed;
+        width: 300px;
+    }
+    .topnav.responsive .icon {
+        position: relative;
+        right: 0;
+        top: 0;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+        line-height: 35px;
+    }
+    .topnav:hover {
+        width: 100%;
+        height: 100%;
+    }
+    .topnav a:not(.languages):focus {
+        background-color: #de3e52;
+        color: #fff;
+    }
+    .topnav a:not(.languages):hover {
+        background-color: #de3e52;
+        color: #fff;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 50%;
+    }
+    .topnav a:not(.languages):active{
+        background-color: #e4473c;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+    }
+    .topnav a:not(.languages):after {
+        background-color: #000;
+    }
+}
