@@ -44,8 +44,8 @@ footer {
 iframe {
     border: 0;
 }
-h1, h2, h3, nav a {
-    font-family: 'Alegreya Sans SC', sans-serif;
+h1, h2, h3, nav option {
+    font-family: 'Alegreya Sans', sans-serif;
 }
 h1 {
     font-size: 2em;
@@ -90,7 +90,6 @@ main {
     color: #de3e52;
     font-family: 'Alegreya Sans', sans-serif;
     text-align: left;
-    font-stretch: expanded;
 }
 .banner_text h1 {
     font-size: 4.5em;
@@ -167,7 +166,6 @@ main {
     height: 0;
     overflow: hidden;/*hidden*/
 }
-
 .embed_container iframe, .embed_container object, .embed_container embed {
     position: absolute;
     width: 100%;
@@ -190,7 +188,7 @@ main {
     background-size: contain;
 }
 .team-member h3 {
-    font-family: 'Alegreya Sans SC', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     padding-bottom: 0;
     color: #fff;
     text-align: center;
@@ -224,15 +222,24 @@ main {
     transition: all 0.3s ease-out;
 }
 .child {
-  width: 66.66%;
-  margin: 2em auto;
-  padding: 0 20px;
+    width: 66.66%;
+    margin: 2em auto;
+    padding: 0 20px;
 }
 .child p, .team-member:last-child p {
     text-align: left;
     text-indent: 1.5em;
 }
 /* Gallery */
+#gallery_block {
+    background: #000; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(top, #000, rgba(222, 62, 82, 0.5)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom, #000, rgba(222, 62, 82, 0.5)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom, #000, rgba(222, 62, 82, 0.5)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom, #000, rgba(222, 62, 82, 0.5)); /* Standard syntax */
+    background-attachment: fixed;
+    z-index: 60;
+}
 .gallery {
     padding: 0;
     margin: 0; 
@@ -300,14 +307,13 @@ main {
 }
 
 /* Button to load rest images of the gallery */
-#gallery_block {
-    z-index: 60;
-}
 #gallery_block button {
     padding: 5px 7px;
     border: none;
+    border-radius: 7px;
     cursor: pointer;
     background-color: #555;
+    color: #fff;
     font-family: 'Alegreya Sans SC', sans-serif;
     font-size: 18px;
     -webkit-transition: background-color 1s; /* For Safari 3.1 to 6.0 */
@@ -334,8 +340,6 @@ main {
     text-decoration: none;
     cursor: pointer;
 }
-
-/* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px){
     .modal-content {
         width: 100%;
@@ -345,7 +349,7 @@ main {
 /* Music block */
 #music_block {
     width: 100%;
-    margin: 2em auto;
+    margin: 0 auto;
     text-align: center;
 }
 .audio_container {
@@ -387,9 +391,9 @@ main {
     border-radius: 50%;
 }
 .social_c li, .social-icons img {
-    -webkit-transition: box-shadow 0.3s ease;
-    -moz-transition: box-shadow 0.3s ease;
-    transition: box-shadow 0.3s ease;
+    -webkit-transition: box-shadow 0.5s ease;
+    -moz-transition: box-shadow 0.5s ease;
+    transition: box-shadow 0.5s ease;
     -webkit-backface-visibility: hidden;
 }
 .social_c li:hover, .social-icons img:hover {
@@ -430,7 +434,6 @@ main {
 .ontop img {
     width: 30px;
 }
-
 .ontop:hover {
     -webkit-animation: bounce 0.7s ease; /* Safari 4.0 - 8.0 */
     animation: bounce 0.7s ease;

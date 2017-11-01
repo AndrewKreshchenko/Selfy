@@ -38,6 +38,10 @@
         float: left;
         width: 12.5%;
     }
+
+    #button_load {
+        display: none;
+    }
 }
 @media screen and (max-width: 1024px) {
     #banner {
@@ -163,6 +167,13 @@
     }
     h3 {
         font-size: 1.2em;
+    }
+    .languages option {
+        width: 60px;
+        height: 30px;
+    }
+    .languages option .topnav a {
+        font-size: 20px;
     }
     #banner {
         background-position: center 100px;

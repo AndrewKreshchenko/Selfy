@@ -58,6 +58,17 @@ function onMenu() {
     }
 }
 
+/* Change language */
+$('#languages').click(function(){
+    $(this).hide().text("Вибрати мову").fadeIn("slow");
+});
+//hover
+/*document.getElementsByClassName('languages').onchange = function() {
+    if (this.selectedIndex !== 0) {
+        window.location.href = this.children[this.selectedIndex].getAttribute('href');
+    }        
+};*/
+
 /* Date show in footer */
 var d = new Date();
 var m = d.getMonth() + 1;
@@ -99,7 +110,6 @@ function showSlide(n) {
 }
 
 /* Click button for loading images in gallery */
-var slides = document.getElementsByClassName("gall-row");
 $(document).ready(function() {
     var w = $("body").innerWidth();
     if ((w > 500) && (w < 768)) {
@@ -111,6 +121,7 @@ $(document).ready(function() {
         $('#gallery_block button').style.display = "block";
     }
     if (w < 501) {
+        var slides = document.getElementsByClassName("gall-row");
         for (i = 1; i < slides.length; i++) {
             slides[i].style.display = "none";//Erase all rest images
         }
@@ -122,13 +133,21 @@ $('#gallery_block button').click(function() {
     var w = $("body").innerWidth();
     if ((w > 500) && (w < 768)) {
         for (i = 9; i < slides.length; i++) {
-            slides[i].style.display = "block";//Erase all rest images
+            slides[i].style.display = "block";
         }
+        var em = 0;//= $(".languages:selected").text();
+        if (em === 0)
+            $("#gallery_block button").text('Приховати фотографії');
+        if (em == 3)
+            $("#gallery_block button").text('Hide photographs');
+        else
+            $("#gallery_block button").text('Hide photographs');
     }
     if (w < 501) {
         for (i = 9; i < slides.length; i++) {
-            slides[i].style.display = "block";//Erase all rest images
+            slides[i].style.display = "block";
         }
+        $("#gallery_block button").attr('value', 'Save');
     }
 });
 

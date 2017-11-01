@@ -8,36 +8,56 @@
     overflow: hidden;
     z-index: 20;
 }
-.languages img {
-    width: 40px;
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    -o-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
-}
-.languages img:hover {
-    box-shadow: 0 0 3px 3px #fff;
-}
+
+select#gender option[value="female"] { background-image:url(female.png); }
+select#gender option[value="others"] { background-image:url(others.png); }
+
 .languages {
+    width: 80px;
+    height: 40px;
     top: 0;
     right: 0;
     float: right;
     position: fixed;
     text-align: center;
-    padding: 14px 16px;
+    border: none;
+    border-radius: 7px;
+    overflow: hidden;
+    background: #555 url("img/ua.png") no-repeat 90% center;
+    background-size: cover;
+    color: #fff;
+    font-family: 'Source Sans Pro', sans-serif;
+    -webkit-transition: width 0.5s; /* For Safari 3.1 to 6.0 */
+    transition: width 0.5s;
     z-index: 25;
+}
+.languages option {
+    /*visibility: hidden;*/
+    background-color: #555;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+.languages:hover {
+    width: 120px;
+}
+.languages option:hover {
+    background-color: #de3e52;
 }
 .topnav a {
     float: left;
     background-color: #555;
     color: #f2f2f2;
-    font-family: 'Alegreya Sans SC', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 18px;
     -webkit-transition: background-color 1s; /* For Safari 3.1 to 6.0 */
     transition: background-color 1s;
+}
+.topnav a, .languages option {
+    font-size: 18px;
 }
 .topnav a:not(.languages):focus {
     background-color: #de3e52;
@@ -72,7 +92,7 @@
     	/*-webkit-transition: width 1s; /* For Safari 3.1 to 6.0 */
     	/*transition: width 1s;*/
     }
-    .topnav .languages a {
+    .topnav .languages option {
         float: right;
         position: top right;
         text-align: center;
@@ -114,12 +134,12 @@
         background-color: #de3e52;
         color: #fff;
         border-top-right-radius: 0;
-        border-bottom-right-radius: 50%;
+        border-bottom-right-radius: 0;
     }
     .topnav a:not(.languages):active{
         background-color: #e4473c;
-        border-top-right-radius: 50%;
-        border-bottom-right-radius: 50%;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
     }
     .topnav a:not(.languages):after {
         background-color: #000;
