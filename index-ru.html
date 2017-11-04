@@ -22,10 +22,9 @@
             <a href="#contact_block">Контакты</a>
         </div>
         <select class="languages">
-            <option value="Select" href="#" selected>Выбрать язык</option>
-            <option value="English" href="index-en.html" style="border: 2px solid #fff">English<</option>
-            <option value="Українська" href="#"><img src="img/ua.png">Українська</option>
-            <option value="Русский" href="index-ru.html"><img src="img/ru.png">Русский</option>
+            <option value="en">English</option>
+            <option value="ua"><img src="img/ua.png">Українська</option>
+            <option value="ru" selected><img src="img/ru.png">Русский</option>
         </select>
     </nav>
 
@@ -42,34 +41,34 @@
         <div class="ontop">
             <a title="В начало" href="#banner"><img src="img/arrow.png"></a>
         </div>
-        <div id="media_block" class="media_bg">
+        <!--<div id="media_block" class="media_bg">
             <div class="media_c col-1">
-                <div class="heading_style">
+                <div id="anim" class="heading_style">
                     <h1>Премьера</h1>
                 </div>
-                <div class="embed_container"><!--https://www.youtube.com/watch?v=ULeTvc9iFow-->
-                    <iframe src="sources_v/ULeTvc9iFow.html" allowfullscreen=""></iframe>
+                <div class="embed_container">
+                    <iframe src="https://www.youtube.com/embed/ULeTvc9iFow" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
             <div class="row clearfix">
                 <div class="media_c col-2">
                     <div class="embed_container">
-                        <iframe src="sources_v/HtjVzEGU-u8.html" allowfullscreen=""></iframe>
+                        <iframe src="https://www.youtube.com/embed/HtjVzEGU-u8" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <div class="embed_container">
-                        <iframe src="sources_v/p3VE_hQ_KE0.html" allowfullscreen=""></iframe>
+                        <iframe src="https://www.youtube.com/embed/7lZ2jToAIcQ" allowfullscreen=""></iframe>
                     </div>
                 </div>
                 <div class="media_c col-2">
                     <div class="embed_container">
-                        <iframe src="sources_v/7lZ2jToAIcQ.html" allowfullscreen=""></iframe>
+                        <iframe src="https://www.youtube.com/embed/p3VE_hQ_KE0" allowfullscreen=""></iframe>
                     </div>
                     <div class="embed_container">
-                        <iframe src="sources_v/nNKQqvaEEFk.html" allowfullscreen=""></iframe>
+                        <iframe src="https://www.youtube.com/embed/CuYHfjMrzM0" allowfullscreen=""></iframe>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
         <div id="about">
             <div class="row clearfix">
                 <div class="heading_style">
@@ -162,8 +161,10 @@
                     </div>
                 </div>
                 <div id="m1" class="modal" style="display: none;">
+                    <div class="im_block">
                     <span id="close1" class="close">&times;</span>
                     <img class="modal-content" id="img01">
+                    </div>
                     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                     <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 </div>
@@ -205,7 +206,7 @@
         <div id="contact_block">
             <div class="row clearfix">
                 <div class="heading_style">
-                    <h1>Наши контакты</h1>
+                    <h1>Контакты</h1>
                 </div>
                 <div class="col-3 col-mb-2 col-m-2-3 col-ms-1-3">
                     <div class="contacts">
@@ -236,6 +237,9 @@
 		<p>&#169; <span id="date"></span> Selfy</p></div>
 	</footer><!--End of Footer-->
 
+    <!--<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>-->
+    <script src="dist/scrollreveal.min.js"></script>
+    <script src="dist/scrollreveal.js"></script>
     <script type="text/javascript" src="script.js"></script>
 </body>
 </html>

@@ -8,13 +8,16 @@ $(window).scroll(function () {
         $(".ontop").hide(); //reached the desired point -- show div
     }
 });
-$('.ontop').click(function(){
+$('.ontop').click(function() {
     $('html, body').animate({scrollTop: 0}, 'slow');
 });
-$('a.topnav').click(function(){
+$('a.topnav').click(function() {
     $('html, body').animate({scrollTop: 0}, 'slow');
 });
-// Select all links with hashes
+$('.topnav > .icon').click(function() {
+    $('.languages').show();
+    //alert(mmm);
+});
 $('a[href*="#"]')
 // Remove links that don't actually link to anything
 .not('[href="#"]')
@@ -47,6 +50,48 @@ $('a[href*="#"]')
     }
 });
 
+window.sr = ScrollReveal({ duration: 2000 });
+sr.reveal('.gall-row', 50);
+
+//sr.reveal(document.getElementById('about'));
+//sr.reveal(document.querySelectorAll('.heading_style'));
+//var $el1 = $('#about .heading_style');
+// as a selector...
+//sr.reveal('.bar', { container: '#barContainer' });
+
+//hover
+/*document.getElementsByClassName('languages').onchange = function() {
+    if (this.selectedIndex !== 0) {
+        window.location.href = this.children[this.selectedIndex].getAttribute('href');
+    }        
+};*/
+
+$.fn.isInViewport = function() {
+    var elementTop = $(this).offset().top;
+    var elementBottom = elementTop + $(this).outerHeight();
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+};
+
+var $p = $(".heading_style");
+var arl = [], i = $p.length - 1;
+console.log(i);
+$(window).on('resize scroll', function() {
+    $('.heading_style').each(function() {
+        var active = $(this).attr('id');
+        if ($(this).isInViewport() && arl[i] != $p.index($(this))) {
+            $('.heading_style').toggleClass('anim_h');
+            arl[i] = $p.index($(this));
+        }
+        //$('.heading_style').removeClass('anim_h');
+        /*setTimeout(function() {
+            $('.heading_style').removeClass('anim_h');
+        }, 5000);
+    }*/
+    });
+});
+
 /* Menu */
 function onMenu() {
     var nav = document.getElementById('menu'),
@@ -59,15 +104,63 @@ function onMenu() {
 }
 
 /* Change language */
-$('#languages').click(function(){
-    $(this).hide().text("Вибрати мову").fadeIn("slow");
+//function check() {
+    //$("select[name=Lang] option:first").text("Выбрать язык");
+    //var ind = $(".languages").prop('selectedIndex');
+    //alert($(".languages").prop('selectedIndex'));
+    //alert($(".languages")[0].selectedIndex);
+    //var l = $(".languages select:nth-child(1)").index();
+    //var opl = $(".languages option:selected").val();
+    //console.log(opl);
+/*$('.languages').change(function () {
+    // bind change event to select
+        $(this).find('option:selected').css('color', 'green');
+        var opl = $(".languages option:selected").val();
+        console.log(opl);
+        if (opl == "English")
+        console.log(opl);
+});*/
+$(function() {
+    $('.languages').on('change', function() {
+        var opl = $(".languages option:selected").val();
+        if (opl == "en") {
+            console.log(opl);
+            window.location = "index-en.html";
+        }
+        if (opl == "ua") {
+            console.log(opl);
+            window.location = "index-ua.html";
+        }
+        if (opl == "ru") {
+            console.log(opl);
+            window.location = "index-ru.html";
+        }
+        return false;
+    });
 });
-//hover
-/*document.getElementsByClassName('languages').onchange = function() {
-    if (this.selectedIndex !== 0) {
-        window.location.href = this.children[this.selectedIndex].getAttribute('href');
-    }        
-};*/
+
+/* Selection language */
+/*$("select").click(function(e) {
+     var $target = $(e.target); 
+     //if($target.is('option')) {
+        //var opt = $(this).find("option:selected");
+        //opt.text("Select");
+        //var $opt = $("select")[0];
+        //$opt.text("Select");
+        if ($target.is('option')) {
+            alert('sdfsd');
+            //var vOptionSelect = ".languages";
+            //var l= $(vOptionSelect).find(":selected").index();
+            //alert(l);
+            //$(selectElement).prop('selectedIndex', savedIndex);
+            //alert($target.prop('selectedIndex'));
+            //if ($(".languages option:selected").index() == 0)//($(this).text == "English")
+                //console.log("English");
+        }
+        //alert($target.attr("id"));//Will alert id if it has id attribute
+        //alert(opt);//Will alert the text of the option
+        //alert($target.val());//Will alert the value of the option
+});*/
 
 /* Date show in footer */
 var d = new Date();
@@ -118,14 +211,14 @@ $(document).ready(function() {
             slides[i].style.display = "none";//Erase all rest images
         }
         //var nav = document.getElementById('menu'), body = document.body;
-        $('#gallery_block button').style.display = "block";
+        $('#gallery_block button').show();
     }
     if (w < 501) {
         var slides = document.getElementsByClassName("gall-row");
         for (i = 1; i < slides.length; i++) {
             slides[i].style.display = "none";//Erase all rest images
         }
-        $('#gallery_block button').style.display = "block";
+        $('#gallery_block button').show();
     }
 });
 $('#gallery_block button').click(function() {
@@ -136,7 +229,7 @@ $('#gallery_block button').click(function() {
             slides[i].style.display = "block";
         }
         var em = 0;//= $(".languages:selected").text();
-        if (em === 0)
+        if (em == 0)
             $("#gallery_block button").text('Приховати фотографії');
         if (em == 3)
             $("#gallery_block button").text('Hide photographs');
@@ -150,7 +243,3 @@ $('#gallery_block button').click(function() {
         $("#gallery_block button").attr('value', 'Save');
     }
 });
-
-/*$('.gall-row img').click(function(){
-    var windowWidth = $(window).width();
-});*/

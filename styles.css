@@ -7,7 +7,6 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather+Sans');
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import url('https://fonts.googleapis.com/css?family=Merriweather+Sans');*/
-
 @import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:800|PT+Sans:700|Source+Sans+Pro:700|Ubuntu:700');
 
 /* resets */
@@ -103,9 +102,26 @@ main {
 .heading_style h1 {
     padding-top: 25px;
     padding-bottom: 10px;
+    font-family: 'Alegreya Sans', sans-serif;
     text-align: center;
     font-size: 2.5em;
     letter-spacing: 1px;
+}
+
+.anim_h h1 { background: url(img/through_text_.png);
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-position: -200% 50%;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: thrt 2s linear;
+    /* Activate hardware acceleration for smoother animations */
+    /*-webkit-transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;*/
+}
+
+@-webkit-keyframes thrt {
+    0% { background-position: 200% 50%; }
+    100% { background-position: -100% 50%; }
 }
 #media_block, #wrapper, #about, #gallery_block, #music_block, .contact_block, #page_footer {
     padding: 0 50px;
@@ -164,7 +180,7 @@ main {
     padding-bottom: 56.25%; /* 16/9 ratio */
     padding-top: 25px; /* IE6 workaround*/
     height: 0;
-    overflow: hidden;/*hidden*/
+    overflow: hidden;
 }
 .embed_container iframe, .embed_container object, .embed_container embed {
     position: absolute;
@@ -232,11 +248,11 @@ main {
 }
 /* Gallery */
 #gallery_block {
-    background: #000; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(top, #000, rgba(222, 62, 82, 0.5)); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(bottom, #000, rgba(222, 62, 82, 0.5)); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(bottom, #000, rgba(222, 62, 82, 0.5)); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to bottom, #000, rgba(222, 62, 82, 0.5)); /* Standard syntax */
+    background-color: #000;
+    background: -webkit-radial-gradient(circle at top right, rgb(222, 62, 82), #000 40%);
+    background: -o-radial-gradient(circle at top right, rgb(222, 62, 82), #000 40%);
+    background: -moz-radial-gradient(circle at top right, rgb(222, 62, 82), #000 40%);
+    background: radial-gradient(circle at top right, rgb(222, 62, 82), #000 40%);
     background-attachment: fixed;
     z-index: 60;
 }
@@ -259,13 +275,6 @@ main {
     padding: 5px;
     text-align: center !important;
 }
-.modal {
-    cursor: pointer;
-}
-.prev, .next {
-    padding: 0 15px;
-    background-position: left 50%;
-}
 
 /* for Gallery */
 .modal {
@@ -286,7 +295,7 @@ main {
 .modal-content {
     margin: auto;
     display: block;
-    width: 80%;
+    width: 100%;
     max-width: 700px;
 }
 .modal-content, #caption {    
@@ -305,45 +314,60 @@ main {
     from {transform:scale(0)} 
     to {transform:scale(1)}
 }
-
-/* Button to load rest images of the gallery */
-#gallery_block button {
-    padding: 5px 7px;
-    border: none;
+.im_block {
+    display: inline-block;
+}
+.im_block img {
+}
+.prev, .next {
+    /*bottom: 5px;
+    padding: 0 15px;
+    background-position: left 50%;*/
+    padding: 0 10px;
+	position: absolute;
+	top: 50%;
+	margin-top: -30px;
+	opacity: 1;
+    font-size: 40px;
+    font-weight: bold;
+}
+.prev {
+    left: 30px;
+}
+.next {
+    right: 30px;
+}
+.close {
+    padding: 0 10px;
+    bottom: 20px;
+    position: relative;
+    font-size: 40px;
+    font-weight: bold;
+}
+.close, .prev, .next, #gallery_block button {
     border-radius: 7px;
-    cursor: pointer;
     background-color: #555;
     color: #fff;
-    font-family: 'Alegreya Sans SC', sans-serif;
+    cursor: pointer;
+    text-align: center;
+    -webkit-transition: background-color 0.8s;
+    -moz-transition: background-color 0.8s;
+    -o-transition: background-color 0.8s;
+    transition: background-color 0.8s;
+}
+.close:hover, .close:focus, .prev:hover, .next:hover {
+    background-color: #e4473c;
+}
+
+/* Button to load rest images of the gallery */
+#gallery_block  {
+    padding: 5px 7px;
+    border: none;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 18px;
-    -webkit-transition: background-color 1s; /* For Safari 3.1 to 6.0 */
-    transition: background-color 1s;
 }
 #gallery_block button:hover {
     background-color: #de3e52;
-}
-
-/* The Close Button */
-.close {
-    position: relative;
-    bottom: 15px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    text-align: center;
-    transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-    color: #fff;
-    text-decoration: none;
-    cursor: pointer;
-}
-@media only screen and (max-width: 700px){
-    .modal-content {
-        width: 100%;
-    }
 }
 
 /* Music block */
@@ -413,8 +437,7 @@ main {
 }
 
 /* Footer */
-#page_footer,
-#page_footer p {
+#page_footer, #page_footer p {
     margin: 0;
     padding: 10px 30px;
     background: #fff;
@@ -424,39 +447,21 @@ main {
 
 /* OnTop link */
 .ontop {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     bottom: 0;
     right: 0;
     position: fixed;
     cursor: pointer;
 }
 .ontop img {
-    width: 30px;
+    width: 40px;
 }
 .ontop:hover {
     -webkit-animation: bounce 0.7s ease; /* Safari 4.0 - 8.0 */
     animation: bounce 0.7s ease;
 }
 @-webkit-keyframes bounce {
-    0% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-    }
-    25% {
-        -webkit-transform: translateY(10px);
-        transform: translateY(10px);
-    }
-    50% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-    }
-    75% {
-        -webkit-transform: translateY(10px);
-        transform: translateY(10px);
-    }
-}
-@keyframes bounce {
     0% {
         -webkit-transform: translateY(0);
         transform: translateY(0);

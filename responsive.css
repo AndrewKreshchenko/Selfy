@@ -1,4 +1,13 @@
 /* Media queries for grid system */
+.row {
+    margin: 0 auto;
+}
+.row:last-child {
+    margin-bottom: 0;
+}
+[class*="col-"] {
+    padding: 15px;
+}
 @media all and (min-width: 768px) and (max-width: 1024px) {
     .col-mb-2-3 {
         float: left;
@@ -37,10 +46,6 @@
     .col-8 {
         float: left;
         width: 12.5%;
-    }
-
-    #button_load {
-        display: none;
     }
 }
 @media screen and (max-width: 1024px) {
@@ -101,6 +106,9 @@
     #banner {
         background-position: center 150px;
         background-size: 100%;
+    }
+    .modal-content {
+        width: 100%;
     }
 }
 @media screen and (max-width: 549px) {
