@@ -167,7 +167,6 @@
         float: left;
         width: 12.5%;
     }
-
 }
 @media screen and (max-width: 449px) {
     .heading_style h1 {
@@ -180,7 +179,7 @@
         width: 60px;
         height: 30px;
     }
-    .languages option .topnav a {
+    .topnav a .languages option  {
         font-size: 20px;
     }
     #banner {
@@ -193,7 +192,7 @@
 @media screen and (max-width: 414px) {
     .col-ms-1-3 {
         float: left;
-        width: 66.60%;
+        width: 66.66%;
     }
     .col-ms-2-3 {
         float: left;

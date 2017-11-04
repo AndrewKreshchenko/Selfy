@@ -1,4 +1,44 @@
-/* Stick element */
+var thislang = $('html')[0].lang, fm = false;
+$(function() {
+    if (thislang == 'en')
+        $('.languages').css("background-image", "url('img/en.png')");
+    if (thislang == 'uk')
+        $('.languages').css("background-image", "url('img/ua.png')");
+    if (thislang == 'ru')
+        $('.languages').css("background-image", "url('img/ru.png')");
+});
+$('.topnav > .icon').click(function() {// Show if it is devise. Then language pictogram should be if menu was clicked.
+    if (this.fm === false) {
+        $('.languages').show();
+        this.fm = true;
+    }
+    else {
+        $('.languages').hide();
+        this.fm = false;
+    }
+});
+
+/* Languages */
+$(function() {
+    $('.languages').on('change', function() {
+        var opl = $(".languages option:selected").val();
+        if (opl == "en") {
+            console.log(opl);
+            window.location = "index-en.html";
+        }
+        if (opl == "ua") {
+            console.log(opl);
+            window.location = "index-ua.html";
+        }
+        if (opl == "ru") {
+            console.log(opl);
+            window.location = "index-ru.html";
+        }
+        return false;
+    });
+});
+
+/* Stick elements*/
 $(".ontop").hide();
 $(window).scroll(function () {
     if ($(window).scrollTop() > 600) {//if($(window).scrollTop() > topOfOthDiv) { //scrolled past the other div?
@@ -14,13 +54,8 @@ $('.ontop').click(function() {
 $('a.topnav').click(function() {
     $('html, body').animate({scrollTop: 0}, 'slow');
 });
-$('.topnav > .icon').click(function() {
-    $('.languages').show();
-    //alert(mmm);
-});
 $('a[href*="#"]')
-// Remove links that don't actually link to anything
-.not('[href="#"]')
+.not('[href="#"]')// Then Remove links that don't actually link to anything
 .not('[href="#0"]')
 .click(function(event) {
     // On-page links
@@ -50,22 +85,6 @@ $('a[href*="#"]')
     }
 });
 
-window.sr = ScrollReveal({ duration: 2000 });
-sr.reveal('.gall-row', 50);
-
-//sr.reveal(document.getElementById('about'));
-//sr.reveal(document.querySelectorAll('.heading_style'));
-//var $el1 = $('#about .heading_style');
-// as a selector...
-//sr.reveal('.bar', { container: '#barContainer' });
-
-//hover
-/*document.getElementsByClassName('languages').onchange = function() {
-    if (this.selectedIndex !== 0) {
-        window.location.href = this.children[this.selectedIndex].getAttribute('href');
-    }        
-};*/
-
 $.fn.isInViewport = function() {
     var elementTop = $(this).offset().top;
     var elementBottom = elementTop + $(this).outerHeight();
@@ -74,9 +93,15 @@ $.fn.isInViewport = function() {
     return elementBottom > viewportTop && elementTop < viewportBottom;
 };
 
+/* Smooth scrolling when any menu item was clicked. */
+window.sr = ScrollReveal({
+    duration: 2000
+});
+sr.reveal('.gall-row', 50);
+
+/* Animation for headings */
 var $p = $(".heading_style");
 var arl = [], i = $p.length - 1;
-console.log(i);
 $(window).on('resize scroll', function() {
     $('.heading_style').each(function() {
         var active = $(this).attr('id');
@@ -84,11 +109,6 @@ $(window).on('resize scroll', function() {
             $('.heading_style').toggleClass('anim_h');
             arl[i] = $p.index($(this));
         }
-        //$('.heading_style').removeClass('anim_h');
-        /*setTimeout(function() {
-            $('.heading_style').removeClass('anim_h');
-        }, 5000);
-    }*/
     });
 });
 
@@ -102,7 +122,6 @@ function onMenu() {
         nav.className = "topnav";
     }
 }
-
 /* Change language */
 //function check() {
     //$("select[name=Lang] option:first").text("Выбрать язык");
@@ -120,24 +139,6 @@ function onMenu() {
         if (opl == "English")
         console.log(opl);
 });*/
-$(function() {
-    $('.languages').on('change', function() {
-        var opl = $(".languages option:selected").val();
-        if (opl == "en") {
-            console.log(opl);
-            window.location = "index-en.html";
-        }
-        if (opl == "ua") {
-            console.log(opl);
-            window.location = "index-ua.html";
-        }
-        if (opl == "ru") {
-            console.log(opl);
-            window.location = "index-ru.html";
-        }
-        return false;
-    });
-});
 
 /* Selection language */
 /*$("select").click(function(e) {
@@ -228,13 +229,12 @@ $('#gallery_block button').click(function() {
         for (i = 9; i < slides.length; i++) {
             slides[i].style.display = "block";
         }
-        var em = 0;//= $(".languages:selected").text();
-        if (em == 0)
+        if (thislang == 'en')
+            $("#gallery_block button").text('Hide'); //$( "button:lang(en-us)").text('Hide');
+        if (thislang == 'uk')
             $("#gallery_block button").text('Приховати фотографії');
-        if (em == 3)
-            $("#gallery_block button").text('Hide photographs');
-        else
-            $("#gallery_block button").text('Hide photographs');
+        if (thislang == 'ru')
+            $("#gallery_block button").text('Спрятать фотографии');
     }
     if (w < 501) {
         for (i = 9; i < slides.length; i++) {

@@ -22,10 +22,9 @@
             <a href="#contact_block">Contacts</a>
         </div>
         <select class="languages">
-            <option value="Select" href="#" selected>Select language</option>
-            <option value="English" href="index-en.html" style="border: 2px solid #fff">English</option>
-            <option value="Українська" href="#"><img src="img/ua.png">Українська</option>
-            <option value="Русский" href="index-ru.html"><img src="img/ru.png">Русский</option>
+            <option value="en" data-icon="img/en.png" class="left circle" selected style="background: url(img/en.png);">English</option>
+            <option value="ua" data-icon="img/en.png" class="left circle">Українська</option>
+            <option value="ru" data-icon="img/en.png" class="left circle">Русский</option>
         </select>
     </nav>
 
@@ -48,24 +47,24 @@
                     <h1>Premiere</h1>
                 </div>
                 <div class="embed_container">
-                    <iframe src="https://www.youtube.com/embed/ULeTvc9iFow" frameborder="0" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/ULeTvc9iFow" controls disablekb="0" allowfullscreen></iframe><!--disablekb="0"  frameborder="0"-->
                 </div>
             </div>
             <div class="row clearfix">
                 <div class="media_c col-2">
                     <div class="embed_container">
-                        <iframe src="https://www.youtube.com/embed/HtjVzEGU-u8" frameborder="0" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/HtjVzEGU-u8" controls allowfullscreen></iframe>
                     </div>
                     <div class="embed_container">
-                        <iframe src="https://www.youtube.com/embed/7lZ2jToAIcQ" allowfullscreen=""></iframe>
+                        <iframe src="https://www.youtube.com/embed/7lZ2jToAIcQ" controls allowfullscreen=""></iframe>
                     </div>
                 </div>
                 <div class="media_c col-2">
                     <div class="embed_container">
-                        <iframe src="https://www.youtube.com/embed/p3VE_hQ_KE0" allowfullscreen=""></iframe>
+                        <iframe src="https://www.youtube.com/embed/p3VE_hQ_KE0" controls allowfullscreen=""></iframe>
                     </div>
                     <div class="embed_container">
-                        <iframe src="https://www.youtube.com/embed/CuYHfjMrzM0" allowfullscreen=""></iframe>
+                        <iframe src="https://www.youtube.com/embed/CuYHfjMrzM0" controls allowfullscreen=""></iframe>
                     </div>
                 </div>
             </div>
@@ -167,7 +166,7 @@
                     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                     <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 </div>
-                <div id="button_load">
+                <div id="button_load" lang="en-us">
                     <button>Load rest photographs</button>
                 </div>
             </div>
