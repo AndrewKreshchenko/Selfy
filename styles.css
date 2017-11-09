@@ -77,10 +77,16 @@ a:hover {color: #ed8078;}
 main {
     margin: 0 auto;
 }
+#media_block, #wrapper, #about, #gallery_block, #music_block, .contact_block, #page_footer {
+    padding: 0 50px;
+}
 .banner_text {
     padding: 150px 100px;
     display: flex;
     z-index: 15;
+    -webkit-transition: all .3s ease-in-out 1.7s;
+    transition: all .3s ease-in-out 1.7s;
+    letter-spacing: -.07em;
 }
 .banner_text h1, h2, h3 {
     /*font-family: 'Ubuntu', sans-serif;*/
@@ -97,7 +103,7 @@ main {
     font-size: 32px;
 }
 .banner_text h3 {
-    font-size: 24px;
+    font-size: 20px;
 }
 .heading_style h1 {
     padding-top: 25px;
@@ -107,29 +113,6 @@ main {
     font-size: 2.5em;
     letter-spacing: 1px;
 }
-
-.anim_h h1 { background: url(img/through_text_.png);
-    -webkit-background-clip: text;
-    background-clip: text;
-    background-position: -200% 50%;
-    -webkit-text-fill-color: transparent;
-    -webkit-animation: thrt 2s linear;
-    /* Activate hardware acceleration for smoother animations */
-    /*-webkit-transform: translate3d(0,0,0);
-    -webkit-backface-visibility: hidden;*/
-}
-
-@-webkit-keyframes thrt {
-    0% { background-position: 200% 50%; }
-    100% { background-position: -100% 50%; }
-}
-#media_block, #wrapper, #about, #gallery_block, #music_block, .contact_block, #page_footer {
-    padding: 0 50px;
-}
-                /*@media all and (max-width: 1200px) {
-            .wrapper {
-                min-width: 100%;
-            }*/
 #banner {
     background: url(http://selfyofficial.com.ua/wp-content/uploads/2016/04/bg3.jpg);
     background-attachment: fixed;
@@ -263,7 +246,7 @@ main {
 }
 .gallery img {
     max-width: 300px;
-    width: 100%;/*&*/
+    width: 100%;
     transition: 0.3s;
 }
 .gallery img:hover {
@@ -298,21 +281,33 @@ main {
     width: 100%;
     max-width: 700px;
 }
-.modal-content, #caption {    
+.modal-anim {    
     -webkit-animation-name: zoom;
     -webkit-animation-duration: 0.5s;
     animation-name: zoom;
     animation-duration: 0.5s;
 }
-
 @-webkit-keyframes zoom {
     from {-webkit-transform:scale(0)} 
     to {-webkit-transform:scale(1)}
 }
-
 @keyframes zoom {
     from {transform:scale(0)} 
     to {transform:scale(1)}
+}
+.modal-slide {    
+    -webkit-animation-name: bias; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+    animation-name: bias;
+    animation-duration: 1s;
+}
+@-webkit-keyframes bias {
+    0%   {left:100px; top:0px;}
+    100%  {left:0px; top:0px;}
+}
+@keyframes bias {
+    0%   {left:100px; top:0px;}
+    100%  {left:0px; top:0px;}
 }
 .im_block {
     display: inline-block;
@@ -344,7 +339,7 @@ main {
     font-size: 40px;
     font-weight: bold;
 }
-.close, .prev, .next, #gallery_block button {
+.close, .prev, .next, #gallery_block button, #news button {
     border-radius: 7px;
     background-color: #555;
     color: #fff;
@@ -366,8 +361,17 @@ main {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 18px;
 }
-#gallery_block button:hover {
+#gallery_block button, #news button {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    padding: 10px 14px;
+    text-align: center;
+}
+#gallery_block button:hover, #news button:hover {
     background-color: #de3e52;
+}
+#gallery_block button:after, #news button:after {
+    background-color: #555;
 }
 
 /* Music block */
@@ -380,6 +384,37 @@ main {
     width: 100%;
     padding-top: 25px;
     overflow: hidden;
+}
+
+
+/* News block */
+#thesenews h3 {
+    color: #fff;
+}
+.news_cell {
+    margin: 0 0 0 2px;
+    padding: 0;
+}
+.news_cell img {
+    max-width: 300px;
+    width: 100%;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    text-align: center
+}
+.news_text {
+    margin-top: 0;
+    padding: 5px;
+    max-width: 300px;
+    width: 100%;
+    border: none;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    background: #31384e;
+    background: -webkit-linear-gradient(top, #555, #000);
+    background: -o-linear-gradient(bottom, #555, #000);
+    background: -moz-linear-gradient(bottom, #555, #000);
+    background: linear-gradient(to bottom, #555, #000);
 }
 
 /* Contacts */
@@ -439,7 +474,7 @@ main {
 /* Footer */
 #page_footer, #page_footer p {
     margin: 0;
-    padding: 10px 30px;
+    padding: 10px 0;
     background: #fff;
     font-style: italic;
     color: #000;
@@ -448,7 +483,7 @@ main {
 /* OnTop link */
 .ontop {
     width: 60px;
-    height: 60px;
+    height: 45px;
     bottom: 0;
     right: 0;
     position: fixed;

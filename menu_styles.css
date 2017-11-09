@@ -1,5 +1,6 @@
 .topnav .icon {
     background-color: #555;
+    border-radius: 7px;
     display: none;
 }
 .topnav {
@@ -9,12 +10,10 @@
     overflow: hidden;
     z-index: 20;
 }
-
 /*select#gender option[value="female"] { background-image:url(female.png); }
 select#gender option[value="others"] { background-image:url(others.png); }*/
-
 .languages {
-    width: 80px;
+    width: 100px;
     height: 40px;
     top: 5px;
     right: 5px;
@@ -23,12 +22,12 @@ select#gender option[value="others"] { background-image:url(others.png); }*/
     text-align: center;
     overflow: hidden;
     border: 0 !important;
-    background: #555 url("img/ua.png");
+    border-radius: 7px;
+    background: #555;/* Color by default */
     background-repeat: no-repeat;
     background-position: 90% center;
     background-size: cover;
     color: #fff;
-    font-family: 'Source Sans Pro', sans-serif;
     -webkit-transition: width 0.5s; /* For Safari 3.1 to 6.0 */
     transition: width 0.5s;
     z-index: 25;
@@ -39,7 +38,7 @@ select#gender option[value="others"] { background-image:url(others.png); }*/
     -moz-appearance: none; /* Removes Default Firefox style*/
 }
 select > option {
-    /*visibility: hidden;*/
+    padding: 0 10px;
     background-color: #555;
     -webkit-transition: all 0.2s ease-out;
     -moz-transition: all 0.2s ease-out;
@@ -47,6 +46,7 @@ select > option {
     transition: all 0.2s ease-out;
 }
 .languages:hover {
+    background-image: none;
     width: 120px;
 }
 .languages option:hover {
@@ -54,8 +54,8 @@ select > option {
 }
 .topnav a {
     float: left;
+    /*background-color: #555;*/
     color: #f2f2f2;
-    font-family: 'Source Sans Pro', sans-serif;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -63,6 +63,7 @@ select > option {
     transition: background-color 0.8s;
 }
 .topnav a, .languages option {
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 18px;
 }
 .topnav a:not(.languages):focus {
@@ -100,6 +101,9 @@ select > option {
     	/*-webkit-transition: width 1s; /* For Safari 3.1 to 6.0 */
     	/*transition: width 1s;*/
     }
+    .topnav a {
+        background-color: #555;
+    }
     /*nav > select:before, nav > select:after {
         display: none;
     }*/
@@ -132,7 +136,6 @@ select > option {
         top: 0;
     }
     .topnav.responsive a {
-        background-color: #555;
         float: none;
         border-radius: 15px;
         display: block;

@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <title>Група Selfy</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" media="all" href="styles.css">
+    <link rel="stylesheet" type="text/css" media="all" href="anim_header.css">
+    <link rel="stylesheet" type="text/css" href="preload/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="preload/css/effect1.css" />
     <link rel="stylesheet" type="text/css" media="all" href="menu_styles.css">
     <link rel="stylesheet" type="text/css" media="all" href="responsive.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<script src="preload/js/modernizr.custom.js"></script> 
 </head>
 <body>
     <!-- Navigation bar -->
@@ -18,22 +23,121 @@
             <a href="#media_block">Прем'єра</a>
             <a href="#about">Про групу</a>
             <a href="#gallery_block">Галерея</a>
+            <a href="#news">Новини</a>
             <a href="#music_block">Музика</a>
             <a href="#contact_block">Контакти</a>
         </div>
         <select class="languages">
             <option value="en" data-icon="img/en.png">English</option>
-            <option value="ua" style="background: url(img/ua.png);">Українська</option>
-            <option value="ru" selected>Русский</option>
+            <option value="ua" selected style="background-image: url('img/ua.png')">Українська</option>
+            <option value="ru">Русский</option>
         </select>
     </nav>
 
     <!-- Header -->
     <header id="banner">
-        <div class="banner_text">
+        <div class="banner_text anim_bg">
             <h2>ГРУПА</h2>
             <h1>SELFY</h1>
             <h3>ОФІЦІЙНИЙ САЙТ</h3>
+            <div class="ip-loader">
+                <span><svg class="ip-inner" width="60px" height="60px" viewBox="0 0 80 80">
+                    <path class="ip-loader-circlebg" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z"/>
+                    <path id="ip-loader-circle" class="ip-loader-circle" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z"/>
+                    
+                </svg></span>
+            </div>
+            <div id="anim_svgs">
+                <span id="flash1"></span>
+                <span id="flash2"></span>
+                <span id="camera"><svg xmlns="http://www.w3.org/2000/svg"
+                width="1in"
+                viewBox="0 0 108 69">
+                <path id="camera1"
+                    fill="#555" stroke="none"
+                    d="M 58.00,3.00
+                    C 60.96,3.00 66.39,2.74 69.00,3.74
+                        74.34,5.79 75.89,10.90 79.21,12.83
+                        81.45,14.13 84.48,13.99 87.00,14.00
+                        92.00,14.02 101.15,12.48 103.40,18.06
+                        104.11,19.82 104.00,23.05 104.00,25.00
+                        104.00,25.00 104.00,55.00 104.00,55.00
+                        103.99,57.77 104.29,61.44 102.40,63.69
+                        100.13,66.38 96.18,65.99 93.00,66.00
+                        93.00,66.00 24.00,66.00 24.00,66.00
+                        18.92,66.00 5.80,67.55 3.02,62.85
+                        1.81,60.80 2.00,57.35 2.00,55.00
+                        2.00,55.00 2.00,23.00 2.00,23.00
+                        2.28,7.77 17.15,16.94 25.90,13.26
+                        29.97,11.55 30.20,7.32 37.00,3.74
+                        42.46,2.42 52.05,3.00 58.00,3.00 Z"/>
+                <path id="ar1"
+                    fill="#fff" stroke="none"
+                    d="M 61.88,55.38
+                    C 40.60,53.92 34.64,38.00 34.64,38.00
+                        34.64,38.00 39.09,37.91 39.09,37.91
+                        39.09,37.91 31.73,31.00 31.73,31.00
+                        31.73,31.00 23.91,38.00 23.91,38.00
+                        23.91,38.00 29.18,38.27 29.27,38.45
+                        37.09,61.28 62.00,60.00 62.00,60.00
+                        62.00,60.00 61.88,55.25 61.88,55.25"/>
+                <path id="ar2"
+                    fill="#fff" stroke="none"
+                    d="M 77.27,41.00
+                    C 67.91,15.00 44.09,17.18 44.09,17.18
+                        44.09,17.18 44.09,21.00 44.36,21.00
+                        69.27,24.82 70.82,40.82 70.82,40.82
+                        70.82,40.82 67.73,41.18 67.73,41.18
+                        67.73,41.18 74.73,47.82 74.73,47.82
+                        74.73,47.82 81.55,40.82 81.09,40.91
+                        80.64,41.00 77.36,41.09 77.36,41.09"/>
+                </svg></span>
+                <span id="selfie_stick">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                    width="115px" height="370px" viewBox="-0.0555556 0 115.111 370" preserveAspectRatio="xMidYMid meet" onload="">
+                    <linearGradient id="gr1">
+                        <stop offset="0%"   stop-color="#222"/>
+                        <stop offset="50%"  stop-color="#777"/>
+                        <stop offset="100%" stop-color="#333"/>
+                    </linearGradient>
+                    <defs id="svgEditorDefs">
+                        <polygon id="svgEditorShapeDefs" style="fill:url('#gr1');stroke:black;vector-effect:non-scaling-stroke;stroke-width:1px;"/>
+                    </defs><rect id="svgEditorBackground" x="0" y="0" width="1080" height="590" style="fill: none; stroke: none;"/>
+                    <path d="M-0.704116023253432,-4.000000044431769l-3.295883976746568,8.000000044431768h8l-3.481010285849993,-7.999999962340358Z"
+                    style="fill:url('#gr1'); stroke: none; vector-effect:non-scaling-stroke;stroke-width:1px;" id="e13_shape" transform="matrix(3.49164 0 0 38.1382 51.959 200.262)"/></svg>
+                </span>
+                <span id="square"><svg xmlns="http://www.w3.org/2000/svg"
+                width="0.7in" height="0.7in"
+                viewBox="0 0 90 90">
+            <path fill="#fed800" stroke="none"
+                    d="M 90.00,0.00
+                    C 90.00,0.00 90.00,90.00 90.00,90.00
+                        90.00,90.00 0.00,90.00 0.00,90.00
+                        0.00,90.00 0.00,0.00 0.00,0.00
+                        0.00,0.00 90.00,0.00 90.00,0.00 Z
+                    M 2.00,2.00
+                    C 2.00,2.00 2.00,44.00 2.00,44.00
+                        2.00,44.00 9.00,44.00 9.00,44.00
+                        9.00,44.00 9.00,46.00 9.00,46.00
+                        9.00,46.00 2.00,46.00 2.00,46.00
+                        2.00,46.00 2.00,88.00 2.00,88.00
+                        2.00,88.00 44.00,88.00 44.00,88.00
+                        44.00,88.00 44.00,81.00 44.00,81.00
+                        44.00,81.00 46.00,81.00 46.00,81.00
+                        46.00,81.00 46.00,88.00 46.00,88.00
+                        46.00,88.00 88.00,88.00 88.00,88.00
+                        88.00,88.00 88.00,46.00 88.00,46.00
+                        88.00,46.00 81.00,46.00 81.00,46.00
+                        81.00,46.00 81.00,44.00 81.00,44.00
+                        81.00,44.00 88.00,44.00 88.00,44.00
+                        88.00,44.00 88.00,2.00 88.00,2.00
+                        88.00,2.00 46.00,2.00 46.00,2.00
+                        46.00,2.00 46.00,9.00 46.00,9.00
+                        46.00,9.00 44.00,9.00 44.00,9.00
+                        44.00,9.00 44.00,2.00 44.00,2.00
+                        44.00,2.00 2.00,2.00 2.00,2.00 Z" />
+            </svg></span>
+            </div>
         </div>
     </header>
 
@@ -162,11 +266,11 @@
                 </div>
                 <div id="m1" class="modal" style="display: none;">
                     <span id="close1" class="close">&times;</span>
-                    <img class="modal-content" id="img01">
-                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    <img class="modal-content modal-anim" id="img1">
+                    <a class="prev">&#10094;</a>
+                    <a class="next">&#10095;</a>
                 </div>
-                <div id="button_load">
+                <div class="button_load">
                     <button>Завантажити решта фотографій</button>
                 </div>
             </div>
@@ -189,7 +293,35 @@
                         <img src="img/gall_20.png">
                     </div>
                 </div>-->
-    
+        <div id="news">
+            <div class="heading_style">
+                <h1>Новини</h1>
+            </div>
+            <div id="thesenews" class="row clearfix">
+                <div class="news_cell col-3 col-ms-1"><div><img src="img/news1.png"></div>
+                    <div class="news_text">
+                        <h3>Музика Selfy на музичних веб-каналах</h3>
+                        <p>Тепер музика Selfy можна слухати на <a href="https://goo.gl/ADWS2">iTunes</a> i <a href="https://play.google.com/store/music/album/Selfy_%D0%9E%D0%B1%D0%BD%D0%B8%D0%BC%D0%B8?id=Bvwhwdwmbg2bo5t7c45ux6bhope">Google Play</a></p>
+                    </div>
+                </div>
+                <div class="news_cell col-3 col-ms-1"><div><img src="img/news2.png"></div>
+                    <div class="news_text">
+                        <h3>Пісня "Обійми" на 2 місці "Хвилі країни"</h3>
+                        <p>Нова пісня "Обійми" вже на 2 місці <a href="https://www.facebook.com/krainafm.ua/?fref=mentions">"Хвилі країни"</a>. "Віримо, що завдяки вам, дуже скоро, станемо першим" &ndash; коментують солістки групи.</p>
+                    </div>
+                </div>
+                <div class="news_cell col-3 col-ms-1"><div><img src="img/news3.jpg"></div>
+                    <div class="news_text">
+                        <h3>Група Selfy зацепила актуальну соціальну проблему</h3>
+                        <p>Головний меседж нового хіта &ndash; спонукати слухачів, не втрачаючи ні хвилини, обійняти своїх близьких! Це проста річ, якої катастрофічно не вистачає нашому сьогоденню.</p>
+                        <p>Деталі на сайті <a href="http://radio.obozrevatel.com/news/gruppa-selfy-zadela-aktualjnuyu-socialjnuyu-problemu-10216878.html">radio.obozrevatel.com</a>.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="button_load">
+                <button>Завантажити решта новин</button>
+            </div>
+        </div>
         <!--<div id="music_block" class="media_c media_bg">
             <div class="heading_style">
                 <h1>Музика</h1>
@@ -202,10 +334,10 @@
             </div>
         </div>-->
         <div id="contact_block">
-            <div class="row clearfix">
-                <div class="heading_style">
-                    <h1>Наші контакти</h1>
-                </div>
+            <div class="heading_style">
+                <h1>Наші контакти</h1>
+            </div>
+                <div class="row clearfix">
                 <div class="col-3 col-mb-2 col-m-2-3 col-ms-1-3">
                     <div class="contacts">
                         <img src="img/c_tel.png"><div class="contacts_p"><p>PR-менеджер: ‎+380 (50) 575 94 98 Віталій</p></div>
@@ -217,7 +349,7 @@
                         <img src="img/c_mail.png"><div class="contacts_p"><p>Електронна пошта: <a href="mailto:selfygirlz@gmail.com">selfygirlz@gmail.com</a></p></div>
                     </div>
                 </div>
-                <div class="social_c col-2-3 col-mb-2">
+                <div class="social_c col-2-3 col-mb-2 col-m-3">
                     <ul>
                         <li><a href="https://www.instagram.com/selfygirlz/" title="Instagram" rel="me"><img src="img/s_ins.png"></a>
                         </li>
@@ -232,12 +364,15 @@
     </main>
 
     <footer id="page_footer">
-		<p>&#169; <span id="date"></span> Selfy</p></div>
+		<p><span id="date"></span> &#169; Selfy</p></div>
 	</footer><!--End of Footer-->
-    
-    <!--<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>-->
+    <script src="preload/js/classie.js"></script>
+	<script src="preload/js/pathLoader.js"></script>
+	<script src="preload/js/main.js"></script>
+
     <script src="dist/scrollreveal.min.js"></script>
     <script src="dist/scrollreveal.js"></script>
+
     <script type="text/javascript" src="script.js"></script>
 </body>
 </html>

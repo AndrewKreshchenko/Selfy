@@ -1,4 +1,4 @@
-var thislang = $('html')[0].lang, fm = false;
+var thislang = $('html')[0].lang, fm = false, fg = false;
 $(function() {
     if (thislang == 'en')
         $('.languages').css("background-image", "url('img/en.png')");
@@ -16,26 +16,6 @@ $('.topnav > .icon').click(function() {// Show if it is devise. Then language pi
         $('.languages').hide();
         this.fm = false;
     }
-});
-
-/* Languages */
-$(function() {
-    $('.languages').on('change', function() {
-        var opl = $(".languages option:selected").val();
-        if (opl == "en") {
-            console.log(opl);
-            window.location = "index-en.html";
-        }
-        if (opl == "ua") {
-            console.log(opl);
-            window.location = "index-ua.html";
-        }
-        if (opl == "ru") {
-            console.log(opl);
-            window.location = "index-ru.html";
-        }
-        return false;
-    });
 });
 
 /* Stick elements*/
@@ -97,8 +77,11 @@ $.fn.isInViewport = function() {
 window.sr = ScrollReveal({
     duration: 2000
 });
-sr.reveal('.gall-row', 50);
-
+/*$(document).ready(function() {
+    var w = $("body").innerWidth();
+    if (w > 768)
+        sr.reveal('.gall-row', 50);
+});*/
 /* Animation for headings */
 var $p = $(".heading_style");
 var arl = [], i = $p.length - 1;
@@ -112,6 +95,107 @@ $(window).on('resize scroll', function() {
     });
 });
 
+/* Styling the banner when page load */
+$(document).ready(function() {
+    //var elem = document.querySelector(".banner_text");
+    //var p1 = document.createElement("div");
+    ///elem.appendChild(p1);
+    //$(".banner_text div").append('<img src="http://selfyofficial.com.ua/wp-content/uploads/2016/04/bg3.jpg"/>');
+    /*var w_b = $("body").innerWidth();
+    if (w_b < 1600) {
+        calcGraphics(w_b);
+    }*/
+    $('.ip-loader').css('opacity', 0);
+    $('#anim_svg1').hide();
+    $('#square').hide();
+    $('.banner_text h1').css('opacity', 0);
+    $('.banner_text h2').css('opacity', 0);
+    $('.banner_text h3').css('opacity', 0);
+    $('#banner').css('background', 'url(http://selfyofficial.com.ua/wp-content/uploads/2016/04/bg3.jpg);');
+    //$('#banner').css('background-color', '#303541');
+    var elem = document.querySelector("#anim_svgs");
+    var p1 = document.createElement("img");
+    p1.src = "for_header/iphone1m1.png";
+    $('#selfie_stick').hide();
+    $(p1).css('width', '50%');
+    elem.appendChild(p1);
+    /*$(p1).animate({
+        transform: "scale(0.7)"
+    }, 2000 );*/
+    setTimeout(function() {
+        $('#camera').show();
+        $('#camera').addClass('anim-camera');
+    }, 1000);
+    setTimeout(function() {
+        $('#camera').hide();
+        $('#selfie_stick').show();
+        p1.src = "for_header/iphone1m2.png";
+        $(p1).addClass('iphone_big');
+        $(p1).css('transform', 'scale(0.7)');
+    }, 4200);
+    setTimeout(function() {
+        $('#square').show();
+    }, 4700);
+    setTimeout(function() {
+        $('#square').hide();
+        $('#flash1').show();
+        $('#flash2').show();
+        $('#flash1').addClass('flashnow1');
+        $('#flash2').addClass('flashnow2');
+    }, 5700);
+    setTimeout(function() {
+        $('#flash1').hide();
+        $('#flash2').hide();
+    }, 6000);
+    setTimeout(function() {
+        $('#anim_svgs').remove();
+		$('.banner_text h1').css('opacity', 0);
+    }, 6500);
+});
+/*function Animate1(el) {//this and next function repeat
+    $({deg: 0}).animate({deg: 180}, {
+        duration: 500,
+        step: function(now){
+            $('.anim_svgs svg').css({
+                 transform: "rotate(" + now + "deg)"
+            });
+        }
+    });
+}
+function appear(x) {
+    //$('.anim_svgs svg').delay(10).animate({top:100},interval);
+    $(x).animate({
+        opacity: 1,
+        height: '300px'
+    }, 800)//, 5000, function() {Animate2()};
+}
+function disappear(x) {
+    $(x).animate({
+        opacity: 0,
+        height: '600px'
+    }, 800)
+}*/
+
+/* Languages */
+$(function() {
+    $('.languages').on('change', function() {
+        var opl = $(".languages option:selected").val();
+        if (opl == "en") {
+            console.log(opl);
+            window.location = "index-en.html";
+        }
+        if (opl == "ua") {
+            console.log(opl);
+            window.location = "index-ua.html";
+        }
+        if (opl == "ru") {
+            console.log(opl);
+            window.location = "index-ru.html";
+        }
+        return false;
+    });
+});
+
 /* Menu */
 function onMenu() {
     var nav = document.getElementById('menu'),
@@ -122,24 +206,6 @@ function onMenu() {
         nav.className = "topnav";
     }
 }
-/* Change language */
-//function check() {
-    //$("select[name=Lang] option:first").text("Выбрать язык");
-    //var ind = $(".languages").prop('selectedIndex');
-    //alert($(".languages").prop('selectedIndex'));
-    //alert($(".languages")[0].selectedIndex);
-    //var l = $(".languages select:nth-child(1)").index();
-    //var opl = $(".languages option:selected").val();
-    //console.log(opl);
-/*$('.languages').change(function () {
-    // bind change event to select
-        $(this).find('option:selected').css('color', 'green');
-        var opl = $(".languages option:selected").val();
-        console.log(opl);
-        if (opl == "English")
-        console.log(opl);
-});*/
-
 /* Selection language */
 /*$("select").click(function(e) {
      var $target = $(e.target); 
@@ -169,24 +235,35 @@ var m = d.getMonth() + 1;
 document.getElementById("date").innerHTML = d.getDate() + "." + m + "." + d.getFullYear();
 
 /* Gallery */
-var img;
 var modal = document.getElementById('m1');
 var slideIndex = 1;
+var audio = document.getElementById("m1")
+var btn_g1 = document.querySelector('.next');
+var btn_g2 = document.querySelector('.prev');
+
+btn_g1.addEventListener('click', function() {// event handlers
+    showSlide(slideIndex += 1);
+});
+btn_g2.addEventListener('click', function() {
+    showSlide(slideIndex -= 1);
+});
+document.addEventListener('keydown', function (event) {
+    if (event.keyCode == 37 || event.keyCode == 40) {
+        showSlide(slideIndex -= 1);
+    }
+    if (event.keyCode == 38 || event.keyCode == 39) {
+        showSlide(slideIndex += 1);
+    }
+});
 $('.gall-row').on('click', 'img', function() {
-    img = $(this).prev("a").attr("href");//img = obj.getAttribute("href"); //slideIndex = parseInt(obj.getAttribute("alt"));
-    var modalImg = document.getElementById("img01");
+    var img = $(this).prev("a").attr("href");//img = obj.getAttribute("href"); //slideIndex = parseInt(obj.getAttribute("alt"));
+    var modalImg = document.getElementById("img1");
     modal.style.display = "block";
     modalImg.src = img;
     var span = document.getElementsByClassName("close")[0];// Get the <span> element that closes the modal, when the user clicks on <span> (x), close the modal.
 });
 document.getElementById("close1").onclick = function() {
     modal.style.display = "none";
-}
-function plusSlides(n) {
-    showSlide(slideIndex += n);
-}
-function currentSlide(n) {
-    showSlide(slideIndex = n);
 }
 function showSlide(n) {
     var i;
@@ -199,47 +276,77 @@ function showSlide(n) {
     }
     slide = slides[slideIndex-1];
     var im = $(slides[n]).find('a').attr("href");
-    var modalImg = document.getElementById("img01");
+    var modalImg = document.getElementById("img1");
+    //$('.modal-content').removeClass('modal-anim');
+    //$('.modal-content').addClass('modal-slide');
     modalImg.src = im;
+    //$(".modal-image").animate({height: "300px"});
 }
 
 /* Click button for loading images in gallery */
 $(document).ready(function() {
     var w = $("body").innerWidth();
-    if ((w > 500) && (w < 768)) {
-        var slides = document.getElementsByClassName("gall-row");
-        for (i = 9; i < slides.length; i++) {
-            slides[i].style.display = "none";//Erase all rest images
-        }
-        //var nav = document.getElementById('menu'), body = document.body;
-        $('#gallery_block button').show();
-    }
-    if (w < 501) {
-        var slides = document.getElementsByClassName("gall-row");
-        for (i = 1; i < slides.length; i++) {
-            slides[i].style.display = "none";//Erase all rest images
-        }
-        $('#gallery_block button').show();
-    }
+    hidePhotos(w);
 });
+
+/* Button for gallery, that appears on devices */
 $('#gallery_block button').click(function() {
-    var slides = document.getElementsByClassName("gall-row");
     var w = $("body").innerWidth();
-    if ((w > 500) && (w < 768)) {
-        for (i = 9; i < slides.length; i++) {
-            slides[i].style.display = "block";
-        }
-        if (thislang == 'en')
-            $("#gallery_block button").text('Hide'); //$( "button:lang(en-us)").text('Hide');
-        if (thislang == 'uk')
-            $("#gallery_block button").text('Приховати фотографії');
-        if (thislang == 'ru')
-            $("#gallery_block button").text('Спрятать фотографии');
+    if (fg === false) {
+        showPhotos(w);
+        fg = true;
     }
-    if (w < 501) {
-        for (i = 9; i < slides.length; i++) {
-            slides[i].style.display = "block";
-        }
-        $("#gallery_block button").attr('value', 'Save');
+    else {
+        hidePhotos(w);
+        fg = false;
     }
 });
+function showPhotos(w1) {
+    var slides = document.getElementsByClassName("gall-row");
+    if ((w1 > 500) && (w1 < 768)) {
+        for (i = 9; i < slides.length; i++) {
+            slides[i].style.display = "block";
+        }
+        nameBtnHide();
+    }
+    if (w1 < 501) {
+        for (i = 9; i < slides.length; i++) {
+            slides[i].style.display = "block";
+        }
+        nameBtnHide();
+    }
+}
+function hidePhotos(w1) {
+    var slides = document.getElementsByClassName("gall-row");
+    if ((w1 > 500) && (w1 < 768)) {
+        for (i = 9; i < slides.length; i++) {
+            slides[i].style.display = "none";//Erase all rest images
+        }
+        nameBtnShow();
+        //var nav = document.getElementById('menu'), body = document.body;
+        //$('#gallery_block button').show();
+    }
+    if (w1 < 501) {
+        for (i = 1; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        nameBtnShow();
+        //$('#gallery_block button').show();
+    }
+}
+function nameBtnHide() {
+    if (thislang == 'en')
+        $("#gallery_block button").text('Hide photographs');//$("button:lang(en-us)").text('Hide');
+    if (thislang == 'uk')
+        $("#gallery_block button").text('Приховати фотографії');
+    if (thislang == 'ru')
+        $("#gallery_block button").text('Спрятать фотографии');
+}
+function nameBtnShow() {
+    if (thislang == 'en')
+        $("#gallery_block button").text('Load rest photographs');
+    if (thislang == 'uk')
+        $("#gallery_block button").text('Завантажити решта фотографій');
+    if (thislang == 'ru')
+        $("#gallery_block button").text('Загрузить остальние фотографии');
+}
