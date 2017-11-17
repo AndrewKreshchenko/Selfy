@@ -210,30 +210,24 @@ main {
 .social-icons img {
     width: 30px;
 }
-.social-widget li, .share-icons li, .social-icons li {
+.social-icons li {
     display: inline-block;
     border: none;
     padding: 0;
 }
-.share-icons li, .social-icons li {
+.social-icons li {
     margin: 0!important;
 }
-.social-icons a, .share-icons a, .social-widget a  {
+.social-icons a {
     display: inline-block;
     margin: 0 2px 5px 2px;
-}
-.share-icons a, .social-widget a {
-    -webkit-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
 }
 .child {
     width: 66.66%;
     margin: 2em auto;
     padding: 0 20px;
 }
-.child p, .team-member:last-child p {
+.child p, .team-member:last-child p, .news_cell p {
     text-align: left;
     text-indent: 1.5em;
 }
@@ -278,7 +272,6 @@ main {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
 }
 
@@ -286,8 +279,16 @@ main {
 .modal-content {
     margin: auto;
     display: block;
-    width: 100%;
+}
+#m1 .modal {
     max-width: 500px;
+}
+#m2 .modal-content {
+    max-height: 500px;
+    width: auto;
+}
+#m2 img {
+    width: auto;
 }
 .modal-anim {    
     -webkit-animation-name: zoom;
@@ -406,7 +407,7 @@ main {
     background: linear-gradient(to bottom, #555, #000);
     text-align: center;
 }
-.news_cell img {
+.news_cell img:not(.modal) {
     max-width: 100%;
     max-height: 350px;
     border-radius: 7px;
@@ -432,9 +433,9 @@ main {
     text-align: right !important;
 }
 #news .button_load {
-    width: 30%;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 }
 
 /* Contacts */

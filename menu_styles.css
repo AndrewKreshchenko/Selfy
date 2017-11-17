@@ -2,14 +2,14 @@
 select#gender option[value="others"] { background-image:url(others.png); }*/
 /* Languages */
 .languages {
-    width: 80px;
-    top: 5px;
-    right: 5px;
+    width: 120px;
+    top: 3px;
+    right: 0;
     float: right;
     position: fixed;
     text-align: center;
     overflow: hidden;
-    border: 0 !important;
+    border: 0;
     border-radius: 7px;
     background-repeat: no-repeat;
     background-position: 70% center;
@@ -19,7 +19,6 @@ select#gender option[value="others"] { background-image:url(others.png); }*/
     transition: background-color 0.8s;
 }
 .languages:hover {
-    width: 120px;
     background-color: #555;
 }
 .languages img {
@@ -48,7 +47,7 @@ select#gender option[value="others"] { background-image:url(others.png); }*/
 
 /* Topnav */
 .topnav .icon {
-    background-color: #555;
+    background-color: #fff;
     border-radius: 7px;
     display: none;
 }
@@ -104,9 +103,9 @@ select#gender option[value="others"] { background-image:url(others.png); }*/
 @media screen and (max-width: 767px) {
 	.languages {
         top: 0;
-        right: 0;
         display: none;
         background-color: #555;
+        border: 2px solid #fff;
     }
     .languages a {
         line-height: 15px;
@@ -117,14 +116,14 @@ select#gender option[value="others"] { background-image:url(others.png); }*/
     .topnav {
     	width: 45px;
         display: block;
-    	/*-webkit-transition: width 1s; /* For Safari 3.1 to 6.0 */
-    	/*transition: width 1s;*/
     }
     .topnav a:not(.languages) {
         background-color: #555;
     }
     .topnav a:not(:first-child) {
         display: none;
+        -webkit-transition: background-color 0.8s;
+        transition: background-color 0.8s;
     }
     .topnav a.icon {
         position: fixed;
@@ -141,7 +140,7 @@ select#gender option[value="others"] { background-image:url(others.png); }*/
         right: 0;
         top: 0;
     }
-    .topnav.responsive a {
+    .topnav.responsive a:not(.languages) {
         float: none;
         border-radius: 15px;
         display: block;

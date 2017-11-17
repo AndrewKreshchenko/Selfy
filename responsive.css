@@ -17,9 +17,6 @@
         float: left;
         width: 50%;
     }
-    #news .button_load {
-        width: 50%;
-    }
 }
 @media all and (min-width: 768px) {
     .col-1 {
@@ -74,15 +71,13 @@
     .social_c img {
         width: 80px;
     }
-}
-@media screen and (max-width: 799px) {
+    #banner div {
+        height: 45vh;
+    }
 }
 @media screen and (max-width: 767px) {
     #banner {
         background-position: center 130px;
-    }
-    #banner div {
-        height: 50vh;
     }
     .banner_text {
         padding: 60px 50px

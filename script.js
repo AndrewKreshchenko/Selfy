@@ -1,5 +1,4 @@
 /* Languages */
-var w = $("body").innerWidth();
 var thislang = $('html')[0].lang, fm = false, fg = false, fn = false;
 /*$(function() {
     $('.languages').on('change', function() {
@@ -109,6 +108,7 @@ window.sr = ScrollReveal({
     duration: 2000
 });
 $(document).ready(function() {
+    var w = $("body").innerWidth();
     if (w > 768)
         sr.reveal('.gall-row', 50);
 });
@@ -221,8 +221,11 @@ function onMenu() {
     var nav = document.getElementById('menu'),
     body = document.body;
     if (nav.className === "topnav") {
+        $('.topnav').find('.icon').text("×");
+        $('.topnav').find('.icon').css('font-size', '30px;');
         nav.className += " responsive";
     } else {
+        $('.topnav').find('.icon').text("☰");
         nav.className = "topnav";
     }
 }
@@ -231,14 +234,9 @@ function onLanguages() {
     body = document.body;
     if (lang.className === "languages") {
         lang.className += " lang_opt";
-        if (w > 1025)
-            $('.languages').css('width', '150px');
-        else
-            $('.languages').css('width', '120px');
     }
     else {
         lang.className = "languages";
-        $('.languages').css('width', '120px');
     }
 }
 /* Selection language */
@@ -323,16 +321,16 @@ function showSlide(n) {
     modalImg.src = im;
 }
 
-/* Click button for loading images in gallery and news. Also align button */
-/*$(document).ready(function() {
+/* Click button for loading images in gallery and news.*/
+$(document).ready(function() {
     var w = $("body").innerWidth();
-    var w_b = $('#news .button_load').innerWidth();
-    console.log('button_load ' + w_b);
-    w_b = (w-w_b)/3;
-    $('#news .button_load').css('padding-left', w_b);
+    //var w_b = $('#news .button_load').innerWidth();
+    //console.log('button_load ' + w_b);
+    //w_b = (w-w_b)/3;
+    //$('#news .button_load').css('padding-left', w_b);
     hidePhotos(w);
     hideNews(w);
-});*/
+});
 
 /* Button for gallery, that appears on devices */
 $('#gallery_block button').click(function() {
@@ -478,18 +476,22 @@ function nameBtnShow() {
         $("#gallery_block button").text('Загрузить остальние фотографии');
 }
 function nameBtnHideNews() {
-    if (thislang == 'en')
-        $("#news button").text('Hide news');
+    if (thislang == 'en') {
+        $("#news button").text('Hide rest news');
+        $("#news button").css('padding-right', '5%');
+    }
     if (thislang == 'uk')
         $("#news button").text('Приховати новини');
     if (thislang == 'ru')
         $("#news button").text('Спрятать новости');
 }
 function nameBtnShowNews() {
-    if (thislang == 'en')
+    if (thislang == 'en') {
         $("#news button").text('Load rest news');
+        $("#news button").css('padding-right', '5%');
+    }
     if (thislang == 'uk')
         $("#news button").text('Завантажити решта новин');
     if (thislang == 'ru')
-        $("#news button").text('Загрузить остальние новостей');
+        $("#news button").text('Загрузить остальные новости');
 }

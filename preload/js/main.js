@@ -49,7 +49,7 @@
 					instance.setProgress(progress);
 
 					// reached the end
-					if(progress === 1) {
+					if (progress === 1) {
 						classie.remove(container, 'loading');
 						classie.add(container, 'loaded');
 						clearInterval(interval);
@@ -64,9 +64,12 @@
 							$('nav').show();
 							$('.banner_text').removeClass('anim_bg');
 							$('.banner_text').addClass('animate-b-txt');
+							setTimeout(function() {
+								$('#banner').addClass('banner_photo');
+							}, 3000);
 						};
 
-						if(support.animations) {
+						if (support.animations) {
 							header.addEventListener(endEventName, endInitialAnim);
 						}
 						else {
