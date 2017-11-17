@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <title>Група Selfy</title>
+    <title>Гурт Selfy</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" media="all" href="styles.css">
     <link rel="stylesheet" type="text/css" media="all" href="anim_header.css">
-    <link rel="stylesheet" type="text/css" href="preload/css/normalize.css" />
-	<link rel="stylesheet" type="text/css" href="preload/css/effect1.css" />
+    <link rel="stylesheet" type="text/css" href="preload/css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="preload/css/effect1.css">
     <link rel="stylesheet" type="text/css" media="all" href="menu_styles.css">
     <link rel="stylesheet" type="text/css" media="all" href="responsive.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -21,122 +21,125 @@
         <div class="topnav">
             <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="onMenu()">&#9776;</a>
             <a href="#media_block">Прем'єра</a>
-            <a href="#about">Про групу</a>
+            <a href="#about">Про гурт</a>
             <a href="#gallery_block">Галерея</a>
             <a href="#news">Новини</a>
             <a href="#music_block">Музика</a>
             <a href="#contact_block">Контакти</a>
         </div>
-        <select class="languages">
-            <option value="en" data-icon="img/en.png">English</option>
-            <option value="ua" selected style="background-image: url('img/ua.png')">Українська</option>
-            <option value="ru">Русский</option>
-        </select>
+        <div id="lang" class="languages">
+            <a href="javascript:void(0);" onclick="onLanguages()">
+            <a href="index-en.html">English</a>
+            <a href="#">Українська</a>
+            <a href="index-ru.html">Русский</a>
+        </div>
     </nav>
 
     <!-- Header -->
     <header id="banner">
         <div class="banner_text anim_bg">
-            <h2>ГРУПА</h2>
+            <h2>ГУРТ</h2>
             <h1>SELFY</h1>
             <h3>ОФІЦІЙНИЙ САЙТ</h3>
-            <div class="ip-loader">
-                <span><svg class="ip-inner" width="60px" height="60px" viewBox="0 0 80 80">
-                    <path class="ip-loader-circlebg" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z"/>
-                    <path id="ip-loader-circle" class="ip-loader-circle" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z"/>
-                    
-                </svg></span>
-            </div>
             <div id="anim_svgs">
+                <div class="ip-loader">
+                    <span>
+                        <svg class="ip-inner" width="60px" height="60px" viewBox="0 0 80 80">
+                            <path class="ip-loader-circlebg" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z"/>
+                            <path id="ip-loader-circle" class="ip-loader-circle" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z"/>
+                        </svg>
+                    </span>
+                </div>
                 <span id="flash1"></span>
                 <span id="flash2"></span>
-                <span id="camera"><svg xmlns="http://www.w3.org/2000/svg"
-                width="1in"
-                viewBox="0 0 108 69">
-                <path id="camera1"
-                    fill="#555" stroke="none"
-                    d="M 58.00,3.00
-                    C 60.96,3.00 66.39,2.74 69.00,3.74
-                        74.34,5.79 75.89,10.90 79.21,12.83
-                        81.45,14.13 84.48,13.99 87.00,14.00
-                        92.00,14.02 101.15,12.48 103.40,18.06
-                        104.11,19.82 104.00,23.05 104.00,25.00
-                        104.00,25.00 104.00,55.00 104.00,55.00
-                        103.99,57.77 104.29,61.44 102.40,63.69
-                        100.13,66.38 96.18,65.99 93.00,66.00
-                        93.00,66.00 24.00,66.00 24.00,66.00
-                        18.92,66.00 5.80,67.55 3.02,62.85
-                        1.81,60.80 2.00,57.35 2.00,55.00
-                        2.00,55.00 2.00,23.00 2.00,23.00
-                        2.28,7.77 17.15,16.94 25.90,13.26
-                        29.97,11.55 30.20,7.32 37.00,3.74
-                        42.46,2.42 52.05,3.00 58.00,3.00 Z"/>
-                <path id="ar1"
-                    fill="#fff" stroke="none"
-                    d="M 61.88,55.38
-                    C 40.60,53.92 34.64,38.00 34.64,38.00
-                        34.64,38.00 39.09,37.91 39.09,37.91
-                        39.09,37.91 31.73,31.00 31.73,31.00
-                        31.73,31.00 23.91,38.00 23.91,38.00
-                        23.91,38.00 29.18,38.27 29.27,38.45
-                        37.09,61.28 62.00,60.00 62.00,60.00
-                        62.00,60.00 61.88,55.25 61.88,55.25"/>
-                <path id="ar2"
-                    fill="#fff" stroke="none"
-                    d="M 77.27,41.00
-                    C 67.91,15.00 44.09,17.18 44.09,17.18
-                        44.09,17.18 44.09,21.00 44.36,21.00
-                        69.27,24.82 70.82,40.82 70.82,40.82
-                        70.82,40.82 67.73,41.18 67.73,41.18
-                        67.73,41.18 74.73,47.82 74.73,47.82
-                        74.73,47.82 81.55,40.82 81.09,40.91
-                        80.64,41.00 77.36,41.09 77.36,41.09"/>
-                </svg></span>
+                <span id="camera">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1in" viewBox="0 0 108 69">
+                        <path id="camera1"
+                            fill="#555" stroke="none"
+                            d="M 58.00,3.00
+                            C 60.96,3.00 66.39,2.74 69.00,3.74
+                                74.34,5.79 75.89,10.90 79.21,12.83
+                                81.45,14.13 84.48,13.99 87.00,14.00
+                                92.00,14.02 101.15,12.48 103.40,18.06
+                                104.11,19.82 104.00,23.05 104.00,25.00
+                                104.00,25.00 104.00,55.00 104.00,55.00
+                                103.99,57.77 104.29,61.44 102.40,63.69
+                                100.13,66.38 96.18,65.99 93.00,66.00
+                                93.00,66.00 24.00,66.00 24.00,66.00
+                                18.92,66.00 5.80,67.55 3.02,62.85
+                                1.81,60.80 2.00,57.35 2.00,55.00
+                                2.00,55.00 2.00,23.00 2.00,23.00
+                                2.28,7.77 17.15,16.94 25.90,13.26
+                                29.97,11.55 30.20,7.32 37.00,3.74
+                                42.46,2.42 52.05,3.00 58.00,3.00 Z"/>
+                        <path id="ar1"
+                            fill="#fff" stroke="none"
+                            d="M 61.88,55.38
+                            C 40.60,53.92 34.64,38.00 34.64,38.00
+                                34.64,38.00 39.09,37.91 39.09,37.91
+                                39.09,37.91 31.73,31.00 31.73,31.00
+                                31.73,31.00 23.91,38.00 23.91,38.00
+                                23.91,38.00 29.18,38.27 29.27,38.45
+                                37.09,61.28 62.00,60.00 62.00,60.00
+                                62.00,60.00 61.88,55.25 61.88,55.25"/>
+                        <path id="ar2"
+                            fill="#fff" stroke="none"
+                            d="M 77.27,41.00
+                            C 67.91,15.00 44.09,17.18 44.09,17.18
+                                44.09,17.18 44.09,21.00 44.36,21.00
+                                69.27,24.82 70.82,40.82 70.82,40.82
+                                70.82,40.82 67.73,41.18 67.73,41.18
+                                67.73,41.18 74.73,47.82 74.73,47.82
+                                74.73,47.82 81.55,40.82 81.09,40.91
+                                80.64,41.00 77.36,41.09 77.36,41.09"/>
+                    </svg>
+                </span>
                 <span id="selfie_stick">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
                     width="115px" height="370px" viewBox="-0.0555556 0 115.111 370" preserveAspectRatio="xMidYMid meet" onload="">
-                    <linearGradient id="gr1">
-                        <stop offset="0%"   stop-color="#222"/>
-                        <stop offset="50%"  stop-color="#777"/>
-                        <stop offset="100%" stop-color="#333"/>
-                    </linearGradient>
-                    <defs id="svgEditorDefs">
-                        <polygon id="svgEditorShapeDefs" style="fill:url('#gr1');stroke:black;vector-effect:non-scaling-stroke;stroke-width:1px;"/>
-                    </defs><rect id="svgEditorBackground" x="0" y="0" width="1080" height="590" style="fill: none; stroke: none;"/>
-                    <path d="M-0.704116023253432,-4.000000044431769l-3.295883976746568,8.000000044431768h8l-3.481010285849993,-7.999999962340358Z"
-                    style="fill:url('#gr1'); stroke: none; vector-effect:non-scaling-stroke;stroke-width:1px;" id="e13_shape" transform="matrix(3.49164 0 0 38.1382 51.959 200.262)"/></svg>
+                        <linearGradient id="gr1">
+                            <stop offset="0%"   stop-color="#222"/>
+                            <stop offset="50%"  stop-color="#777"/>
+                            <stop offset="100%" stop-color="#333"/>
+                        </linearGradient>
+                        <defs id="svgEditorDefs">
+                            <polygon id="svgEditorShapeDefs" style="fill:url('#gr1');stroke:black;vector-effect:non-scaling-stroke;stroke-width:1px;"/>
+                        </defs><rect id="svgEditorBackground" x="0" y="0" width="1080" height="590" style="fill: none; stroke: none;"/>
+                        <path d="M-0.704116023253432,-4.000000044431769l-3.295883976746568,8.000000044431768h8l-3.481010285849993,-7.999999962340358Z"
+                        style="fill:url('#gr1'); stroke: none; vector-effect:non-scaling-stroke;stroke-width:1px;" id="e13_shape" transform="matrix(3.49164 0 0 38.1382 51.959 200.262)"/>
+                    </svg>
                 </span>
-                <span id="square"><svg xmlns="http://www.w3.org/2000/svg"
-                width="0.7in" height="0.7in"
-                viewBox="0 0 90 90">
-            <path fill="#fed800" stroke="none"
-                    d="M 90.00,0.00
-                    C 90.00,0.00 90.00,90.00 90.00,90.00
-                        90.00,90.00 0.00,90.00 0.00,90.00
-                        0.00,90.00 0.00,0.00 0.00,0.00
-                        0.00,0.00 90.00,0.00 90.00,0.00 Z
-                    M 2.00,2.00
-                    C 2.00,2.00 2.00,44.00 2.00,44.00
-                        2.00,44.00 9.00,44.00 9.00,44.00
-                        9.00,44.00 9.00,46.00 9.00,46.00
-                        9.00,46.00 2.00,46.00 2.00,46.00
-                        2.00,46.00 2.00,88.00 2.00,88.00
-                        2.00,88.00 44.00,88.00 44.00,88.00
-                        44.00,88.00 44.00,81.00 44.00,81.00
-                        44.00,81.00 46.00,81.00 46.00,81.00
-                        46.00,81.00 46.00,88.00 46.00,88.00
-                        46.00,88.00 88.00,88.00 88.00,88.00
-                        88.00,88.00 88.00,46.00 88.00,46.00
-                        88.00,46.00 81.00,46.00 81.00,46.00
-                        81.00,46.00 81.00,44.00 81.00,44.00
-                        81.00,44.00 88.00,44.00 88.00,44.00
-                        88.00,44.00 88.00,2.00 88.00,2.00
-                        88.00,2.00 46.00,2.00 46.00,2.00
-                        46.00,2.00 46.00,9.00 46.00,9.00
-                        46.00,9.00 44.00,9.00 44.00,9.00
-                        44.00,9.00 44.00,2.00 44.00,2.00
-                        44.00,2.00 2.00,2.00 2.00,2.00 Z" />
-            </svg></span>
+                <span id="square">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="0.7in" height="0.7in" viewBox="0 0 90 90">
+                        <path fill="#fed800" stroke="none"
+                            d="M 90.00,0.00
+                            C 90.00,0.00 90.00,90.00 90.00,90.00
+                                90.00,90.00 0.00,90.00 0.00,90.00
+                                0.00,90.00 0.00,0.00 0.00,0.00
+                                0.00,0.00 90.00,0.00 90.00,0.00 Z
+                            M 2.00,2.00
+                            C 2.00,2.00 2.00,44.00 2.00,44.00
+                                2.00,44.00 9.00,44.00 9.00,44.00
+                                9.00,44.00 9.00,46.00 9.00,46.00
+                                9.00,46.00 2.00,46.00 2.00,46.00
+                                2.00,46.00 2.00,88.00 2.00,88.00
+                                2.00,88.00 44.00,88.00 44.00,88.00
+                                44.00,88.00 44.00,81.00 44.00,81.00
+                                44.00,81.00 46.00,81.00 46.00,81.00
+                                46.00,81.00 46.00,88.00 46.00,88.00
+                                46.00,88.00 88.00,88.00 88.00,88.00
+                                88.00,88.00 88.00,46.00 88.00,46.00
+                                88.00,46.00 81.00,46.00 81.00,46.00
+                                81.00,46.00 81.00,44.00 81.00,44.00
+                                81.00,44.00 88.00,44.00 88.00,44.00
+                                88.00,44.00 88.00,2.00 88.00,2.00
+                                88.00,2.00 46.00,2.00 46.00,2.00
+                                46.00,2.00 46.00,9.00 46.00,9.00
+                                46.00,9.00 44.00,9.00 44.00,9.00
+                                44.00,9.00 44.00,2.00 44.00,2.00
+                                44.00,2.00 2.00,2.00 2.00,2.00 Z"/>
+                    </svg>
+                </span>
             </div>
         </div>
     </header>
@@ -176,15 +179,15 @@
         <div id="about">
             <div class="row clearfix">
                 <div class="heading_style">
-                    <h1><span>П</span><span/>р<span/><span>о</span> <span>г</span>р</span><span>у</span><span>п</span><span>у</span></h1>
+                    <h1>Про гурт</h1>
                 </div>
                 <div class="col-2">
                     <div class="team-member"><img src="img/1-1.png" alt="actor1">
                         <h3>Dana Queen</h3>
-                        <p class="team-position">солістка групи "Selfy"</p>
+                        <p class="team-position">солістка гурту "Selfy"</p>
                     </div>
                     <div class="team-member">
-                        <p>Dana Queen народилася в Києві, 19 липня 1991 року. Фіналістка шоу <a href=https://uk.wikipedia.org/wiki/%D0%A5%D0%BE%D1%87%D1%83_%D0%B4%D0%BE_%C2%AB%D0%92%D0%86%D0%90_%D0%93%D1%80%D0%B8%C2%BB>"Хочу до ВІА Гри"</a>. Випускниця <a href="https://circusacademy.kiev.ua/">Київської муніципальної академії естрадного та циркового мистецтв</a>, отримала спеціальність соліст-вокаліст, кваліфікацію магістра в <a href="http://nakkkim.edu.ua/instituti/institut-publichnogo-upravlinnya-ta-kadrovoji-politiki">НАКККіМ</a> за спеціальністю соліст-вокаліст, викладач вокалу. З 8 років маленька Дана грала на гітарі та співала на концертах. Тепер вона лауреат і призер міжнародних і українських конкурсів естрадного вокалу. Виступала у Парижі, Берліні, Дрездені, Варшаві, Празі, Киргизстані. Близько двох років була вокаліст кою в групі "Триши". Більше року співала в групі "SMS". Загалом виступає в Україні, Білорусії, Казахстані, Киргизстані і Туреччині.</p>
+                        <p>Dana Queen народилася в Києві, 19 липня 1991 року. Фіналістка шоу <a href=https://uk.wikipedia.org/wiki/%D0%A5%D0%BE%D1%87%D1%83_%D0%B4%D0%BE_%C2%AB%D0%92%D0%86%D0%90_%D0%93%D1%80%D0%B8%C2%BB>"Хочу до ВІА Гри"</a>. Випускниця <a href="https://circusacademy.kiev.ua/">Київської муніципальної академії естрадного та циркового мистецтв</a>, отримала спеціальність соліст-вокаліст, кваліфікацію магістра в <a href="http://nakkkim.edu.ua/instituti/institut-publichnogo-upravlinnya-ta-kadrovoji-politiki">НАКККіМ</a> за спеціальністю соліст-вокаліст, викладач вокалу. З 8 років маленька Дана грала на гітарі та співала на концертах. Тепер вона лауреат і призер міжнародних і українських конкурсів естрадного вокалу. Виступала у Парижі, Берліні, Дрездені, Варшаві, Празі, Киргизстані. Близько двох років була вокаліст кою в гурті "Триши". Більше року співала в гурті "SMS". Загалом виступає в Україні, Білорусії, Казахстані, Киргизстані і Туреччині.</p>
                         <a class="social-icons" title="Instagram" target="_blank" href="https://www.instagram.com/dana_selfy/">
                             <img src="img/1_instagram.png"><!--<i class="fa fa-home fa-1x"></i><span>Website</span>-->
                         </a>
@@ -195,7 +198,7 @@
                         <h3>Таня Лі</h3>
                     </div>
                     <div class="team-member">
-                        <p class="team-position">солистка группы "Selfy"</p>
+                        <p class="team-position">солістка гурту "Selfy"</p>
                         <p>Таня Лі народилася у м. Василівка, 2 вересня 1995 року, в Запоріжській області. З дитинства займається вокалом. З 2006 по 2013 рік займалась у Школі естрадного вокалу "Fleur". У 2015 році проходила Вокальний інтенсив, у Лани Меркулової. З 2005-2011 роки стала призером і лауреатом більше 30-ти обласних, всеукраїнських та міжнародних конкурсів і фестивалів дитячої і юнацької творчості у номінації "Естрадний вокал ", і більше 70-ти конкурсів і фестивалів у номінацій естрадного, народного і сучасного танцю. У 2012 році увійшла в 100 кращих вокалістів країни в шоу <a href="https://ru.wikipedia.org/wiki/X-%D0%A4%D0%B0%D0%BA%D1%82%D0%BE%D1%80_(%D1%81%D0%B5%D0%B7%D0%BE%D0%BD_3)">"X-Factor", 3 сезон</a>.</p>
                         <a class="social-icons" title="Gramlove" target="_blank" href="http://gramlove.co/user.php?id=1149300736&name=tanya_li_music/">
                             <img src="img/gramlove.png">
@@ -203,19 +206,19 @@
                     </div>
                 </div>
             </div>
-                <div class="child row clearfix">
-                    <div class="team-member">
-                        <h3>Історія групи</h3>
-                    </div>
-                    <p>Група Selfy була заснована у січні 2014 року продюсером, композитором і виконавцем пісень, Олександром Яременко. У склад групи входять двоє чудових дівчат Таня Лі (Тетьяна Духонченко) і Dana Queen (Ольга Хареба).</p>
-                    <p>Дівчата володіють відмінними вокальними даними і у більшості випадків виконують пісні вживу. Чим і здивували публіку на одному з концертів у Киргизстані, де дізнавшись що у дівчат є лаундж усіх пісень і вони співають їх вживу, за вимогами замовника програма була зупинена. по требованию заказчика программа была остановлена. Але коли їм запропонували гітариста в акомпанемент, вони продовжили виконувати свої пісні вживу, створювати незабутню атмосферу і дивувати своїх колег з-за кордону.</p>
-                    <p>Візитна картка групи – композиція «Галя балувана». Після прем’єри пісень в інтернеті з’явилося більше 15 фан-кліпів за перший місяць. Офіційний кліп групи Selfy за три неділі піднявся у чартах основних музичних каналів України М1 і М2 на перші місця: перше месце &ndash; <a href="http://m1.tv/chart/25">"Головний Хіт-Парад України"</a> і друге місце &ndash; <a href="http://1tv.com.ua/">"Перший український"</a>. За першу неділю прем’єри в інтернеті, кліп переглянули більше 150 000 людей, а на даний момент більше 200 000.</p>
+            <div class="child row clearfix">
+                <div class="team-member">
+                    <h3>Історія гурту</h3>
                 </div>
+                <p>Гурт Selfy була заснована у січні 2014 року продюсером, композитором і виконавцем пісень, Олександром Яременко. У склад гурту входять двоє чудових дівчат Таня Лі (Тетьяна Духонченко) і Dana Queen (Ольга Хареба).</p>
+                <p>Дівчата володіють відмінними вокальними даними і у більшості випадків виконують пісні вживу. Чим і здивували публіку на одному з концертів у Киргизстані, де дізнавшись що у дівчат є лаундж усіх пісень і вони співають їх вживу, за вимогами замовника програма була зупинена. Але коли їм запропонували гітариста в акомпанемент, вони продовжили виконувати свої пісні вживу, створювати незабутню атмосферу і дивувати своїх колег з-за кордону.</p>
+                <p>Візитна картка гурту &ndash; композиція «Галя балувана». Після прем’єри пісень в інтернеті з’явилося більше 15 фан-кліпів за перший місяць. Офіційний кліп гурту Selfy за три неділі піднявся у чартах основних музичних каналів України М1 і М2 на перші місця: перше месце &ndash; <a href="http://m1.tv/chart/25">"Головний Хіт-Парад України"</a> і друге місце &ndash; <a href="http://1tv.com.ua/">"Перший український"</a>. За першу неділю прем’єри в інтернеті, кліп переглянули більше 150 000 людей, а на даний момент більше 200 000.</p>
+            </div>
         </div>
         <div id="gallery_block">
             <div class="gallery">
                 <div class="heading_style">
-                    <h1><span>Г</span><span>а</span><span>л</span><span>е</span><span>р</span><span>е</span><span>я</span></h1>
+                    <h1>Галерея</h1>
                 </div>
                 <div id="thisgallery" class="row clearfix">
                     <div class="gall-row col-5 col-m-3">
@@ -266,7 +269,7 @@
                 </div>
                 <div id="m1" class="modal" style="display: none;">
                     <span id="close1" class="close">&times;</span>
-                    <img class="modal-content modal-anim" id="img1">
+                    <img class="modal-content modal-anim" id="img_modal1">
                     <a class="prev">&#10094;</a>
                     <a class="next">&#10095;</a>
                 </div>
@@ -275,69 +278,124 @@
                 </div>
             </div>
         </div>
-            <!--Added another photos-->
-                <!--<div class="row clearfix">
-                    <div class="gall-row col-m-5">
-                        <img src="img/gall_16.jpg">
-                    </div>
-                    <div class="gall-row col-m-5">
-                        <img src="img/gall_17.png">
-                    </div>
-                    <div class="gall-row col-m-5">
-                        <img src="img/gall_18.png">
-                    </div>
-                    <div class="gall-row col-m-5">
-                        <img src="img/gall_19.png">
-                    </div>
-                    <div class="gall-row col-m-5">
-                        <img src="img/gall_20.png">
-                    </div>
-                </div>-->
+        <!--Added another photos-->
+        <!--<div class="row clearfix">
+            <div class="gall-row col-m-5">
+                <img src="img/gall_16.jpg">
+            </div>
+            <div class="gall-row col-m-5">
+                <img src="img/gall_17.png">
+            </div>
+            <div class="gall-row col-m-5">
+                <img src="img/gall_18.png">
+            </div>
+            <div class="gall-row col-m-5">
+                <img src="img/gall_19.png">
+            </div>
+            <div class="gall-row col-m-5">
+                <img src="img/gall_20.png">
+            </div>
+        </div>-->
         <div id="news">
             <div class="heading_style">
                 <h1>Новини</h1>
             </div>
-            <div id="thesenews" class="row clearfix">
-                <div class="news_cell col-3 col-ms-1"><div><img src="img/news1.png"></div>
+            <div class="row clearfix">
+                <div class="news_cell col-3 col-m-2 col-ms-1"><img src="img/news1_1.png">
                     <div class="news_text">
-                        <h3>Музика Selfy на музичних веб-каналах</h3>
-                        <p>Тепер музика Selfy можна слухати на <a href="https://goo.gl/ADWS2">iTunes</a> i <a href="https://play.google.com/store/music/album/Selfy_%D0%9E%D0%B1%D0%BD%D0%B8%D0%BC%D0%B8?id=Bvwhwdwmbg2bo5t7c45ux6bhope">Google Play</a></p>
+                        <h3>Як відбувся вечір в Caribbean Club</h3>
+                        <p>В нічному клубі <a href="http://caribbean.com.ua/ru/concert_hall_ru/aleksandr-yaremenko/">Caribbean Club</a> міста Києва відбулася велика подія з Олександром Яременком &ndash; в день працівників радіо, телебачення і зв'язку! Саме тому в цей день відвідувачі мали змогу почути найкращі пісні за програмою "Я живу"! "Щиро вітаємо всіх, хто наполегливо працює у сфері радіо, телебачення та зв'язку!" &ndash; вітають солістки гурту Selfy усіх у цій сфері зайнятості.<p>
+                        <p>"Дякуємо, що забарвлюєте інформаційну одноманітність яскравими ідеями, новинами, подіями. Бажаємо гігантських запасів активності та плідності в роботі!" &ndash; вітають солістки працівників на своїй сторінці у <a href="https://www.facebook.com/selfy.official/">Facebook</a></p>
+                        <p class="news_date">16 листопада 2017</p>
                     </div>
                 </div>
-                <div class="news_cell col-3 col-ms-1"><div><img src="img/news2.png"></div>
+                <div class="news_cell col-3 col-m-2 col-ms-1"><img src="img/news1.png">
                     <div class="news_text">
-                        <h3>Пісня "Обійми" на 2 місці "Хвилі країни"</h3>
-                        <p>Нова пісня "Обійми" вже на 2 місці <a href="https://www.facebook.com/krainafm.ua/?fref=mentions">"Хвилі країни"</a>. "Віримо, що завдяки вам, дуже скоро, станемо першим" &ndash; коментують солістки групи.</p>
+                        <h3>Рінгтон "Обійми"</h3>
+                        <p>Пісня "Обійми" вже представлена ​​у <a href="https://www.facebook.com/kyivstar/?fref=mentions">Kyivstar</a> і доступна для замовлення абонентами. Закоханим і усім хто бажає додати теплої нотки любові у серце близькій людині, можна встановити цю мелодію замість гудка, бажають відчувати трохи більше тепла і любові &ndash; можна просто встановити цю мелодію замість гудка, відправивши SMS з Кодом 105182 на номер 465.</p>
+                        <p class="news_date">13 листопада 2017</p>
                     </div>
                 </div>
-                <div class="news_cell col-3 col-ms-1"><div><img src="img/news3.jpg"></div>
+                <div class="news_cell col-3 col-m-2 col-ms-1"><img src="img/news2.png">
                     <div class="news_text">
-                        <h3>Група Selfy зацепила актуальну соціальну проблему</h3>
+                        <h3>Конкурс від продюсера гурту "Selfy"!</h3>
+                        <p>16 листопада у місті Київ відбудеться творчий вечір Олександра Яременка в Caribbean Club. Охочі можуть взяти учясть у конкурсі: переможці отримають 2 квитки на вечір! Деталі на сторінці <a href="https://www.facebook.com/selfy.official/">Facebook</a>.</p>
+                        <p class="news_date">10 листопада 2017</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="news_cell col-3 col-m-2 col-ms-1"><img src="img/news3.png">
+                    <div class="news_text">
+                        <h3>Пісня "Обійми" отримала 2 місце</h3>
+                        <p>Нова пісня "Обійми" вже на 2 місці <a href="https://www.facebook.com/krainafm.ua/?fref=mentions/">"Хвилі країни"</a>. "Хвиля країни" &ndash; на сьогоднішній день вважається хіт-парадом найкращої україномовної музики!. Це одна з програм відомої україномовної радіостанції <a href="https://uk.wikipedia.org/wiki/%D0%9A%D1%80%D0%B0%D1%97%D0%BD%D0%B0_%D0%A4%D0%9C">"Країна ФМ"</a>.</p>
+                        <p>"Віримо, що завдяки вам, дуже скоро, станемо першим" &ndash; коментують солістки гурту.</p>
+                        <p class="news_date">7 листопада 2017</p>
+                    </div>
+                </div>
+                <div class="news_cell col-3 col-m-2 col-ms-1"><img src="img/news4.png" style="width: 50%">
+                    <div class="news_text">
+                        <h3>Гурт Selfy зацепила актуальну соціальну проблему</h3>
                         <p>Головний меседж нового хіта &ndash; спонукати слухачів, не втрачаючи ні хвилини, обійняти своїх близьких! Це проста річ, якої катастрофічно не вистачає нашому сьогоденню.</p>
                         <p>Деталі на сайті <a href="http://radio.obozrevatel.com/news/gruppa-selfy-zadela-aktualjnuyu-socialjnuyu-problemu-10216878.html">radio.obozrevatel.com</a>.</p>
+                        <p class="news_date">7 листопада 2017</p>
                     </div>
+                </div>
+                <div class="news_cell col-3 col-m-2 col-ms-1"><img src="img/news5.png">
+                    <div class="news_text">
+                        <h3>Прем'єра нового кліпу гурту Selfy "Обійми"</h3>
+                        <p>Selfy презентував новій кліп до пісні "Обійми" і тепер його можна переглядати в <a href="http://instagram.com/selfygirlz">Instagram</a>. Хіт розміщений на <a href="https://soundcloud.com/selfygirlz">SoundCloud</a>.</p>
+                        <p class="news_date">15 жовтня 2017</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="news_cell col-3 col-m-2 col-ms-1"><img src="img/news6.png">
+                    <div class="news_text">
+                        <h3>День міста у Нікополі</h3>
+                        <p>У вихідні, 23-24 вересня, нікопольчани відсвяткували 378-му річницю заснування рідного міста. Щоб підтримати настрій містян у тонусі, гурт Selfy приїхав з концертом, який відбувся ввечері.</p>
+                        <p>Детальніше про події дня міста &ndash; <a href="https://vesti.dp.ua/nikopolchane-otprazdnovali-den-goroda-foto/">Vesti.dp.ua</a>.</p>
+                        <p class="news_date">24 вересня 2017</p>
+                    </div>
+                </div>
+                <div class="news_cell col-3 col-m-2 col-ms-1"><img src="img/news6.png">
+                    <div class="news_text">
+                        <h3>Концерт у селищі Зоря</h3>
+                        <p>Selfy продовжує дивувати красивими піснями! В селі Зоря, що на Рівненшині, відбувся концерт, на який зібралося чимало людей. Відео з виступом гурту викледене на сторінці у <a href="https://www.facebook.com/selfy.official/">Facebook</a>.</p>
+                        <p>"Друзі ви фантастичні! Ми обов'язково повернемось до вас!" &ndash; обіцяють солістки.</p>
+                        <p class="news_date">24 вересня 2017</p>
+                    </div>
+                </div>
+                <div id="m2" class="modal" style="display: none;">
+                    <span id="close2" class="close">&times;</span>
+                    <img class="modal-content modal-anim" id="img_modal2">
                 </div>
             </div>
             <div class="button_load">
                 <button>Завантажити решта новин</button>
             </div>
         </div>
-        <!--<div id="music_block" class="media_c media_bg">
+        <div id="music_block" class="media_c media_bg">
             <div class="heading_style">
                 <h1>Музика</h1>
             </div>
             <div class="audio_container">
-                <iframe width="60%" scrolling="no" frameborder="no" src="Selfy_content/Selfy — Группа — Selfy_files/saved_resource.html"></iframe>
+                <iframe width="60%" scrolling="no" frameborder="no" src="saved_resource1.html"></iframe>
             </div>
             <div class="audio_container">
-                <iframe width="60%" scrolling="no" frameborder="no" src="Selfy_content/Selfy — Группа — Selfy_files/saved_resource.html"></iframe>
+                <iframe width="60%" scrolling="no" frameborder="no" src="saved_resource2.html"></iframe>
             </div>
-        </div>-->
+            <div class="music_c">
+                <a href="https://itunes.apple.com/ua/artist/selfy/826475348/" title="iTunes" rel="me"><img src="img/itunes.png"></a>
+                <a href="https://play.google.com/store/music/album/Selfy_%D0%9E%D0%B1%D0%BD%D0%B8%D0%BC%D0%B8?id=Bvwhwdwmbg2bo5t7c45ux6bhope/" title="Google Play" rel="me"><img src="img/google_play.png"></a>
+                <a href="https://soundcloud.com/selfygirlz/" title="SoundCloud" rel="me"><img src="img/soundcloud.png"></a>
+            </div>
+        </div>
         <div id="contact_block">
             <div class="heading_style">
                 <h1>Наші контакти</h1>
             </div>
-                <div class="row clearfix">
+            <div class="row clearfix">
                 <div class="col-3 col-mb-2 col-m-2-3 col-ms-1-3">
                     <div class="contacts">
                         <img src="img/c_tel.png"><div class="contacts_p"><p>PR-менеджер: ‎+380 (50) 575 94 98 Віталій</p></div>

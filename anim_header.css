@@ -1,12 +1,15 @@
 .anim_bg {
     background: #31384e; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(top, #31384e, #0a0d16); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(bottom, #31384e, #0a0d16); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(bottom, #31384e, #0a0d16); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to bottom, #31384e, #0a0d16); /* Standard syntax */
-    opacity: 1;
+    background: -webkit-linear-gradient(top, #31384e, #000); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom, #31384e, #000); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom, #31384e, #000); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom, #31384e, #000); /* Standard syntax */
     -webkit-animation: bgimg 2s;
-    -webkit-animation-delay: 7s;
+    -webkit-animation-delay: 7.5s;/* !!! addEventListener in file preload/js/main.js */
+}
+@-webkit-keyframes bgimg {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
 }
 .anim-appear {
     height: 250px;
@@ -29,22 +32,19 @@
         /*-ms-transform: translateY(-115px); -webkit-transform: translateY(-115px); transform: translateY(-115px);}*/
 }
 #selfie_stick {
-    width: 37.5%;
+    width: 40%;
     position: absolute;
     float: left;
     fill: -webkit-linear-gradient(#333, #777, #333);
 }
 #camera, #square {
-    width: 40%;
-    height: 40%;
+    margin-top: 9%;
     margin-left: auto;
     margin-right: auto;
+    width: 43%;
     position: absolute;
     text-align: center;
     z-index: 26;
-}
-#camera svg, #square svg {
-    width: calc(30%-20px);
 }
 .anim-camera svg {
     transform-style: preserve-3d;
@@ -56,13 +56,10 @@
 .anim-button1 {
     -webkit-animation: btnc 2s ease;
 }
-.anim_timer {
-    
-}
 @-webkit-keyframes cam {
-    0%, 25% { transform: rotateY(0); }
-    25% { transform: rotateY(0); }
-    100%{ transform: rotateY(180deg); } /*{transform: translate3D(0, 0, 0); opacity: 1;}
+    0%, 25% {transform: rotateY(0);}
+    25% {transform: rotateY(0);}
+    100% {transform: rotateY(180deg);} /*{transform: translate3D(0, 0, 0); opacity: 1;}
     50% {transform: translate3D(0, 0, 0); opacity: 1;}
     100% {transform: translate3D(0, 80px, 0); opacity: 0;}*/
 }
@@ -70,47 +67,20 @@
     0% {transform: translate3D(0, 0, 0); opacity: 0;}
     100% {transform: translate3D(0, 80px, 0); opacity: 1;}
 }
-@-webkit-keyframes bgimg {
-    0% {opacity: 1;}
-    100% {opacity: 0;}
-}
 #anim_svgs {
-    bottom:100px;
-    -webkit-align-self: flex-end; /* Safari 7.0+ */
-    align-self: flex-end;
     display: flex;
     text-align: center;
-}
-#square {
-    -webkit-animation: flowsquare 0.5s ease;
-}
-@-webkit-keyframes flowsquare {
-    0% {-ms-transform: translateY(0); -webkit-transform: translateY(0); transform: translateY(0);}
-    100% {-ms-transform: translateY(20px); -webkit-transform: translateY(20px); transform: translateY(20px);}
 }
 #flash1, #flash2, #square {
     position: absolute;
     border-radius: 50%;
     z-index: 28;
-    /*border: 2px solid black;
-    border-radius: 50%;
-    box-shadow: 0 0 0 1px #050;
-    -webkit-transition: lightflash 4s ease-out;
-    -moz-transition: lightflash 4s ease-out;
-    transition: lightflash 4s ease-out;
-    -webkit-backface-visibility: hidden;*/
 }
-#flash2 {
+#flash1 {
     margin-top: 3%;
-    margin-left: 3%;
-    width: calc(100%/8);/*width: calc(100% - 100px);*/
-    height: calc(100%/8);
-}
-.flashnow1 {
-    margin-top: 4%;
-    margin-left: 7.5%;
-    width: 40px;
-    height: 40px;
+    margin-left: 6%;
+    width: 43px;
+    height: 43px;
     background-color: #fff;
     -webkit-filter: blur(8px);
     -moz-filter: blur(8px); 
@@ -118,30 +88,15 @@
     -ms-filter: blur(8px); 
     filter: blur(8px);
 }
-.flashnow2 {
-    margin-top: 7%;
-    margin-left: auto;
-    margin-right: auto;
-    width: 240px;
-    height: 240px;
-    position: absolute;
-    border-radius: 50%;
-    -webkit-animation: flashlight2 0.4s ease-out;
+#flash2 {
+    width: 250px;/*calc(100%/6); hut Opera doesn't support calc*/
+    height: 250px;
+    -webkit-animation: flashlight2 2s ease-out;
 }
-/*@-webkit-keyframes flashlight1 {
-    0% {transform: scale(1)}
-    100% {transform: scale(1.5)}
-}*/
 @-webkit-keyframes flashlight2 {
     0% {background: rgba(255, 255, 255, 0.2); -webkit-filter: blur(40px); filter: blur(40px);}
     100% {background: #fff; -webkit-filter: blur(100px); filter: blur(100px);}
 }
-/*.anim_svgs svg:nth-child(0) {
-    height: 500px;
-}
-.anim_svgs svg:nth-child(1) {
-    height: 55px;
-}*/
 
 /* Animation for text */
 .anim_h h1 { background: url(img/through_text.png);
@@ -164,9 +119,10 @@
 .anim-timer {
     display: none;
 }
+/* Animation variant 1 */
 .animate-b-txt h1, .animate-b-txt h2, .animate-b-txt h3 {
-  animation: pop-in .6s cubic-bezier(0, 0.7, 0.3, 1.2) forwards;
-  opacity: 0;
+    animation: pop-in .6s cubic-bezier(0, 0.7, 0.3, 1.2) forwards;
+    opacity: 0;
 }
 .animate-b-txt h2, .animate-b-txt h3 {
     animation-delay: .4s;
@@ -174,24 +130,64 @@
 .animate-b-txt h1 {
     animation-delay: .1s;
 }
-/*.anim-header1 {
-    width: 33.33%;
-    background: url(img/iphone1.png);
-    background-repeat: no-repeat;
-    background-size: contain;
+
+/* Animations variant 2*/
+/*.animate-b-txt1 h2, .animate-b-txt1 h3 {
+    animation: pop-in .6s cubic-bezier(0, 0.7, 0.3, 1.2) forwards;
+    opacity: 0;
+}
+.animate-b-txt1 h2, .animate-b-txt1 h3 {
+    animation-delay: .7s;
+}
+.animate-b-txt1 h1 {
+    animation: pop-in2 5s ease;
+    animation-delay: .1s;
+}*/
+/*.anim_bg1 {
+    padding: 150px 100px;
+    display: flex;
+    width: 300px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: anim_bgnew 1s ease-out;
+    z-index: 17;
+}*/
+@-webkit-keyframes anim_bgnew {
+    0% { 
+        width: 300px;
+        -webkit-filter: blur(8px);
+        -moz-filter: blur(8px); 
+        -o-filter: blur(8px);
+        -ms-filter: blur(8px); 
+        filter: blur(8px);
+    }
+    100% { 
+        width: 500px;
+        -webkit-filter: blur(100px);
+        -moz-filter: blur(100px); 
+        -o-filter: blur(100px);
+        -ms-filter: blur(100px); 
+        filter: blur(100px);
+    }
+}
+
+/*.anim-b-txt1 {
+    opacity: 1;
     background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-animation: bgimg1 2s;
+    -webkit-animation-delay: 7.5s;
 }
-.anim-header1 img {
-    width: 90%;
-    -webkit-animation-name: decrease;
-    -webkit-animation-duration: 5s;
-    animation-name: decrease;
-    animation-duration: 5s;
-}
+@-webkit-keyframes bgimg1 {
+    0% {opacity: 1; background-size: 0%;}
+    100% {opacity: 1; background-size: 100%;}
+}*/
 
 /* Keyframes */
 @-webkit-keyframes decrease {
-    from {-webkit-transform: scale(1); transform: 0} 
+    from {-webkit-transform: scale(1); transform: 0}
     to {-webkit-transform: scale(0.3); transform: translateY(-40px)}
 }
 @keyframes decrease {
@@ -199,39 +195,87 @@
     to {-webkit-transform: scale(0.3); transform: translateY(-40px)}
 }
 @keyframes pop-in {
-  0% {
-    opacity: 0;
-    transform: translateY(-70px);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
+    0% {
+        opacity: 0;
+        transform: translateY(-70px);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
 }
 @media screen and (max-width: 2054px) {
     .anim_bg {
         height: 100vh !important;
     }
 }
-@media screen and (max-width: 1023px) {
-    #selfie-stick {
-        opacity: 1;
+@media screen and (min-width: 768px) {
+    #square {
+        -webkit-animation: flowsquare 0.5s ease;
+    }
+    @-webkit-keyframes flowsquare {
+        0% {-ms-transform: translateY(0); -webkit-transform: translateY(0); transform: translateY(0);}
+        100% {-ms-transform: translateY(10px); -webkit-transform: translateY(20px); transform: translateY(20px);}
+    }
+}
+@media screen and (max-width: 1024px) {
+    #camera, #square {
+        margin-top: 8%;
+        width: 40%;
+    }
+    #flash1 {
+        width: 33px;
+        height: 33px;
+    }
+    #flash2 {
+        width: 200px;
+        height: 200px;
+    }
+}
+@media screen and (max-width: 800px) {
+    #camera, #square {
+        margin-top: 7%;
+        width: 38%;
+    }
+    #flash1 {
+        width: 30px;
+        height: 30px;
+    }
+}
+@media screen and (max-width: 768px) {
+    #camera, #square {
+        margin-top: 6%;
+        width: 37%;
+    }
+    .anim-svgs {
+        align-items: flex-end;
     }
 }
 @media screen and (max-width: 549px) {
     #camera, #square {
         margin-top: 5%;
-        -ms-transform: scale(0.5); 
-        -webkit-transform: scale(0.5); 
-        transform: scale(0.5);
+        width: 43%;
     }
-    .flashnow1 {
-        width: 70px;
+    #square svg {
+        width: 0.5in;
+    }
+    #camera svg {
+        width: 0.8in;
+    }
+    #flash1 {
+        width: 20px;
+        height: 20px;
+    }
+    #flash2 {
+        width: 150px;
+        height: 150px;
     }
 }
-@media screen and (min-width: 768px) and (max-width: 2054px) {
-    #camera, #square {
-        margin-top: 10%;
-        width: 37.5%;
+@media screen and (max-width: 400px) {
+    #square svg {
+        width: 0.4in;
+    }
+    #camera svg {
+        width: 0.7in;
     }
 }

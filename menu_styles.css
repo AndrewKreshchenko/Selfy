@@ -1,3 +1,52 @@
+/*select#gender option[value="female"] { background-image:url(female.png); }
+select#gender option[value="others"] { background-image:url(others.png); }*/
+/* Languages */
+.languages {
+    width: 80px;
+    top: 5px;
+    right: 5px;
+    float: right;
+    position: fixed;
+    text-align: center;
+    overflow: hidden;
+    border: 0 !important;
+    border-radius: 7px;
+    background-repeat: no-repeat;
+    background-position: 70% center;
+    background-size: contain;
+    z-index: 25;
+    -webkit-transition: background-color 0.8s; /* For Safari 3.1 to 6.0 */
+    transition: background-color 0.8s;
+}
+.languages:hover {
+    width: 120px;
+    background-color: #555;
+}
+.languages img {
+    border-radius: 7px;
+}
+.languages a {
+    line-height: 25px;
+    color: #fff;
+}
+.languages a:not(:first-child) {
+    display: none;
+}
+.languages a:hover {
+    display: block;
+}
+.languages.lang_opt {/*without backspace because it isn't descendant selector*/
+    position: fixed;
+}
+.languages.lang_opt a {
+    display: block;
+    background-color: #555;
+}
+.languages.lang_opt a:not(:first-child):hover {
+    background-color: #de3e52;
+}
+
+/* Topnav */
 .topnav .icon {
     background-color: #555;
     border-radius: 7px;
@@ -10,59 +59,17 @@
     overflow: hidden;
     z-index: 20;
 }
-/*select#gender option[value="female"] { background-image:url(female.png); }
-select#gender option[value="others"] { background-image:url(others.png); }*/
-.languages {
-    width: 100px;
-    height: 40px;
-    top: 5px;
-    right: 5px;
-    float: right;
-    position: fixed;
-    text-align: center;
-    overflow: hidden;
-    border: 0 !important;
-    border-radius: 7px;
-    background: #555;/* Color by default */
-    background-repeat: no-repeat;
-    background-position: 90% center;
-    background-size: cover;
-    color: #fff;
-    -webkit-transition: width 0.5s; /* For Safari 3.1 to 6.0 */
-    transition: width 0.5s;
-    z-index: 25;
-}
-.languages select {
-    border: 0 !important;
-    -webkit-appearance: none;  /*Removes default chrome and safari style*/
-    -moz-appearance: none; /* Removes Default Firefox style*/
-}
-select > option {
-    padding: 0 10px;
-    background-color: #555;
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    -o-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
-}
-.languages:hover {
-    background-image: none;
-    width: 120px;
-}
-.languages option:hover {
-    background-color: #de3e52;
-}
 .topnav a {
     float: left;
     /*background-color: #555;*/
-    color: #f2f2f2;
+    color: #fff;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     -webkit-transition: background-color 0.8s; /* For Safari 3.1 to 6.0 */
     transition: background-color 0.8s;
 }
-.topnav a, .languages option {
+.topnav a, .languages li {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 18px;
 }
@@ -95,26 +102,25 @@ select > option {
 }
 
 @media screen and (max-width: 767px) {
-	.topnav {
+	.languages {
+        top: 0;
+        right: 0;
+        display: none;
+        background-color: #555;
+    }
+    .languages a {
+        line-height: 15px;
+    }
+    .languages.lang_opt a:not(:first-child) {
+        
+    }
+    .topnav {
     	width: 45px;
         display: block;
     	/*-webkit-transition: width 1s; /* For Safari 3.1 to 6.0 */
     	/*transition: width 1s;*/
     }
-    .topnav a {
-        background-color: #555;
-    }
-    /*nav > select:before, nav > select:after {
-        display: none;
-    }*/
-    .languages {
-        display: none;
-    }
-    .languages option {
-        float: right;
-        position: top right;
-        text-align: center;
-        padding: 14px 16px;
+    .topnav a:not(.languages) {
         background-color: #555;
     }
     .topnav a:not(:first-child) {
@@ -154,8 +160,5 @@ select > option {
         background-color: #e4473c;
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
-    }
-    .topnav a:not(.languages):after {
-        background-color: #000;
     }
 }
