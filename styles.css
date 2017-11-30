@@ -2,13 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400');
 @import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:700');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-/*@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC');
-@import url('https://fonts.googleapis.com/css?family=PT+Sans');
-@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans');
-@import url('https://fonts.googleapis.com/css?family=Lato');
-@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans');*/
 
 /* resets */
 *,
@@ -26,8 +19,8 @@
 
 /* global */
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, blockquote, th, td {
-    margin: 0; 
-    padding: 0; 
+    margin: 0;
+    padding: 0;
     direction: ltr;
     outline:none;
     color: #fff;
@@ -35,7 +28,7 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, blockquote
 body {
     background-color: #000;
 }
-nav {
+nav #menu {
     width: 100%;
 }
 footer {
@@ -44,7 +37,7 @@ footer {
 iframe {
     border: 0;
 }
-h1, h2, h3, nav a, option {
+h1, h2, h3, #menu a, #lang a {
     font-family: 'Alegreya Sans', sans-serif;
 }
 h1 {
@@ -57,8 +50,12 @@ p {
     font-family: 'Source Sans Pro', sans-serif; /*font-family: 'Open Sans', sans-serif, Arial, Helvetica;*/
     font-size: 16px;
 }
-a{
+a {
     text-decoration: none;
+    -webkit-transition: color 0.5s;
+    -moz-transition: color 0.5s;
+    -o-transition: color 0.5s;
+    transition: color 0.5s;
 }
 a:link {color: #e4473c;}
 a:visited {color: #e4473c;}
@@ -86,6 +83,7 @@ main {
     display: flex;
     z-index: 15;
     -webkit-transition: all .3s ease-in-out 1.7s;
+    -moz-transition: all .3s ease-in-out 1.7s;
     transition: all .3s ease-in-out 1.7s;
 }
 .banner_text h1, h2, h3 {
@@ -153,6 +151,36 @@ main {
     text-decoration: none;
 }
 
+/* Animation for text */
+.anim_h h1, .anim_h_mob h1 {
+    background: url(img/through_text.png);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Activate hardware acceleration for smoother animations */
+    /*-webkit-transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;*/
+}
+.anim_h h1 { 
+    background-position: -200% 50%;
+    -webkit-animation: thrt 2s linear;
+}
+.anim_h_mob h1 { 
+    background-position: -120% 50%;
+    -webkit-animation: thrt_mob 2s linear;
+}
+@-webkit-keyframes thrt {
+    0% { background-position: 200% 50%; }
+    100% { background-position: -100% 50%; }
+}
+@-webkit-keyframes thrt_mob {
+    0% { background-position: 80% 50%; }
+    100% { background-position: -20% 50%; }
+}
+.anim-button {
+    display: none;
+}
+
 /* Videos*/
 .media_bg {
     background-image: url(http://selfyofficial.com.ua/wp-content/uploads/2016/04/black-background-pattern-2.jpg);
@@ -188,11 +216,15 @@ main {
     margin-bottom:10px;
     font-style: italic;
 }
-.team-member img {
-    width: 70%;
+.member-photo {
+    width: 45%;
     height: auto;
+    padding: 10px;
+    float: left;
     margin-bottom: 25px;
     background-size: contain;
+    -webkit-shape-outside:circle();
+    shape-outside:circle();
 }
 .team-member h3 {
     font-family: 'Source Sans Pro', sans-serif;
@@ -249,9 +281,9 @@ main {
 .gallery img {
     max-width: 300px;
     width: 100%;
-    transition: 0.3s;
+    -webkit-transition: 0.5s;
 }
-.gallery img:hover {
+.gallery img:hover, .member-photo img:hover {
     opacity: 0.5;
     cursor: pointer;
 }
@@ -262,28 +294,7 @@ main {
 }
 
 /* for Gallery */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-}
-
 /* Modal Content (image) */
-.modal-content {
-    margin: auto;
-    display: block;
-}
-#m2 img{
-    max-width: 90%;
-    max-height: 90%;
-}
 .modal-anim {    
     -webkit-animation-name: zoom;
     -webkit-animation-duration: 0.5s;
@@ -295,8 +306,8 @@ main {
     to {-webkit-transform:scale(1)}
 }
 @keyframes zoom {
-    from {transform:scale(0)} 
-    to {transform:scale(1)}
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
 }
 .modal-slide {    
     -webkit-animation-name: bias; /* Safari 4.0 - 8.0 */
@@ -312,49 +323,122 @@ main {
     0%   {left:100px; top:0px;}
     100%  {left:0px; top:0px;}
 }
-.prev, .next {
-    /*bottom: 5px;
-    padding: 0 15px;
-    background-position: left 50%;*/
-    padding: 0 10px;
-	position: absolute;
-	top: 50%;
-	margin-top: -30px;
-	opacity: 1;
-    font-size: 40px;
-    font-weight: bold;
-}
-.prev {
-    left: 30px;
-}
-.next {
-    right: 30px;
-}
-.close {
+.close, #slider_auto {
     padding: 0 10px;
     bottom: 20px;
     position: relative;
+    text-align: center;
     font-size: 40px;
     font-weight: bold;
 }
-#close1 .close {
-    position: top 50%;
+#slider_auto {
+    margin-left: 10px;
+
+}
+#slider_auto img {
+    height: 35px;
+    width: auto;
+}
+.close {
+    position: top 50%
+}
+/*#slider_auto {
+    padding: 0 10px;
+    bottom: 20px;
+    position: relative;
+    text-align: center;
+    bottom: 10px;
+    position: fixed;
+}*/
+
+#m1, #m2 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 70px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100% !important; /* Full width */
+    height: 100% !important; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    border-radius: 4px;
+}
+#m1 ul {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#m1 ul li {
+    margin: 0;
+    position: relative;
+    float: left;
+    width: 60vh;
+    height: auto;
+}
+#m1 ul li, #m2 ul li {
     text-align: center;
 }
-.close, .prev, .next, #gallery_block button, #news button {
+#m1 ul li img {
+    width: 100%
+}
+#m2 {
+    display: none;
+}
+#m2 img{
+    max-width: 90%;
+    max-height: 90%;
+}
+#img_modal1, #img_modal2, .news_cell img {
     border-radius: 7px;
+}
+/*#img_modal1:before, #img_modal2:before {
+    content:'';
+    display:inline-block;
+    height: 100%;
+    vertical-align:middle;
+}*/
+.control_prev {
+    left: 0px;
+}
+.control_next {
+    right: 30px;
+}
+a.control_prev, a.control_next {
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    display: block;
+    width: auto;
+    height: auto;
     background-color: #555;
     color: #fff;
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: bold;
+    opacity: 1;
     cursor: pointer;
-    text-align: center;
-    -webkit-transition: background-color 0.8s;
-    -moz-transition: background-color 0.8s;
-    -o-transition: background-color 0.8s;
-    transition: background-color 0.8s;
+    padding: 0 10px;
 }
-.close:hover, .close:focus, .prev:hover, .next:hover {
-    background-color: #e4473c;
+a.control_prev {
+    border-radius: 0 2px 2px 0;
 }
+a.control_next {
+    right: 0;
+    border-radius: 2px 0 0 2px;
+}
+a.control_prev:hover, a.control_next:hover, span.close:hover {
+    opacity: 1;
+    -webkit-transition: all 0.5s;
+    background-color: #de3e52;
+}
+/*.slider_option {
+    position: relative;
+    margin: 10px auto;
+    width: 160px;
+    font-size: 18px;
+}*/
 
 /* Button to load rest images of the gallery */
 #gallery_block  {
@@ -367,12 +451,30 @@ main {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 18px;
     padding: 10px 14px;
+    border: none;
     text-align: center;
+}
+.close, .control_next, .control_prev, #slider_auto, #gallery_block button, #news button {
+    border-radius: 7px;
+    background-color: #555;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    -webkit-transition: background-color 0.8s;
+    -moz-transition: background-color 0.8s;
+    -o-transition: background-color 0.8s;
+    transition: background-color 0.8s;
 }
 #gallery_block button:hover, #news button:hover {
     background-color: #de3e52;
 }
-#gallery_block button:after, #news button:after {
+#gallery_block button:hover:after, #news:hover:after {
+    background-color: #555;
+}
+#slider_auto:hover {
+    background-color: #de3e52;
+}
+#slider_auto:after {
     background-color: #555;
 }
 
@@ -394,18 +496,22 @@ main {
     margin-right: auto;
     padding: 3px;
     display: block;
-    background: #31384e;
-    background: -webkit-linear-gradient(top, #555, #000);
-    background: -o-linear-gradient(bottom, #555, #000);
-    background: -moz-linear-gradient(bottom, #555, #000);
-    background: linear-gradient(to bottom, #555, #000);
+    background: #777;
+    background: -webkit-linear-gradient(top, #777, #000);
+    background: -o-linear-gradient(bottom, #777, #000);
+    background: -moz-linear-gradient(bottom, #777, #000);
+    background: linear-gradient(to bottom, #777, #000);
     text-align: center;
 }
 .news_cell img:not(.modal) {
     max-width: 100%;
     max-height: 350px;
     border-radius: 7px;
-    cursor: pointer
+    cursor: pointer;
+    -webkit-transition: 0.5s;
+}
+.news_cell img:not(.modal):hover {
+    opacity: 0.5;
 }
 .news_text {
     margin-top: 0;
@@ -488,6 +594,7 @@ main {
 .social_c li:before, .social-icons img:before, .music_c img:before {
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
     border-radius: 50%;
     box-shadow: 0 0 0 1px #fff;
@@ -496,8 +603,9 @@ main {
 /* Footer */
 #page_footer, #page_footer p {
     margin: 0;
-    padding: 10px 0;
+    padding: 5px 0;
     background: #fff;
+    font-size: 14px;
     font-style: italic;
     color: #000;
 }
@@ -510,7 +618,7 @@ main {
     right: 0;
     position: fixed;
     cursor: pointer;
-    z-index: 100;
+    z-index: 19;
 }
 .ontop img {
     width: 40px;
