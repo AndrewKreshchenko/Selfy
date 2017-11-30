@@ -28,14 +28,14 @@
 @-webkit-keyframes iphonezoom {
     0% { -ms-transform: scale(1); -webkit-transform: scale(1); transform: scale(1);}
         /*-ms-transform: translateY(0); -webkit-transform: translateY(0); transform: translateY(0);}*/
-    100% {-ms-transform: scale(0.7); -webkit-transform: scale(0.7); transform: scale(0.7);}
+    100% {-ms-transform: scale(0.8); -webkit-transform: scale(0.8); transform: scale(0.8);}
         /*-ms-transform: translateY(-115px); -webkit-transform: translateY(-115px); transform: translateY(-115px);}*/
 }
 #selfie_stick {
+    margin-top: 10%;
     width: 40%;
     position: absolute;
     float: left;
-    fill: -webkit-linear-gradient(#333, #777, #333);
 }
 #camera, #square {
     margin-top: 9%;
@@ -78,7 +78,7 @@
 }
 #flash1 {
     margin-top: 3%;
-    margin-left: 6%;
+    margin-left: 5%;
     width: 43px;
     height: 43px;
     background-color: #fff;
@@ -98,26 +98,31 @@
     100% {background: #fff; -webkit-filter: blur(100px); filter: blur(100px);}
 }
 
-/* Animation for text */
-.anim_h h1 { background: url(img/through_text.png);
-    -webkit-background-clip: text;
-    background-clip: text;
-    background-position: -200% 50%;
-    -webkit-text-fill-color: transparent;
-    -webkit-animation: thrt 2s linear;
-    /* Activate hardware acceleration for smoother animations */
-    /*-webkit-transform: translate3d(0,0,0);
-    -webkit-backface-visibility: hidden;*/
+/* Loader */
+.loader {
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    background-color: transparent;
 }
-@-webkit-keyframes thrt {
-    0% { background-position: 200% 50%; }
-    100% { background-position: -100% 50%; }
+.loader:before{
+    display: block;
+    position: absolute;
+    content: "";
+    left: -100px;
+    width: 100px;
+    height: 4px;
+    background-color: #de3e52;
+    animation: loading 2s linear infinite;
 }
-.anim-button {
-    display: none;
-}
-.anim-timer {
-    display: none;
+@keyframes loading {
+    from {left: -100px; width: 30%;}
+    50% {width: 30%;}
+    80% {width: 70%;}
+    90% { left: 50%;}
+    95% {left: 120%;}
+    to {left: 100%;}
 }
 /* Animation variant 1 */
 .animate-b-txt h1, .animate-b-txt h2, .animate-b-txt h3 {
@@ -243,21 +248,26 @@
     }
 }
 @media screen and (max-width: 768px) {
-    #camera, #square {
-        margin-top: 6%;
-        width: 37%;
-    }
     .anim-svgs {
         align-items: flex-end;
     }
 }
+@media screen and (max-width: 600px) {
+    #camera, #square {
+        top: 23%;
+        left: 15%;
+        width: 70%;
+    }
+    #selfie_stick {
+        width: 50%;
+    }
+}
 @media screen and (max-width: 549px) {
     #camera, #square {
-        margin-top: 5%;
-        width: 43%;
+        left: 17%;
     }
     #square svg {
-        width: 0.5in;
+        width: 0.6in;
     }
     #camera svg {
         width: 0.8in;
@@ -272,10 +282,50 @@
     }
 }
 @media screen and (max-width: 400px) {
-    #square svg {
-        width: 0.4in;
+    #selfie_stick {
+        width: 40%;
+        left: 20%;
     }
-    #camera svg {
-        width: 0.7in;
+}
+@media screen and (max-width: 549px) and (orientation: portrait) {
+    #selfie_stick {
+        left: 30%;
+        width: 45%;
+    }
+    #camera, #square {
+        top: 27%;
+    }
+}
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    #camera, #square {
+        top: 55%;
+        left: 15%;
+        width: 70%;
+    }
+    #selfie_stick {
+        width: 60%;
+        left: 20%;
+    }
+}
+@media screen and (max-width: 400px) and (orientation: portrait) {
+    #camera, #square {
+        top: 27%;
+        left: 15%;
+    }
+    #selfie_stick {
+        width: 50%;
+        left: 20%;
+    }
+}
+@media screen and (max-width: 400px) and (orientation: landscape) {
+    #camera, #square {
+        top: 30%;
+        left: 25%;
+        width: 70%;
+    }
+}
+@media screen and (max-width: 350px) and (orientation: portrait) {
+    #camera, #square {
+        top: 30%;
     }
 }
