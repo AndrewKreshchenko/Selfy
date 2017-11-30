@@ -2,126 +2,174 @@
 select#gender option[value="others"] { background-image:url(others.png); }*/
 /* Languages */
 .languages {
-    width: 120px;
-    top: 3px;
+    width: auto;
+    max-width: 90px;
     right: 0;
     float: right;
     position: fixed;
-    text-align: center;
     overflow: hidden;
     border: 0;
-    border-radius: 7px;
-    background-repeat: no-repeat;
-    background-position: 70% center;
-    background-size: contain;
+    border-bottom-left-radius: 10px;
     z-index: 25;
-    -webkit-transition: background-color 0.8s; /* For Safari 3.1 to 6.0 */
-    transition: background-color 0.8s;
-}
-.languages:hover {
-    background-color: #555;
 }
 .languages img {
-    border-radius: 7px;
+    width: 25px;
 }
 .languages a {
+    text-align: right;
     line-height: 25px;
+    top: 10px;
     color: #fff;
+    -webkit-transition: text-shadow 0.8s;
+    transition: text-shadow 0.8s;
+    -webkit-transition: background-color 0.8s;
+    transition: background-color 0.8s;
+}
+.languages a:first-child:hover {
+    background-color: #de3e52;
 }
 .languages a:not(:first-child) {
     display: none;
 }
-.languages a:hover {
-    display: block;
-}
 .languages.lang_opt {/*without backspace because it isn't descendant selector*/
     position: fixed;
 }
-.languages.lang_opt a {
+.languages.lang_opt a:not(:first-child) {
     display: block;
-    background-color: #555;
+    -webkit-animation: fromtop .5s linear;
 }
-.languages.lang_opt a:not(:first-child):hover {
+.languages.lang_opt a:first-child {
     background-color: #de3e52;
+}
+.languages.lang_opt a:first-child:hover {
+    background-color: #de3e52;
+}
+.languages a:not(:first-child):hover {
+    box-shadow: 0 0 3px #fff;
+}
+@-webkit-keyframes fromtop {
+    from {
+        -webkit-transform: translateY(-170px);
+        transform: translateY(-170px);
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
 }
 
 /* Topnav */
-.topnav .icon {
-    background-color: #fff;
-    border-radius: 7px;
+.icon {
+    padding: 5px;
+    position: fixed;
+    float: left;
+    border-bottom-right-radius: 7px;
     display: none;
+    z-index: 99;
 }
 .topnav {
+    top: 0;
     width: 100%;
-    height: 50px;
     position: fixed;
-    overflow: hidden;
     z-index: 20;
 }
 .topnav a {
-    float: left;
-    /*background-color: #555;*/
-    color: #fff;
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    -webkit-transition: background-color 0.8s; /* For Safari 3.1 to 6.0 */
-    transition: background-color 0.8s;
+    float: left;
+    -webkit-transition: background-color 0.7s;
+    transition: background-color 0.7s;
 }
-.topnav a, .languages li {
+.topnav a:not(.icon), .languages a {
+    color: #fff;
+    padding: 14px;
+    text-decoration: none;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 18px;
 }
-.topnav a:not(.languages):focus {
-    background-color: #de3e52;
+.topnav a:not(.languages):hover, .topnav a:not(.languages):active {
     color: #fff;
 }
-.topnav a:not(.languages):hover {
-    background-color: #de3e52;
+.topnav a:focus, .topnav a:hover, .topnav a:active, .languages a:not(:first-child):focus, .languages a:not(:first-child):hover, .languages a:not(:first-child):active {
     color: #fff;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-}
-.topnav a:not(.languages):active {
     background-color: #de3e52;
-    color: #fff;
-}
-.topnav a:not(.languages):after {
-    background-color: #777;
+    text-shadow: 0 0 6px #fff;
 }
 
 @media screen and (min-width: 768px) {
-    .topnav {        
-        background: #555; /* For browsers that do not support gradients */
-        background: -webkit-linear-gradient(top, #555, #999); /* For Safari 5.1 to 6.0 */
-        background: -o-linear-gradient(bottom, #555, #999); /* For Opera 11.1 to 12.0 */
-        background: -moz-linear-gradient(bottom, #555, #999); /* For Firefox 3.6 to 15 */
-        background: linear-gradient(to bottom, #555, #999); /* Standard syntax */
+    .topnav {
+        background: #333;/* For browsers that do not support gradients */
+        background: -webkit-linear-gradient(top, #555, #555); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(bottom, #000, #555); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(bottom, #000, #555); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(to bottom, #333, #999); /* Standard syntax */
+    }
+    .languages.lang_opt a {
+        background-color: #555;
     }
 }
 
 @media screen and (max-width: 767px) {
+    /* Icon animation */
+     .path1_1, .path3_3 {
+        text-align: center;
+        transform: rotate(0deg);
+        transition: .2s ease-in-out;
+    }
+    .path2_2 {
+        text-align: center;
+        transition: .2s ease-in-out;
+    }
+    .path1_1.path1 {
+        -webkit-transform: translateX(10px) rotate(45deg);
+        -ms-transform: translateX(10px) rotate(45deg);
+        transform: translateX(10px) rotate(45deg);
+    }
+    .path2_2.path2 {
+        transform: scale(0);
+    }
+    .path3_3.path3 {
+        -webkit-transform: translateX(-8px) translateY(11px) rotate(-45deg);
+        -ms-transform: translateX(-8px) translateY(11px) rotate(-45deg);
+        transform: translateX(-8px) translateY(11px) rotate(-45deg);
+    }
+
+    /* Languages */
 	.languages {
-        top: 0;
-        display: none;
         background-color: #555;
-        border: 2px solid #fff;
+    }
+    .languages.lang_opt {
+        border-left: 2px solid #de3e52;
+        border-bottom: 2px solid #de3e52;
     }
     .languages a {
-        line-height: 15px;
+        border: transparent !important;
+        text-align: left;
     }
-    .languages.lang_opt a:not(:first-child) {
-        
-    }
-    .topnav {
-    	width: 45px;
+    .languages a {
         display: block;
+        background-color: #de3e52;
     }
-    .topnav a:not(.languages) {
+    /*.languages a:not(:first-child) {
+        display: none;
+    }*/
+    .languages a, .topnav a {
         background-color: #555;
+        line-height: 20px;
+    }
+
+    /* Topnav */
+    .topnav {
+        display: block;
+        height: auto !important;/* if the menu overflow all on the viewport*/
     }
     .topnav a:not(:first-child) {
+        left: 0;
+        width: 40%;
         display: none;
+        background-color: #555; /*rgba(85, 85, 85, 0.5*/
+        text-align: right;
+        -webkit-transition: text-shadow 0.8s;
+        transition: text-shadow 0.8s;
         -webkit-transition: background-color 0.8s;
         transition: background-color 0.8s;
     }
@@ -132,32 +180,39 @@ select#gender option[value="others"] { background-image:url(others.png); }*/
     }
     .topnav.responsive {/*without backspace because it isn't descendant selector*/
         position: fixed;
-        width: 300px;
     }
     .topnav.responsive .icon {
+        top: 0;
+        right: 0;
         background-color: #555;
         position: relative;
-        right: 0;
-        top: 0;
     }
-    .topnav.responsive a:not(.languages) {
+    .topnav.responsive a:not(.icon) {
+        -webkit-animation: fromleft .5s ease-out;
+    }
+    .topnav.responsive a:not(:first-child) {
         float: none;
-        border-radius: 15px;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        border-right: 5px solid #de3e52;
         display: block;
-        text-align: left;
-        line-height: 25px;
+        text-align: center;
     }
     .topnav:hover {
         width: 100%;
         height: 100%;
     }
-    .topnav a:not(.languages):focus {
-        background-color: #de3e52;
-        color: #fff;
+    .topnav a:focus, .topnav a:hover, .topnav a:active {
+        background: #de3e52;
     }
-    .topnav a:not(.languages):active{
-        background-color: #e4473c;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
+    @-webkit-keyframes fromleft {
+        from {
+            -webkit-transform: translateX(-170px);
+            transform: translateX(-170px);
+        }
+        to {
+            -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+        }
     }
 }
