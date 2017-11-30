@@ -1,0 +1,47 @@
+.ip-header {
+	position: fixed;
+	top: 0;
+	z-index: 100;
+	min-height: 480px;
+	width: 100%;
+	height: 100%;
+	background: #f1f1f1;
+}
+.ip-loader {
+}
+.ip-logo,
+.ip-loader {
+	position: fixed;
+	left: 100px;
+	top: 100px;
+	width: 100%;
+	opacity: 0;
+	background-color: #244;
+	cursor: default;
+	pointer-events: none;
+}
+.ip-logo {
+	top: 0;
+	height: 100%;
+	-webkit-transform: translate3d(0,25%,0);
+	transform: translate3d(0,25%,0);
+}
+.ip-header .ip-inner {
+	display: block;
+	margin: 0 auto;
+}
+.ip-header .ip-logo svg {
+	min-width: 320px;
+	max-width: 480px;
+	width: 25%;
+}
+.ip-header .ip-logo svg path {
+	fill: #ef6e7e;
+}
+.ip-header .ip-loader svg path.ip-loader-circle {
+	-webkit-transition: stroke-dashoffset 0.2s;
+	transition: stroke-dashoffset 0.2s;
+	stroke: #ef6e7e;
+	z-index: 156;
+	opacity: 0;
+}
