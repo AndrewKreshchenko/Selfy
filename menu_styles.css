@@ -1,9 +1,7 @@
-/*select#gender option[value="female"] { background-image:url(female.png); }
-select#gender option[value="others"] { background-image:url(others.png); }*/
 /* Languages */
 .languages {
     width: auto;
-    max-width: 90px;
+    max-width: 100px;
     right: 0;
     float: right;
     position: fixed;
@@ -13,17 +11,20 @@ select#gender option[value="others"] { background-image:url(others.png); }*/
     z-index: 25;
 }
 .languages img {
-    width: 25px;
+    padding-right: 8px;
 }
 .languages a {
     text-align: right;
     line-height: 25px;
-    top: 10px;
+    padding-top: 10px;
     color: #fff;
     -webkit-transition: text-shadow 0.8s;
     transition: text-shadow 0.8s;
     -webkit-transition: background-color 0.8s;
     transition: background-color 0.8s;
+}
+.languages a:first-child {
+    padding-top: 5px;
 }
 .languages a:first-child:hover {
     background-color: #de3e52;
@@ -184,7 +185,6 @@ select#gender option[value="others"] { background-image:url(others.png); }*/
     .topnav.responsive .icon {
         top: 0;
         right: 0;
-        background-color: #555;
         position: relative;
     }
     .topnav.responsive a:not(.icon) {
