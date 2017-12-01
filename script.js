@@ -19,6 +19,7 @@ $(function() {
     var p = document.createElement("span");
     if (thislang == 'en')
         $(p).text('ENG');
+        //$('')$('#test').contents().find('html').html("LALALA")
         //$(elem).css('background', 'url(img/en.png)');
     if (thislang == 'uk')
         $(p).text('УКР');
@@ -292,6 +293,28 @@ function disappear(x) {
     }
 }*/
 
+/*$("select").click(function(e) {
+     var $target = $(e.target); 
+     //if($target.is('option')) {
+        //var opt = $(this).find("option:selected");
+        //opt.text("Select");
+        //var $opt = $("select")[0];
+        //$opt.text("Select");
+        if ($target.is('option')) {
+            alert('sdfsd');
+            //var vOptionSelect = ".languages";
+            //var l= $(vOptionSelect).find(":selected").index();
+            //alert(l);
+            //$(selectElement).prop('selectedIndex', savedIndex);
+            //alert($target.prop('selectedIndex'));
+            //if ($(".languages option:selected").index() == 0)//($(this).text == "English")
+                //console.log("English");
+        }
+        //alert($target.attr("id"));//Will alert id if it has id attribute
+        //alert(opt);//Will alert the text of the option
+        //alert($target.val());//Will alert the value of the option
+});*/
+
 /* Date show in footer */
 /*var d = new Date();
 var m = d.getMonth() + 1;
@@ -371,9 +394,8 @@ btn_g2.addEventListener('click', function() {
 $('.gall-row').on('click', 'img', function() {
     var im = $(this).prev("a").attr("href");//img = obj.getAttribute("href"); //slideIndex = parseInt(obj.getAttribute("alt"));
     modalImg1.src = im;
-    modalImg2.src = "";
+    modalImg2.src = "img/no.png";
     modal1.style.display = "block";
-    modalImg1.style.display = "block";
     slideIndex = parseInt($('.gall-row img').index(this));
     setTimeout(function() {
         $('#m1').find('img').removeClass('modal-anim');
@@ -427,12 +449,16 @@ function showSlide(n) {
         n = slides.length-1;
     }
     var im = $(slides[n]).find('a').attr("href");
-    if (modalImg1.src == "") {
-        modalImg2.style.display = "none";
+    if (modalImg1.src == "img/no.png") {
+        modalImg2.src = "img/no.png";
+        $(modalImg2).css('content', '');
+        $(modalImg2).css('margin-top', '0');
         modalImg1.src = im;
     }
     else {
-        modalImg1.style.display = "none";
+        modalImg1.src = "img/no.png";
+        $(modalImg1).css('content', '');
+        $(modalImg1).css('margin-top', '0');
         modalImg2.src = im;
     }//console.log("modalImg1.src = " + modalImg1.src + ", modalImg2.src " + modalImg2.src + ", im = " + im);
 }
@@ -460,8 +486,33 @@ $('#load_ph').click(function() {
         fg = false;
     }
 });
-
 /* News Columns */
+/*var w = $('body').innerWidth();
+var w_b = $('#news .button_load').innerWidth();
+console.log('button-load ' + w_b);
+w_b = (w-w_b)/2;
+$('#news .button_load').css('padding-left', w_b);*/
+/*$(document).ready(function() {
+    var w = $("body").innerWidth();
+    if ((w > 500) && (w < 768)) {
+        var hei_even = $('.news_cell:nth-child(even)').height();
+        var hei_odd = $('.news_cell:nth-child(odd)').height();//var hei = (hei_even > hei_odd) ? hei_even : hei_odd;
+        if (hei_even > hei_odd)
+            $('.news_cell:nth-child(even)').find('.news_text').css('height', hei_even);
+        else
+            $('.news_cell:nth-child(even)').find('.news_text').css('height', hei_odd);
+        console.log(hei_even + ' ' + hei_odd);
+    }
+    if (w > 768) {
+        var hei_even = $('.news_cell:nth-child(even)').height();
+        var hei_odd = $('.news_cell:nth-child(odd)').height();
+        var hei_3n = $('.news_cell:nth-child(3n)').height();
+        if (hei_even > hei_odd)
+            $('.news_cell:nth-child(even)').find('.news_text').css('height', hei_even);
+        else
+            $('.news_cell:nth-child(even)').find('.news_text').css('height', hei_odd);
+    }
+});*/
 $('#news button').click(function() {
     var w = $("body").innerWidth();
     if (fn === false) {
