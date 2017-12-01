@@ -190,9 +190,9 @@
     #img_modal1, #img_modal2 {
         height: 70%;
     }
-    /*#page_footer {
-        font-size: 11px;
-    }*/
+    #m1 ul li img {
+        margin-left: -5%;
+    }
 }
 @media all and (min-width: 501px) and (max-width: 767px) {
     .col-m-2-3 {
