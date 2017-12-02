@@ -20,7 +20,7 @@
 
 		function init() {
 			var endInitialAnim = function() {
-				if(support.animations) {
+				if (support.animations) {
 					this.removeEventListener(endEventName, endInitialAnim);
 				}
 				startLoading();
@@ -32,7 +32,7 @@
 			window.addEventListener('scroll', noscroll);
 
 			// initial animation
-			classie.add(container, 'loading');
+			//classie.add(container, 'loading');
 
 			if (support.animations) {
 				container.addEventListener(endEventName, endInitialAnim);
@@ -44,44 +44,29 @@
 
 		function startLoading() {
 			// simulate loading something..
-			var simulationFn = function(instance) {
-				var progress = 0,
-					interval = setInterval(function() {
-						progress = Math.min(progress + Math.random()*0.1, 1);
-						instance.setProgress(progress);
-
-						// reached the end
-						if (progress === 1) {
-							classie.remove(container, 'loading');
-							classie.add(container, 'loaded');
-							clearInterval(interval);
-
-							var endInitialAnim = function(ev) {
-								if(support.animations) {
-									if(ev.target !== header) return;
-									this.removeEventListener(endEventName, endInitialAnim);
-								}
-								classie.add(document.body, 'layout-switch');
-								window.removeEventListener('scroll', noscroll);
-								$('nav').show();
-								$('#lang').show();
-								$('.banner_text').removeClass('anim_bg');
-								$('.banner_text').addClass('animate-b-txt');
-								$('.loader').remove();
-								setTimeout(function() {
-									$('#banner').addClass('banner_photo');
-								}, 2000);
-							};
-							if (support.animations) {
-								header.addEventListener(endEventName, endInitialAnim);
-							}
-							else {
-								endInitialAnim();
-							}
-						}
-					}, 80);
+			
+			var endInitialAnim = function(ev) {
+				if (support.animations) {
+					if (ev.target !== header) return;
+					this.removeEventListener(endEventName, endInitialAnim);
+				}
+				classie.add(document.body, 'layout-switch');
+				window.removeEventListener('scroll', noscroll);
+				$('nav').show();
+				$('#lang').show();
+				$('.banner_text').removeClass('anim_bg');
+				$('.banner_text').addClass('animate-b-txt');
+				$('.loader').remove();
+				setTimeout(function() {
+					$('#banner').addClass('banner_photo');
+				}, 2000);
+			};
+			if (support.animations) {
+				header.addEventListener(endEventName, endInitialAnim);
 			}
-			loader.setProgressFn(simulationFn);
+			else {
+				endInitialAnim();
+			}
 		}
 		function noscroll() {
 			window.scrollTo(0, 0);
