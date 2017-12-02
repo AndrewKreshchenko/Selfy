@@ -57,8 +57,7 @@ $('a.topnav').click(function() {
 $('a[href*="#"]')
 .not('[href="#"]')// Then Remove links that don't actually link to anything
 .not('[href="#0"]')
-.click(function(event) {
-    // On-page links
+.click(function(event) {//On-page links
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
         // Figure out element to scroll to
         var target = $(this.hash);
@@ -341,26 +340,23 @@ $('a.control_next').click(function () {
     showSlide(slideIndex += 1);
     moveRight();
 });
-$('#slider_auto img').click(function() {
-    var interval;
-    if ($('#slider_auto').val() == '') {
-        $('#slider_auto').val('1');
+var interval;
+function timer() {
+    showSlide(slideIndex += 1);
+    moveRight();
+}
+function slideA() {
+    if (!interval) {
+        //$('#slider_auto').val('1');
         $('#slider_auto').css('background-color', '#de3e52');
-        //nameDisableAutoplay();
-        interval = setInterval(function() {timer()}, 3000);
+        interval = window.setInterval(timer, 3000);
     }
     else {
         $('#slider_auto').css('background-color', '#555');
-        $('#slider_auto').val('');
-        //nameEnableAutoplay();
-        clearInterval(interval);
-        return;
+        window.clearInterval(interval);
+        interval = null;
     }
-    function timer() {
-        showSlide(slideIndex += 1);
-        moveRight();
-    }
-});
+}
 slideCount = 0;
 var slides = document.getElementsByClassName("gall-row");
 var slideWidth = $('#m1 ul li').innerWidth();
