@@ -615,7 +615,6 @@ function nameBtnShow() {
 function nameBtnHideNews() {
     if (thislang == 'en') {
         $("#news button").text('Hide rest news');
-        $("#news button").css('padding-right', '5%');
     }
     if (thislang == 'uk')
         $("#news button").text('Приховати новини');
@@ -625,7 +624,6 @@ function nameBtnHideNews() {
 function nameBtnShowNews() {
     if (thislang == 'en') {
         $("#news button").text('Load rest news');
-        $("#news button").css('padding-right', '5%');
     }
     if (thislang == 'uk')
         $("#news button").text('Завантажити решта новин');
