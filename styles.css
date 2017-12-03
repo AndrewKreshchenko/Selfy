@@ -564,6 +564,7 @@ a.control_prev:hover, a.control_next:hover, span.close:hover {
 .contacts_p {
     padding: 15px;
     display: table-cell;
+    color: #fff;
 }
 .social_c {
     padding: 10%;
