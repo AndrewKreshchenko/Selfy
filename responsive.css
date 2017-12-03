@@ -267,6 +267,9 @@
     }
 }
 @media screen and (max-width: 350px) {
+    #banner div {
+        background-position: 70% 90px;
+    }
     #contact_block li a { 
         padding: 14px 7px;
     }
