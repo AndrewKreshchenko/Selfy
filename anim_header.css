@@ -289,11 +289,11 @@
 }
 @media screen and (max-width: 549px) and (orientation: portrait) {
     #selfie_stick {
-        left: 30%;
+        left: 25%;
         width: 45%;
     }
     #camera, #square {
-        top: 27%;
+        top: 25%;
     }
 }
 @media screen and (max-width: 768px) and (orientation: landscape) {
