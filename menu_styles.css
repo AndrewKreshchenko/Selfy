@@ -94,7 +94,7 @@
 .topnav a:focus, .topnav a:hover, .topnav a:active, .languages a:not(:first-child):focus, .languages a:not(:first-child):hover, .languages a:not(:first-child):active {
     color: #fff;
     background-color: #de3e52;
-    text-shadow: 0 0 6px #fff;
+    text-shadow: 0 0 8px #fff;
 }
 
 @media screen and (min-width: 768px) {
