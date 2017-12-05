@@ -62,7 +62,7 @@
 
 /* Topnav */
 .icon {
-    padding: 8px 5px 5px 5px;
+    padding: 10px 5px 5px 5px;
     position: fixed;
     float: left;
     border-bottom-right-radius: 7px;
@@ -166,10 +166,8 @@
     }
     .topnav a:not(:first-child) {
         left: 0;
-        width: 40%;
         display: none;
         background-color: #555; /*rgba(85, 85, 85, 0.5*/
-        text-align: right;
         -webkit-transition: text-shadow 0.8s;
         transition: text-shadow 0.8s;
         -webkit-transition: background-color 0.8s;
@@ -180,6 +178,9 @@
         float: left;
         display: block;
     }
+	.topnav a:first-child {
+        text-align: left;
+    }
     .topnav.responsive {/*without backspace because it isn't descendant selector*/
         position: fixed;
     }
@@ -187,6 +188,9 @@
         top: 0;
         right: 0;
         position: relative;
+    }
+	.topnav.responsive a {
+        width: 40%;
     }
     .topnav.responsive a:not(.icon) {
         -webkit-animation: fromleft .5s ease-out;
