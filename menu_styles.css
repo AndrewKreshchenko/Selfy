@@ -62,7 +62,7 @@
 
 /* Topnav */
 .icon {
-    padding: 5px;
+    padding: 8px 5px 5px 5px;
     position: fixed;
     float: left;
     border-bottom-right-radius: 7px;
