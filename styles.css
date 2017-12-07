@@ -126,6 +126,7 @@ main {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+    -webkit-backface-visibility: hidden;
     -webkit-animation: bgphoto 2s;
 }
 @-webkit-keyframes bgphoto {
@@ -194,6 +195,7 @@ main {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+    -webkit-backface-visibility: hidden;
 }
 .media_bg h1, .media_bg p {
 
@@ -278,6 +280,7 @@ main {
     background: -moz-radial-gradient(circle at top right, rgb(222, 62, 82), #000 40%);
     background: radial-gradient(circle at top right, rgb(222, 62, 82), #000 40%);
     background-attachment: fixed;
+    -webkit-backface-visibility: hidden;
     z-index: 60;
 }
 .gallery {
