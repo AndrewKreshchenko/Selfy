@@ -222,7 +222,7 @@
         }
     }
 	@-webkit-keyframes fromleftic {
-        from {width: 46px;}
-        to {width: 40%;}
+        from {opacity: 0;}
+        to {opacity: 100%;}
     }
 }
