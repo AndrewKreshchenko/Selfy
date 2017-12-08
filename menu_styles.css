@@ -192,14 +192,14 @@
     }
 	.topnav.responsive a {
         width: 40%;
+	border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
     }
     .topnav.responsive a:not(.icon) {
         -webkit-animation: fromleft .5s ease-out;
     }
     .topnav.responsive a:not(:first-child) {
         float: none;
-        border-top-right-radius: 15px;
-        border-bottom-right-radius: 15px;
         border-right: 5px solid #de3e52;
         display: block;
         text-align: center;
@@ -222,7 +222,7 @@
         }
     }
 	@-webkit-keyframes fromleftic {
-        from {opacity: 0;}
-        to {opacity: 100%;}
+        from {width: 46px;}
+        to {width: 40%;}
     }
 }
