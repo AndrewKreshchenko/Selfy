@@ -127,6 +127,7 @@ main {
     background-size: cover;
     background-position: center;
     -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
     -webkit-animation: bgphoto 2s;
 }
 @-webkit-keyframes bgphoto {
@@ -281,6 +282,7 @@ main {
     background: radial-gradient(circle at top right, rgb(222, 62, 82), #000 40%);
     background-attachment: fixed;
     -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
     z-index: 60;
 }
 .gallery {
@@ -593,6 +595,7 @@ a.control_prev:hover, a.control_next:hover, span.close:hover {
     -moz-transition: box-shadow 0.5s ease;
     transition: box-shadow 0.5s ease;
     -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
 }
 .social_c li:hover, .social-icons img:hover, .music_c img:hover {
     box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.3);
