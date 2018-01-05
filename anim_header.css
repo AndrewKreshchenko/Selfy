@@ -273,8 +273,8 @@
         width: 0.8in;
     }
     #flash1 {
-        width: 20px;
-        height: 20px;
+        width: 17px;
+        height: 17px;
     }
     #flash2 {
         width: 150px;
@@ -309,7 +309,7 @@
 }
 @media screen and (max-width: 400px) and (orientation: portrait) {
     #camera, #square {
-        top: 27%;
+        top: 30%;
         left: 15%;
     }
     #selfie_stick {
@@ -325,11 +325,6 @@
     }
 }
 @media screen and (max-width: 350px) {
-    #camera, #square {
-        top: 28%;
-    }
-}
-@media screen and (max-width: 320px) {
     #camera, #square {
         top: 30%;
     }
