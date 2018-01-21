@@ -11,12 +11,18 @@
 	<link rel="stylesheet" type="text/css" href="preload/css/effect1.css">
     <link rel="stylesheet" type="text/css" media="all" href="menu_styles.css">
     <link rel="stylesheet" type="text/css" media="all" href="responsive.css">
+    <link rel="stylesheet" type="text/css" media="all" href="swiper.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 	<script src="preload/js/modernizr.custom.js"></script> 
 </head>
 <body>
     <!-- Navigation bar -->
+    <div id="lang" class="languages">
+        <a href="javascript:void(0);" onclick="onLanguages()"></a>
+        <a href="index.html" title="Українська">УКР</a>
+        <a href="index-en.html" title="English">ENG</a>
+    </div>
     <nav id="menu">
         <div class="topnav">
             <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="onMenu()">
@@ -32,11 +38,6 @@
             <a href="#news">Новости</a>
             <a href="#music_block">Музыка</a>
             <a href="#contact_block">Контакты</a>
-        </div>
-        <div id="lang" class="languages">
-            <a href="javascript:void(0);" onclick="onLanguages()"><img draggable="false" src="img/flag.png"></a>
-            <a href="index.html" title="Українська">УКР</a>
-            <a href="index-en.html" title="English">ENG</a>
         </div>
     </nav>
 
@@ -188,27 +189,64 @@
             </div>
         </div>
         <div id="about">
-            <div class="row clearfix">
-                <div class="heading_style">
-                    <h1>О группе</h1>
-                </div>
-                <div class="col-2">
-                    <div class="team-member"><img class="member-photo" style="float: right !important" src="img/1-1.png" alt="actor1">
-                        <h3>Dana Queen</h3>
-                        <p class="team-position">солістка групи Selfy</p>
-                    </div>
+            <div class="heading_style">
+                <h1>О группе</h1>
+            </div>
+            <div id="membs" class="child row clearfix">
+                <div class="col-2 col-m-2 col-ms-2 memb1"><!--col-ms-1-->
+                    <img class="member-photo" src="img/mem1_1.png" alt="actor1">
                     <div class="team-member">
+                        <h3>Dana Queen</h3>
+                    </div>
+                </div>
+                <div class="col-2 col-m-2 col-ms-2 memb2">
+                    <img class="member-photo" src="img/mem2_1.png" alt="actor2">
+                    <div class="team-member">
+                        <h3>Tanya Lee</h3>
+                    </div>
+                </div>
+                <p>Группа Selfy была основана в январе 2014 года продюсером, композитором и исполнителем песен, Александром Яременко. В состав группы входят две замечательные девушки Таня Ли (Татьяна Духонченко) и Dana Queen (Ольга Хареба). Само название группы происходит от «Selfmade girls», что в переводе с английского означает «Девушки, которые творят себя сами» &ndash; самостоятельно совершенствуются и достигают желанных вершин.</p>
+                <p style="display: none">Девушки обладают отличными вокальными данными и в большинстве случаев исполняют песни в живую. Чем и удивили публику на одном из концертов у Киргизстане, где узнав что у девушек есть лаундж версии всех их песен и они поют их в живую, по требованию заказчика программа была остановлена. Но предложив им гитариста в аккомпанемент, они продолжили исполнять свои песни в живую, создавать не забываемую атмосферу и удивлять своих заграничных коллег.</p>
+                <p style="display: none">Визитная карточка группы &ndash; композиция «Галя балувана». После премьеры песни в интернете появилось более 15 фан-клипов за первый месяц. Официальный клип группы Selfy за три недели поднялся в чартах главных музыкальных каналов Украины М1 и М2 на первые места: первое место &ndash; <a href="http://m1.tv/chart/25">«Головний Хіт-Парад України»</a> и второе &ndash; <a href="http://1tv.com.ua/">«Перший український»</a>. За первую неделю премьеры в интернете, клип просмотрели более 150 000 человек, а на данный момент более 200 000.</p>
+                <div class="more1" onclick="onInf()">
+                    <svg height="15" width="30">
+                        <polyline points="1,1 14,14 29,1" style="fill:none; stroke:#e4473c; stroke-width:2">
+                    </svg>
+                </div>
+                <div class="less1" onclick="onInf()">
+                    <svg height="15" width="30">
+                        <polyline points="1,14 14,1 29,14" style="fill:none; stroke:#e4473c; stroke-width:2">
+                    </svg>
+                </div>
+            </div>
+            <div id="m1" class="modal-anim">
+                <div class="members row clearfix">
+                    <div class="col-1" style="position: absolute; text-align: center;">
+                        <span id="close1" class="close" style="text-align: center">&times;</span>
+                    </div>
+                    <div class="col-2 col-ms-1" style="padding: 0">
+                        <img src="img/mem1.png">
+                    </div>
+                    <div class="team-member col-2 col-ms-1" style="background-color: #777;">
+                        <h3>Dana Queen</h3>
+                        <p class="team-position">солистка группы</p>
                         <p>Dana Queen родилась в Киеве, 19 июля 1991 года. Финалистка шоу <a href="https://ru.wikipedia.org/wiki/%D0%A5%D0%BE%D1%87%D1%83_V_%D0%92%D0%98%D0%90_%D0%93%D1%80%D1%83">«Хочу в ВиаГру»</a>. Закончила <a href="https://circusacademy.kiev.ua/">Киевскую муниципальную академию эстрадного и циркового искусств</a> по специальности солист-вокалист, получила квалификацию Магистра в <a href="http://nakkkim.edu.ua/instituti/institut-publichnogo-upravlinnya-ta-kadrovoji-politiki">НАРККиИ</a> по специальности солист-вокалист, преподаватель вокала. С 8 лет маленькая Дана играла на гитаре и пела на концертах. Тепер она лауреат и призер международных и украинских конкурсов эстрадного вокала. Выступала в Париже, Берлине, Дрездене, Варшаве, Праге, Киргизстане. Около двух лет была вокалисткой в группе «Триши». Больше года пела в группе «SMS». В основном выступает в Украине, Беларуси, Казахстане, Киргизстане и Турции.</p>
                         <a class="social-icons" title="Instagram" target="_blank" href="https://www.instagram.com/dana_selfy/">
-                            <img src="img/1_instagram.png"><!--<i class="fa fa-home fa-1x"></i><span>Website</span>-->
+                            <img src="img/1_instagram.png">
                         </a>
                     </div>
                 </div>
-                <div class="col-2">
-                    <div class="team-member"><img class="member-photo" src="img/2-1.png" alt="actor1">
-                        <h3>Таня Ли</h3>
+            </div>
+            <div id="m2" class="modal-anim">
+                <div class="members row clearfix">
+                    <div class="col-1" style="position: absolute; text-align: center;">
+                        <span id="close2" class="close" style="text-align: center">&times;</span>
                     </div>
-                    <div class="team-member">
+                    <div class="col-2 col-ms-1" style="padding: 0">
+                        <img src="img/mem2.jpg">
+                    </div>
+                    <div class="team-member col-2 col-ms-1" style="background-color: #777;">
+                        <h3>Таня Ли</h3>
                         <p class="team-position">солистка группы Selfy</p>
                         <p>Таня Ли родилась в г. Васильевка 2 сентября 1995 года, у Запорожской областе. С самого детства занимается вокалом. С 2006 по 2013 год занималась в Школе эстрадного вокала «Fleur». В 2015 году проходила Вокальный интенсив, у Ланы Меркуловой. С 2005-2011 года стала призёром и лауреатом более 30-ти областных, Всеукраинских и Международных конкурсов и фестивалей детского и юношеского творчества в номинации «Эстрадный вокал», и более 70-ти конкурсов и фестивалей в номинациях эстрадного, народного и современного танца. В 2012 году вошла в 100 лучших вокалистов страны в шоу <a href="https://ru.wikipedia.org/wiki/X-%D0%A4%D0%B0%D0%BA%D1%82%D0%BE%D1%80_(%D1%81%D0%B5%D0%B7%D0%BE%D0%BD_3)">X-Factor, 3 сезон</a>.</p>
                         <a class="social-icons" title="Gramlove" target="_blank" href="http://gramlove.co/user.php?id=1149300736&name=tanya_li_music/">
@@ -217,16 +255,8 @@
                     </div>
                 </div>
             </div>
-                <div class="child row clearfix">
-                    <div class="team-member">
-                        <h3>История группы</h3>
-                    </div>
-                    <p>Группа Selfy была основана в январе 2014 года продюсером, композитором и исполнителем песен, Александром Яременко. В состав группы входят две замечательные девушки Таня Ли (Татьяна Духонченко) и Dana Queen (Ольга Хареба).</p>
-                    <p>Девушки обладают отличными вокальными данными и в большинстве случаев исполняют песни в живую. Чем и удивили публику на одном из концертов у Киргизстане, где узнав что у девушек есть лаундж версии всех их песен и они поют их в живую, по требованию заказчика программа была остановлена. Но предложив им гитариста в аккомпанемент, они продолжили исполнять свои песни в живую, создавать не забываемую атмосферу и удивлять своих заграничных коллег.</p>
-                    <p>Визитная карточка группы &ndash; композиция «Галя балувана». После премьеры песни в интернете появилось более 15 фан-клипов за первый месяц. Официальный клип группы Selfy за три недели поднялся в чартах главных музыкальных каналов Украины М1 и М2 на первые места: первое место &ndash; <a href="http://m1.tv/chart/25">«Головний Хіт-Парад України»</a> и второе &ndash; <a href="http://1tv.com.ua/">«Перший український»</a>. За первую неделю премьеры в интернете, клип просмотрели более 150 000 человек, а на данный момент более 200 000.</p>
-                </div>
-            </div>
-            <div id="gallery_block">
+        </div>
+        <div id="gallery_block">
             <div class="gallery">
                 <div class="heading_style">
                     <h1>Галерея</h1>
@@ -277,18 +307,79 @@
                     <div class="gall-row col-5 col-m-3">
                         <a href="http://selfyofficial.com.ua/wp-content/uploads/2016/04/HJDmyxYsg90.jpg"></a><img src="img/gall_15.jpg">
                     </div>
+                    <div class="gall-row col-5 col-m-3">
+                        <img src="img/gall_16.jpg">
+                    </div>
                 </div>
-                <div id="m1">
-                    <a class="control_next">&#10095;</a>
-                    <a class="control_prev">&#10094;</a>
-                    <span id="close1" class="close">&times;</span><a id="slider_auto" title="Автоматический слайдинг" href="javascript:void(0);" onclick="slideA()"><img src="img/slider_a.png"></a>
-                    <ul>                      
-                        <li><img id="img_modal1" class="modal-anim"></li>
-                        <li><img id="img_modal2" class="modal-anim"></li>
-                    </ul>
+                <div id="thisgallery1" class="swiper-container modal-anim">
+                    <span id="close3" class="close">&times;</span>
+                    <a id="slider_auto" title="Автоматический слайдинг" href="javascript:void(0);" onclick="slideA()"><img src="img/slider_a.png"></a>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="img/gall-1.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-2.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-3.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-4.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-5.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-6.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-7.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-8.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-9.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-10.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-11.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-12.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-13.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-14.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-15.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-16.jpg">
+                        </div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-button-next">&#10095;</div>
+                    <div class="swiper-button-prev">&#10094;</div>
                 </div>
-                <div class="button_load">
-                    <button id="load_ph">Загрузить остальные фотографии</button>
+                
+                <div class="more1" onclick="onPh()">
+                    <svg height="15" width="30">
+                        <polyline points="1,1 14,14 29,1" style="fill:none; stroke:#e4473c; stroke-width:2">
+                    </svg>
+                </div>
+                <div class="less1" onclick="onPh()">
+                    <svg height="15" width="30">
+                        <polyline points="1,14 14,1 29,14" style="fill:none; stroke:#e4473c; stroke-width:2">
+                    </svg>
                 </div>
             </div>
         </div>
@@ -299,7 +390,7 @@
             <div class="row clearfix">
                 <div class="news_cell col-3 col-m-2 col-ms-1"><img src="img/news1_3.png">
                     <div class="news_text">
-                        <h3>Таня Ли &ndash; ведучая на «M2 FRESH»</h3>
+                        <h3>Таня Ли &ndash; ведучая на<br> «M2 FRESH»</h3>
                         <p>Встречайте волшебную участницу группы Selfy Таню Ли в качестве красивой и опасной повелительницы хитов, а именно &ndash; ведущей музыкальной программы «Главный хит-парад Украина», который вы можете смотреть на М2 с понедельника по пятницу в 18.00, а также хит-парад новинок <a href="https://www.youtube.com/watch?v=RIc2g3g_pNw/">«M2FRESH»</a> в субботу в 18.00.<p>
                         <p class="news_date">8 декабря 2017</p>
                     </div>
@@ -308,13 +399,13 @@
                     <div class="news_text">
                         <h3>Финал Караоке-сезона от<br>«Радио Пятница»</h3>
                         <p>1 декабря в <a href="https://www.facebook.com/freedomeventhall/?fref=mentions">FREEDOM Event Hall</a> состоялся Масштабный праздник в честь финала очередного Караоке-сезона от «Радио Пятница»! В течение осени <a href="https://www.facebook.com/radiopyatnica/?fref=mentions">«Радио Пятница»</a> с помощью звездного жюри отбирала самых талантливых, ярких и харизматичных исполнителей, среди которых был выбран победитель &ndash; Катя Таирова из Каменец-Подольского. Других победителей сезона определил звездные жюри. Серед финалистов: группа Selfy, Владимир Бебешко, Петя Черный, Zveroboy, Александр Яременко, Светлана Тарабарова и многие другие.</p>
-                        <p>Александр Яременко исполнил на мероприятии свою песню, которая не оставила гостей равнодушными и вдохновила своей лиричностью и душевностью. Группа Selfy презентовала песню «Обійми», которую гости мероприятия очень тепло приняли.</p>
+                        <p>Александр Яременко исполнили на мероприятии свою песню, которая не оставила гостей равнодушными и вдохновило своей лиричностью и душевностью. Группа Selfy презентовала песню «Обійми», которую гости мероприятия очень тепло приняли.</p>
                         <p class="news_date">6 декабря 2017</p>
                     </div>
                 </div>
                 <div class="news_cell col-3 col-m-2 col-ms-1"><img src="img/news1_1.png">
                     <div class="news_text">
-                        <h3>Благотворительный проект «До тебе, моя мріє»</h3>
+                        <h3>Благотворительный проект<br> «До тебе, моя мріє»</h3>
                         <p>Группа Selfy присоединился к благотворительному проекту «До тебе, моя мріє» и выступила на соответствующем мероприятии в <a href="https://www.facebook.com/PanoramaHall2017/?hc_ref=ARTwolUU3HM2VCCO0URNFSBh3bypsM9IMdUgQqe3Rr2M6Y17BljBVYpeuNeaqMwBwmE">Конференц-холл «Панорама»</a>, который состоялся 26 ноября, ради осуществления мечты молодежи с инвалидностью.</p>
                         <p>Участницы группы поддержали цель проекта и основную мысль мероприятия &ndash; мечтам свойственно сбываться, каждый жизненный барьер преодолим, благодаря большой силе веры и настойчивости! «Никогда не прекращайте мечтать, независимо от обстоятельств» &ndash; отмечают солистки.</p>
                         <p class="news_date">28 листопада 2017</p>
@@ -332,9 +423,8 @@
                 </div>
                 <div class="news_cell col-3 col-m-2 col-ms-1"><img src="img/news1.png">
                     <div class="news_text">
-                        <h3>День работников радио, телевидения и связи</h3>
-                        <p>В <a href="http://caribbean.com.ua/ru/concert_hall_ru/aleksandr-yaremenko/">Caribbean Club</a> города Киева произошла встреча с Александром Яременко и группой Selfy &ndash; в день работников радио, телевидения и связи! Именно в этот день посетители имели возможность услышать лучшие песни по программе «Я живу!». «Поздравляем всех, кто упорно работает в сфере радио, телевидения и связи!» &ndash; приветствуют солистки группы Selfy роботников в этой сфере занятости.<p>
-                        <p>«Дякуємо, що забарвлюєте інформаційну одноманітність яскравими ідеями, новинами, подіями. Бажаємо гігантських запасів активності та плідності в роботі!» &ndash; поздравляют солистки працівників на своїй сторінці у <a href="https://www.facebook.com/selfy.official/">Facebook</a></p>
+                        <h3>Горячий вечер у Caribbean Club</h3>
+                        <p>В <a href="http://caribbean.com.ua/ru/concert_hall_ru/aleksandr-yaremenko/">Caribbean Club</a> города Киева произошла встреча с Александром Яременко и группой Selfy &ndash; в день работников радио, телевидения и связи! Именно в этот день посетители имели возможность услышать лучшие песни по программе «Я живу!». «Поздравляем всех, кто упорно работает в сфере радио, телевидения и связи!» &ndash; приветствуют солистки группы Selfy роботников в этой сфере занятости на своей станице в <a href="https://www.facebook.com/selfy.official/">Facebook</a>.</p>
                         <p class="news_date">16 ноября 2017</p>
                     </div>
                 </div>
@@ -365,6 +455,8 @@
                     <div class="news_text">
                         <h3>Группа Selfy зацепила актуальную социальную проблему</h3>
                         <p>Основной меседж нового хита &ndash; побудить слушателей, не теряя ни минуты, обнять своих близких! Это простая вещь, которой катастрофически не хватает нашему настоящему. Детали на сайте <a href="http://radio.obozrevatel.com/news/gruppa-selfy-zadela-aktualjnuyu-socialjnuyu-problemu-10216878.html">radio.obozrevatel.com</a>.</p>
+                        <p>Сингл «Обійми» заставляет вспомнить забытые ценности, живущие в душах людей. Ведь для счастья иногда достаточно остановиться на мгновение и просто обнять близких сердцу людей.</p>
+                        <p>Режиссером клипа стал Влад Разиховський, который максимально точно визуализировал замысел Александра Яременко, продюсера группы и автора сингла.</p>
                         <p class="news_date">7 ноября 2017</p>
                     </div>
                 </div>
@@ -386,15 +478,37 @@
                         <p class="news_date">5 сентября 2017</p>
                     </div>
                 </div>
-                <div id="m2">
-                    <span id="close2" class="close">&times;</span>
-                    <ul>                      
-                        <li><img id="img_modal" class="modal-anim"></li>
-                    </ul>
+                <div id="m3" class="row clearfix">
+                    <div class="col-1 col-m-1 col-ms-1" style="position: absolute; text-align: center;">
+                        <span id="close4" class="close" style="text-align: center">&times;</span>
+                    </div>
+                    <div class="team-member">
+                        <img id="img_modal" class="modal-anim">
+                    </div>
+                    <div class="news_modal">
+                        <h3></h3>
+                        <p></p>
+                        <div class="embed_container" style="display: none">
+                            <iframe src="https://www.youtube.com/embed/RIc2g3g_pNw" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="social_modal">
+                            <a title="Facebook" target="_blank" href="https://www.facebook.com/selfy.official/"><p>Поделиться в Facebook!</p><img src="img/s_fb.png"></a>
+                        </div>
+                        <div>
+                            <p class="news_date"></p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="button_load">
-                <button>Загрузить остальные новости</button>
+            <div class="more1" onclick="onNews()">
+                <svg height="15" width="30">
+                    <polyline points="1,1 14,14 29,1" style="fill:none; stroke:#e4473c; stroke-width:2">
+                </svg>
+            </div>
+            <div class="less1" onclick="onNews()">
+                <svg height="15" width="30">
+                    <polyline points="1,14 14,1 29,14" style="fill:none; stroke:#e4473c; stroke-width:2">
+                </svg>
             </div>
         </div>
         <div id="music_block" class="media_c media_bg">
@@ -444,7 +558,7 @@
     </main>
 
     <footer id="page_footer">
-		<p>12.2017 &#169; Selfy</p>
+		<p>01.2018 &#169; Selfy</p>
 	</footer><!--End of Footer-->
     <script src="preload/js/classie.js"></script>
 	<script src="preload/js/pathLoader.js"></script>
@@ -453,6 +567,8 @@
     <script src="dist/scrollreveal.min.js"></script>
     <script src="dist/scrollreveal.js"></script>
 
+    <!-- Swiper JS -->
+    <script src="swiper.js"></script>
     <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
