@@ -1,31 +1,25 @@
 /* Languages */
 .languages {
+    top: 0;
+    right: 0;
     width: auto;
     max-width: 150px;
+    padding-top: 12px;
     right: 0;
     float: right;
     position: fixed;
     overflow: hidden;
     border: 0;
     border-bottom-left-radius: 10px;
-    z-index: 25;
-}
-.languages img {
-	padding-top: 8px;
-    padding-right: 8px;
+    z-index: 24;
 }
 .languages a {
     text-align: right;
     line-height: 25px;
-    padding-top: 10px;
     color: #fff;
-    -webkit-transition: text-shadow 0.8s;
-    transition: text-shadow 0.8s;
-    -webkit-transition: background-color 0.8s;
-    transition: background-color 0.8s;
 }
 .languages a:first-child {
-    padding-top: 5px;
+    z-index: 47;
 }
 .languages a:first-child:hover {
     background-color: #de3e52;
@@ -85,13 +79,12 @@
     color: #fff;
     padding: 14px;
     text-decoration: none;
-    font-family: 'Source Sans Pro', sans-serif;
     font-size: 18px;
 }
 .topnav a:not(.languages):hover, .topnav a:not(.languages):active {
     color: #fff;
 }
-.topnav a:focus, .topnav a:hover, .topnav a:active, .languages a:not(:first-child):focus, .languages a:not(:first-child):hover, .languages a:not(:first-child):active {
+.topnav a:focus, #f_top:hover, #f_top:active, .topnav a:hover, .topnav a:active {
     color: #fff;
     background-color: #de3e52;
     text-shadow: 0 0 8px #fff;
@@ -99,14 +92,27 @@
 
 @media screen and (min-width: 768px) {
     .topnav {
-        background: #333;/* For browsers that do not support gradients */
-        background: -webkit-linear-gradient(top, #555, #555); /* For Safari 5.1 to 6.0 */
-        background: -o-linear-gradient(bottom, #000, #555); /* For Opera 11.1 to 12.0 */
-        background: -moz-linear-gradient(bottom, #000, #555); /* For Firefox 3.6 to 15 */
+        background: #999;/* For browsers that do not support gradients */
+        background: -webkit-linear-gradient(top, #333, #999); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(bottom, #333, #999); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(bottom, #333, #999); /* For Firefox 3.6 to 15 */
         background: linear-gradient(to bottom, #333, #999); /* Standard syntax */
+    }
+    .languages {
+        padding-bottom: 10px;
     }
     .languages.lang_opt a {
         background-color: #555;
+    }
+    .languages a {
+        -webkit-transition: text-shadow 0.8s;
+        transition: text-shadow 0.8s;
+        -webkit-transition: background-color 0.8s;
+        transition: background-color 0.8s;
+    }
+    .languages a:not(:first-child):focus, .languages a:not(:first-child):hover, .languages a:not(:first-child):active {
+        background-color: #de3e52;
+        text-shadow: 0 0 8px #fff;
     }
 }
 
@@ -137,6 +143,8 @@
 
     /* Languages */
 	.languages {
+        padding-top: 7px;
+        padding-bottom: 7px;
         background-color: #555;
     }
     .languages.lang_opt {
@@ -144,16 +152,11 @@
         border-bottom: 2px solid #de3e52;
     }
     .languages a {
+        display: block;
+        background-color: #de3e52;
         border: transparent !important;
         text-align: left;
     }
-    .languages a {
-        display: block;
-        background-color: #de3e52;
-    }
-    /*.languages a:not(:first-child) {
-        display: none;
-    }*/
     .languages a, .topnav a {
         background-color: #555;
         line-height: 20px;
@@ -178,8 +181,8 @@
         float: left;
         display: block;
     }
-	.topnav a:first-child {
-        text-align: left;
+    .topnav a:first-child { 
+        text-align: left
     }
     .topnav.responsive {/*without backspace because it isn't descendant selector*/
         position: fixed;
@@ -188,11 +191,11 @@
         top: 0;
         right: 0;
         position: relative;
-	-webkit-animation: fromleftic .5s ease-out;
+        -webkit-animation: fromleftic .5s ease-out;
     }
-	.topnav.responsive a {
+    .topnav.responsive a {
         width: 40%;
-	border-top-right-radius: 15px;
+        border-top-right-radius: 15px;
         border-bottom-right-radius: 15px;
     }
     .topnav.responsive a:not(.icon) {
@@ -221,7 +224,7 @@
             transform: translateX(0px);
         }
     }
-	@-webkit-keyframes fromleftic {
+    @-webkit-keyframes fromleftic {
         from {width: 46px;}
         to {width: 40%;}
     }
