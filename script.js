@@ -276,14 +276,6 @@ var swiper = new Swiper('.swiper-container', {
         onlyInViewport: false,
   },
 });
-$('a.control_prev').click(function () {
-    showSlide(slideIndex -= 1);
-    moveLeft();
-});
-$('a.control_next').click(function () {
-    showSlide(slideIndex += 1);
-    moveRight();
-});
 var interval = false;
 function slideA() {
     if (!interval) {
@@ -298,11 +290,10 @@ function slideA() {
         interval = false;
     }
 }
-slideCount = 0, slideIndex = 0;
+slideIndex = 0, current = 0;
 var w = $('body').innerWidth();
 var h = $('body').innerHeight();
 var modal3 = document.getElementById('thisgallery1');
-$('#m1 ul li:last-child').prependTo('#m1 ul');
 function onInf() {
     tags = document.getElementById("membs").getElementsByTagName("p"),
     total = tags.length;
