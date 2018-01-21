@@ -3,22 +3,24 @@
 <head>
     <title>Гурт Selfy</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" media="all" href="styles.css">
     <link rel="stylesheet" type="text/css" media="all" href="anim_header.css">
-    <link rel="stylesheet" type="text/css" href="preload/css/normalize1.css">
+    <link rel="stylesheet" type="text/css" href="preload/css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="preload/css/effect1.css">
     <link rel="stylesheet" type="text/css" media="all" href="menu_styles.css">
     <link rel="stylesheet" type="text/css" media="all" href="responsive.css">
+    <link rel="stylesheet" type="text/css" media="all" href="swiper.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-	<script src="preload/js/modernizr.custom.js"></script> 
+	<script src="preload/js/modernizr.custom.js"></script>
+    <script src="swiper.js"></script>
 </head>
 <body>
     <!-- Navigation bar -->
     <div id="lang" class="languages">
-        <a href="javascript:void(0);" onclick="onLanguages()"><img draggable="false" src="img/flag.png"></a>
+        <a href="javascript:void(0);" onclick="onLanguages()"></a><!--<img draggable="false" src="img/flag.png"></a>-->
         <a href="index-en.html" title="English">ENG</a>
         <a href="index-ru.html" title="Русский">РУС</a>
     </div>
@@ -150,7 +152,7 @@
             <a title="В начало" href="#banner"><img src="img/arrow.png"></a>
         </div>
         <div id="media_block" class="media_bg">
-            <div class="media_c">
+            <div class="media_c col-1">
                 <div class="heading_style">
                     <h1>Прем'єра</h1>
                 </div>
@@ -178,7 +180,7 @@
             </div>
         </div>
         <div id="about">
-            <div class="row clearfix">
+            <!--<div class="row clearfix">
                 <div class="heading_style">
                     <h1>Про гурт</h1>
                 </div>
@@ -190,8 +192,8 @@
                     <div class="team-member">
                         <p>Dana Queen народилася в Києві, 19 липня 1991 року. Фіналістка шоу <a href=https://uk.wikipedia.org/wiki/%D0%A5%D0%BE%D1%87%D1%83_%D0%B4%D0%BE_%C2%AB%D0%92%D0%86%D0%90_%D0%93%D1%80%D0%B8%C2%BB>«Хочу до ВІА Гри»</a>. Випускниця <a href="https://circusacademy.kiev.ua/">Київської муніципальної академії естрадного та циркового мистецтв</a>, отримала спеціальність соліст-вокаліст, кваліфікацію магістра в <a href="http://nakkkim.edu.ua/instituti/institut-publichnogo-upravlinnya-ta-kadrovoji-politiki">НАКККіМ</a> за спеціальністю соліст-вокаліст, викладач вокалу. З 8 років маленька Дана грала на гітарі та співала на концертах. Тепер вона лауреат і призер міжнародних і українських конкурсів естрадного вокалу. Виступала у Парижі, Берліні, Дрездені, Варшаві, Празі, Киргизстані. Близько двох років була вокаліст кою в гурті «Триши». Більше року співала в гурті «SMS». Загалом виступає в Україні, Білорусії, Казахстані, Киргизстані і Туреччині.</p>
                         <a class="social-icons" title="Instagram" target="_blank" href="https://www.instagram.com/dana_selfy/">
-                            <img src="img/1_instagram.png"><!--<i class="fa fa-home fa-1x"></i><span>Website</span>-->
-                        </a>
+                            <img src="img/1_instagram.png"><i class="fa fa-home fa-1x"></i><span>Website</span>-->
+                        <!--</a>
                     </div>
                 </div>
                 <div class="col-2">
@@ -206,14 +208,72 @@
                         </a>
                     </div>
                 </div>
+            </div>-->
+            <div class="heading_style">
+                <h1>Про гурт</h1>
             </div>
-            <div class="child row clearfix">
-                <div class="team-member">
-                    <h3>Історія гурту</h3>
+            <div id="membs" class="child row clearfix">
+                <div class="col-2 col-m-2 col-ms-2 memb1"><!--col-ms-1-->
+                    <img class="member-photo" src="img/mem1_1.png" alt="actor1">
+                    <div class="team-member">
+                        <h3>Dana Queen</h3>
+                    </div>
                 </div>
-                <p>Гурт Selfy була заснована у січні 2014 року продюсером, композитором і виконавцем пісень, Олександром Яременко. У склад гурту входять двоє чудових дівчат Таня Лі (Тетьяна Духонченко) і Dana Queen (Ольга Хареба).</p>
-                <p>Дівчата володіють відмінними вокальними даними і у більшості випадків виконують пісні вживу. Чим і здивували публіку на одному з концертів у Киргизстані, де дізнавшись що у дівчат є лаундж усіх пісень і вони співають їх вживу, за вимогами замовника програма була зупинена. Але коли їм запропонували гітариста в акомпанемент, вони продовжили виконувати свої пісні вживу, створювати незабутню атмосферу і дивувати своїх колег з-за кордону.</p>
-                <p>Візитна картка гурту &ndash; композиція «Галя балувана». Після прем’єри пісень в інтернеті з’явилося більше 15 фан-кліпів за перший місяць. Офіційний кліп гурту Selfy за три неділі піднявся у чартах основних музичних каналів України М1 і М2 на перші місця: перше месце &ndash; <a href="http://m1.tv/chart/25">«Головний Хіт-Парад України»</a> і друге місце &ndash; <a href="http://1tv.com.ua/">«Перший український»</a>. За першу неділю прем’єри в інтернеті, кліп переглянули більше 150 000 людей, а на даний момент більше 200 000.</p>
+                <div class="col-2 col-m-2 col-ms-2 memb2">
+                    <img class="member-photo" src="img/mem2_1.png" alt="actor2">
+                    <div class="team-member">
+                        <h3>Таня Лі</h3>
+                    </div>
+                </div>
+                <p>Гурт Selfy була заснована у січні 2014 року продюсером, композитором і виконавцем пісень Олександром Яременко. У склад гурту входять двоє чудових дівчат Таня Лі (Тетяна Духонченко) і Dana Queen (Ольга Хареба). Сама назва гурту походить від «Selfmade girls», що в перекладі з англійсьої означає «Дівчата, які творять себе самі» &ndash; самостійно вдосконалюються і досягають омріяних вершин.</p>
+                <p style="display: none">Дівчата володіють відмінними вокальними даними, мають лаундж усіх пісень і у більшості випадків виконують їх вживу, чим і здивували публіку на одному з концертів у Киргизстані. Дізнавшись про це, за вимогами замовника програма була зупинена. Але коли їм запропонували гітариста в акомпанемент, вони продовжили виконувати свої пісні вживу, створюючи незабутню атмосферу і дивуючи своїх колег з-за кордону.</p>
+                <p style="display: none">Візитна картка гурту &ndash; композиція «Галя балувана». Після прем’єри пісень в інтернеті з’явилося більше 15 фан-кліпів за перший місяць. Офіційний кліп гурту Selfy за три неділі піднявся у чартах основних музичних каналів України М1 і М2 на перші місця: перше месце &ndash; <a href="http://m1.tv/chart/25">«Головний Хіт-Парад України»</a> і друге місце &ndash; <a href="http://1tv.com.ua/">«Перший український»</a>. За першу неділю прем’єри в інтернеті, кліп переглянули більше 150 000 людей, а на даний момент більше 200 000.</p>
+                <div class="more1" onclick="onInf()">
+                    <svg height="15" width="30">
+                        <polyline points="1,1 14,14 29,1" style="fill:none; stroke:#e4473c; stroke-width:2">
+                    </svg>
+                </div>
+                <div class="less1" onclick="onInf()">
+                    <svg height="15" width="30">
+                        <polyline points="1,14 14,1 29,14" style="fill:none; stroke:#e4473c; stroke-width:2">
+                    </svg>
+                </div>
+            </div>
+            <div id="m1" class="modal-anim">
+                <div class="members row clearfix">
+                    <div class="col-1" style="position: absolute; text-align: center;">
+                        <span id="close1" class="close" style="text-align: center">&times;</span>
+                    </div>
+                    <div class="col-2 col-ms-1" style="padding: 0">
+                        <img src="img/mem1.png">
+                    </div>
+                    <div class="team-member col-2 col-ms-1" style="background-color: #777;">
+                        <h3>Dana Queen</h3>
+                        <p class="team-position">солістка гурту</p>
+                        <p>Dana Queen народилася в Києві, 19 липня 1991 року. Фіналістка шоу <a href="https://uk.wikipedia.org/wiki/%D0%A5%D0%BE%D1%87%D1%83_%D0%B4%D0%BE_%C2%AB%D0%92%D0%86%D0%90_%D0%93%D1%80%D0%B8%C2%BB">«Хочу до ВІА Гри»</a>. Випускниця <a href="https://circusacademy.kiev.ua/">Київської муніципальної академії естрадного та циркового мистецтв</a>, отримала спеціальність соліст-вокаліст, кваліфікацію магістра в <a href="http://nakkkim.edu.ua/instituti/institut-publichnogo-upravlinnya-ta-kadrovoji-politiki">НАКККіМ</a> за спеціальністю соліст-вокаліст, викладач вокалу. З 8 років маленька Дана грала на гітарі та співала на концертах. Тепер вона лауреат і призер міжнародних і українських конкурсів естрадного вокалу. Виступала у Парижі, Берліні, Дрездені, Варшаві, Празі, Киргизстані. Близько двох років була вокаліст кою в гурті «Триши». Більше року співала в гурті «SMS». Загалом виступає в Україні, Білорусії, Казахстані, Киргизстані і Туреччині.</p>
+                        <a class="social-icons" title="Instagram" target="_blank" href="https://www.instagram.com/dana_selfy/">
+                            <img src="img/1_instagram.png"><!--<i class="fa fa-home fa-1x"></i><span>WebsiteВК11864554</span>-->
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="m2" class="modal-anim"><!--! child-->
+                <div class="members row clearfix">
+                    <div class="col-1" style="position: absolute; text-align: center;">
+                        <span id="close2" class="close" style="text-align: center">&times;</span>
+                    </div>
+                    <div class="col-2 col-ms-1" style="padding: 0">
+                        <img src="img/mem2.jpg">
+                    </div>
+                    <div class="team-member col-2 col-ms-1" style="background-color: #777;">
+                        <h3>Таня Лі</h3>
+                        <p class="team-position">солістка гурту</p>
+                        <p>Таня Лі народилася у м. Василівка, 2 вересня 1995 року, в Запоріжській області. З дитинства займається вокалом. З 2006 по 2013 рік займалась у Школі естрадного вокалу «Fleur». У 2015 році проходила Вокальний інтенсив, у Лани Меркулової. З 2005-2011 роки стала призером і лауреатом більше 30-ти обласних, всеукраїнських та міжнародних конкурсів і фестивалів дитячої і юнацької творчості у номінації «Естрадний вокал», і більше 70-ти конкурсів і фестивалів у номінацій естрадного, народного і сучасного танцю. У 2012 році увійшла в 100 кращих вокалістів країни в шоу <a href="https://ru.wikipedia.org/wiki/X-%D0%A4%D0%B0%D0%BA%D1%82%D0%BE%D1%80_(%D1%81%D0%B5%D0%B7%D0%BE%D0%BD_3)">X-Factor, 3 сезон</a>.</p>
+                        <a class="social-icons" title="Gramlove" target="_blank" href="http://gramlove.co/user.php?id=1149300736&name=tanya_li_music/">
+                            <img src="img/gramlove.png">
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="gallery_block">
@@ -267,24 +327,79 @@
                     <div class="gall-row col-5 col-m-3">
                         <a href="http://selfyofficial.com.ua/wp-content/uploads/2016/04/HJDmyxYsg90.jpg"></a><img src="img/gall_15.jpg">
                     </div>
+                    <div class="gall-row col-5 col-m-3">
+                        <img src="img/gall_16.jpg">
+                    </div>
                 </div>
-                <!--<div id="m1" class="modal" style="display: none;">
-                    <span id="close1" class="close">&times;</span>
-                    <img class="modal-content modal-anim" id="img_modal1">
-                    <a class="prev">&#10094;</a>
-                    <a class="next">&#10095;</a>
-                </div>-->
-                <div id="m1">
-                    <a class="control_next">&#10095;</a>
-                    <a class="control_prev">&#10094;</a>
-                    <span id="close1" class="close">&times;</span><a id="slider_auto" title="Автоматичний слайдинг" href="javascript:void(0);" onclick="slideA()"><img src="img/slider_a.png"></a>
-                    <ul>                      
-                        <li><img id="img_modal1" class="modal-anim"></li>
-                        <li><img id="img_modal2" class="modal-anim"></li>
-                    </ul>
+                <div id="thisgallery1" class="swiper-container modal-anim">
+                    <span id="close3" class="close">&times;</span>
+                    <a id="slider_auto" title="Автоматичний слайдинг" href="javascript:void(0);" onclick="slideA()"><img src="img/slider_a.png"></a>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="img/gall-1.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-2.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-3.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-4.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-5.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-6.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-7.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-8.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-9.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-10.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-11.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-12.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-13.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-14.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-15.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/gall-16.jpg">
+                        </div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-button-next">&#10095;</div>
+                    <div class="swiper-button-prev">&#10094;</div>
                 </div>
-                <div class="button_load">
-                    <button id="load_ph">Завантажити решта фотографій</button>
+                
+                <div class="more1" onclick="onPh()">
+                    <svg height="15" width="30">
+                        <polyline points="1,1 14,14 29,1" style="fill:none; stroke:#e4473c; stroke-width:2">
+                    </svg>
+                </div>
+                <div class="less1" onclick="onPh()">
+                    <svg height="15" width="30">
+                        <polyline points="1,14 14,1 29,14" style="fill:none; stroke:#e4473c; stroke-width:2">
+                    </svg>
                 </div>
             </div>
         </div>
@@ -295,7 +410,7 @@
             <div class="row clearfix">
                 <div class="news_cell col-3 col-m-2 col-ms-1"><img src="img/news1_3.png">
                     <div class="news_text">
-                        <h3>Таня Лі &ndash; ведуча на «M2 FRESH»</h3>
+                        <h3>Таня Лі &ndash; ведуча на<br> «M2 FRESH»</h3>
                         <p>Зустрічайте чарівну учасницю гурту Selfy Таню Лі в якості вродливої та небезпечної повелительки хітів, а саме &ndash; ведучої музичної програми «Головний хіт-парад України», який ви можете дивитися на каналі М2 з понеділка по п’ятницю о 18.00, а також хіт-парад новинок <a href="https://www.youtube.com/watch?v=RIc2g3g_pNw/">«M2 FRESH»</a> у суботу о 18.00.<p>
                         <p class="news_date">8 грудня 2017</p>
                     </div>
@@ -310,7 +425,7 @@
                 </div>
                 <div class="news_cell col-3 col-m-2 col-ms-1"><img src="img/news1_1.png">
                     <div class="news_text">
-                        <h3>Благодійний проект<br>«До тебе, моя мріє»</h3>
+                        <h3>Благодійний проект<br> «До тебе, моя мріє»</h3>
                         <p>Гурт Selfy приєднався до благодійного проекту «До тебе, моя мріє» та виступив на відповідному заході у <a href="https://www.facebook.com/PanoramaHall2017/?hc_ref=ARTwolUU3HM2VCCO0URNFSBh3bypsM9IMdUgQqe3Rr2M6Y17BljBVYpeuNeaqMwBwmE">Конференц-холл «Панорама»</a>, що відбувся 26 листопада, заради здійснення мрій молоді з інвалідністю.<p>
                         <p>Учасниці гурту підтримали мету проекту та основну думку заходу &ndash; мріям властиво збуватися, кожен життєвий бар’єр переборний, завдяки великій силі віри і наполегливості! «Ніколи не припиняйте мріяти, незалежно від обставин!» &ndash; наголошують солістки.</p>
                         <p class="news_date">26 листопада 2017</p>
@@ -329,8 +444,7 @@
                 <div class="news_cell col-3 col-m-2 col-ms-1"><img src="img/news1.png">
                     <div class="news_text">
                         <h3>Гарячий вечір у Caribbean Club</h3>
-                        <p>В <a href="http://caribbean.com.ua/ru/concert_hall_ru/aleksandr-yaremenko/">Caribbean Club</a> міста Києва відбулася зустріч з Олександром Яременком і гуртом Selfy &ndash; в день працівників радіо, телебачення і зв'язку! Саме тому в цей день відвідувачі мали змогу почути найкращі пісні за програмою «Я живу»! «Щиро вітаємо всіх, хто наполегливо працює у сфері радіо, телебачення та зв'язку!» &ndash; вітають солістки гурту Selfy усіх у цій сфері зайнятості.<p>
-                        <p>«Дякуємо, що забарвлюєте інформаційну одноманітність яскравими ідеями, новинами, подіями. Бажаємо гігантських запасів активності та плідності в роботі!» &ndash; вітають солістки працівників на своїй сторінці у <a href="https://www.facebook.com/selfy.official/">Facebook</a></p>
+                        <p>В <a href="http://caribbean.com.ua/ru/concert_hall_ru/aleksandr-yaremenko/">Caribbean Club</a> міста Києва відбулася зустріч з Олександром Яременком і гуртом Selfy &ndash; в день працівників радіо, телебачення і зв'язку! Саме тому в цей день відвідувачі мали змогу почути найкращі пісні за програмою «Я живу»! «Щиро вітаємо всіх, хто наполегливо працює у сфері радіо, телебачення та зв'язку!» &ndash; вітають солістки гурту Selfy усіх у цій сфері зайнятості на своїй сторінці у <a href="https://www.facebook.com/selfy.official/">Facebook</a>.</p>
                         <p class="news_date">16 листопада 2017</p>
                     </div>
                 </div>
@@ -362,6 +476,8 @@
                     <div class="news_text">
                         <h3>Гурт Selfy зацепила актуальну соціальну проблему</h3>
                         <p>Головний меседж нового хіта &ndash; спонукати слухачів, не втрачаючи ні хвилини, обійняти своїх близьких! Це проста річ, якої катастрофічно не вистачає нашому сьогоденню. Деталі на сайті <a href="http://radio.obozrevatel.com/news/gruppa-selfy-zadela-aktualjnuyu-socialjnuyu-problemu-10216878.html">radio.obozrevatel.com</a>.</p>
+                        <p>Сингл «Обійми» змушує згадати забуті цінності, які живуть в душах людей. Адже для щастя інколи потрібно зупинитися на мить і просто обійняти близьких чи рідних людей.</p>
+                        <p>Режисером кліпу став Влад Разиховський, який максимально точно візуалізував замисел Олександра Яременко, продюсера гурту та автора пісні.</p>
                         <p class="news_date">7 листопада 2017</p>
                     </div>
                 </div>
@@ -383,15 +499,52 @@
                         <p class="news_date">5 вересня 2017</p>
                     </div>
                 </div>
-                <div id="m2">
-                    <span id="close2" class="close">&times;</span>
-                    <ul>                      
-                        <li><img id="img_modal" class="modal-anim"></li>
-                    </ul>
+            </div>
+            <div id="m3" class="row clearfix">
+                <!--<div class="col-1" style="position: absolute; text-align: center;">
+                    <span id="close1" class="close" style="text-align: center">&times;</span>
+                </div>-->
+                <div class="col-1 col-m-1 col-ms-1" style="position: absolute; text-align: center;">
+                    <span id="close4" class="close" style="text-align: center">&times;</span>
+                </div>
+                <div class="team-member">
+                    <img id="img_modal" class="modal-anim">
+                </div>
+                <div class="news_modal">
+                    <h3></h3>
+                    <p></p>
+                    <div class="embed_container" style="display: none">
+                        <iframe src="https://www.youtube.com/embed/RIc2g3g_pNw" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="social_modal">
+                        <a title="Facebook" target="_blank" href="https://www.facebook.com/selfy.official/"><p>Поділитись у Facebook!</p><img src="img/s_fb.png"></a>
+                    </div>
+                    <div>
+                        <p class="news_date"></p>
+                    </div>
                 </div>
             </div>
-            <div class="button_load">
-                <button>Завантажити решта новин</button>
+            
+            <!--<div class="col-2 col-ms-1" style="padding: 0">
+                <img src="img/mem1.png">
+            </div>
+            <div class="team-member col-2 col-ms-1">
+                <h3>Dana Queen</h3>
+                <p class="team-position">солістка гурту</p>
+                <p>Dana Queen народилася в Києві, 19 липня 1991 року. Фіналістка шоу <a href="https://uk.wikipedia.org/wiki/%D0%A5%D0%BE%D1%87%D1%83_%D0%B4%D0%BE_%C2%AB%D0%92%D0%86%D0%90_%D0%93%D1%80%D0%B8%C2%BB">«Хочу до ВІА Гри»</a>. Випускниця <a href="https://circusacademy.kiev.ua/">Київської муніципальної академії естрадного та циркового мистецтв</a>, отримала спеціальність соліст-вокаліст, кваліфікацію магістра в <a href="http://nakkkim.edu.ua/instituti/institut-publichnogo-upravlinnya-ta-kadrovoji-politiki">НАКККіМ</a> за спеціальністю соліст-вокаліст, викладач вокалу. З 8 років маленька Дана грала на гітарі та співала на концертах. Тепер вона лауреат і призер міжнародних і українських конкурсів естрадного вокалу. Виступала у Парижі, Берліні, Дрездені, Варшаві, Празі, Киргизстані. Близько двох років була вокаліст кою в гурті «Триши». Більше року співала в гурті «SMS». Загалом виступає в Україні, Білорусії, Казахстані, Киргизстані і Туреччині.</p>
+                <a class="social-icons" title="Instagram" target="_blank" href="https://www.instagram.com/dana_selfy/">
+                    <img src="img/1_instagram.png"><i class="fa fa-home fa-1x"></i><span>WebsiteВК11864554</span>
+                </a>
+            </div>-->
+            <div class="more1" onclick="onNews()">
+                <svg height="15" width="30">
+                    <polyline points="1,1 14,14 29,1" style="fill:none; stroke:#e4473c; stroke-width:2">
+                </svg>
+            </div>
+            <div class="less1" onclick="onNews()">
+                <svg height="15" width="30">
+                    <polyline points="1,14 14,1 29,14" style="fill:none; stroke:#e4473c; stroke-width:2">
+                </svg>
             </div>
         </div>
         <div id="music_block" class="media_c media_bg">
@@ -441,7 +594,7 @@
     </main>
 
     <footer id="page_footer">
-		<p>12.2017 &#169; Selfy</p>
+		<p>01.2018 &#169; Selfy</p>
 	</footer><!--End of Footer-->
     <script src="preload/js/classie.js"></script>
 	<script src="preload/js/pathLoader.js"></script>
@@ -449,7 +602,9 @@
 
     <script src="dist/scrollreveal.min.js"></script>
     <script src="dist/scrollreveal.js"></script>
-
+    
+    <!-- Swiper JS -->
+    <script src="swiper.js"></script>
     <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
