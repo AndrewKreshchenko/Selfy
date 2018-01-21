@@ -2,10 +2,10 @@
     background: #31384e; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(top, #31384e, #000); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(bottom, #31384e, #000); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(bottom, #31384e, #000); /* For Firefox 3.6 to 15 */
+    background: -moz-linear-5ient(bottom, #31384e, #000); /* For Firefox 3.6 to 15 */
     background: linear-gradient(to bottom, #31384e, #000); /* Standard syntax */
     -webkit-animation: bgimg 2s;
-    -webkit-animation-delay: 10s;/* !!! addEventListener in file preload/js/main.js */
+    -webkit-animation-delay: 7.5s;/* !!! addEventListener in file preload/js/main.js */
 }
 @-webkit-keyframes bgimg {
     0% {opacity: 1;}
@@ -70,6 +70,9 @@
 #anim_svgs {
     display: flex;
     text-align: center;
+}
+#anim_svgs img {
+    bottom: 100px;
 }
 #flash1, #flash2, #square {
     position: absolute;
@@ -326,6 +329,11 @@
 }
 @media screen and (max-width: 350px) {
     #camera, #square {
-        top: 31%;
+        top: 30%;
+    }
+}
+@media screen and (max-width: 320px) {
+    #camera, #square {
+        top: 30%;
     }
 }
