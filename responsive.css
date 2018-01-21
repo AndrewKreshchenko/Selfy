@@ -63,7 +63,7 @@
     #media_block, #wrapper, #about, #gallery_block, #music_block, .contact_block, #page_footer {
         padding: 0 30px;
     }
-    .child {
+    .child, .news_modal {
         width: 86.32%;
     }
 }
@@ -86,20 +86,14 @@
     }
 }
 @media screen and (max-width: 900px) and (orientation: landscape) {
-    #m1 {
+    .slider-con {
         padding-top: 10px;
     }
     #img_modal1 {
         width: 50%;
     }
     .close, #slider_auto {
-        top: 3px;
-        bottom: 5px;
-    }
-}
-@media only screen and (max-width: 768px) and (orientation: landscape) {
-    #banner div {
-        height: 100vh !important;
+        top: 0;
     }
 }
 @media screen and (max-width: 767px) {
@@ -110,16 +104,30 @@
         padding: 60px 50px
     }
     .banner_text h1 {
-        font-size: 3.75em;
+        font-size: 5em;
     }
     .banner_text h2 {
-        font-size: 32px;
+        font-size: 38px;
     }
     .banner_text h3 {
-        font-size: 18px;
+        font-size: 24px;
     }
     .member-photo {
-        width: 50%;
+        padding-left: 5px;
+        width: 100%;
+    }
+    .languages {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    #img_modal {
+        max-width: 100%;
+    }
+    .team-member p:last-child {
+        font-size: 18px;
+    }
+    .swiper-container {
+        top: 0;
     }
     .contacts {
         padding: 20px 10px;
@@ -133,6 +141,11 @@
     .social_c img {
         width: 60px;
         padding: 10px;
+    }
+}
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+    #banner div {
+        height: 100vh !important;
     }
 }
 @media screen and (max-width: 599px) {
@@ -167,14 +180,14 @@
     .topnav a, .button_load button {
         font-size: 16px;
     }
-    .child {
+    .child, .news_modal {
         width: 100%;
     }
     .gall-row {
         float: left;
         width: 100%;
     }
-    .contact_block li img {
+    #contact_block li img {
         width: 70px;
     }
     .ontop {
@@ -189,9 +202,6 @@
     }
     #img_modal1, #img_modal2 {
         height: 70%;
-    }
-    #m1 ul li img {
-        margin-left: -5%;
     }
 }
 @media all and (min-width: 501px) and (max-width: 767px) {
@@ -237,24 +247,30 @@
         float: left;
         width: 50%;
     }
-    .heading_style h1 {
-        font-size: 1.75em;
-    }
     h3 {
         font-size: 1.2em;
     }
     .topnav a .languages a  {
         font-size: 20px;
     }
-    .topnav a:not(.icon), .languages a {
+    .topnav a:not(.icon) {
         padding: 7px;
     }
     #banner {
         background-position: center 100px;
     }
+    .team-position p {
+        font-size: 20px;
+    }
     #img_modal1, #img_modal2 {
         left: 0;
         margin-top: 0
+    }
+    .social_modal {
+        width: 66.6%;
+    }
+    .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom {
+        bottom: 40px !important;
     }
     .contacts {
         padding: 0 10px;
