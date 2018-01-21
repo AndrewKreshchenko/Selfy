@@ -28,7 +28,7 @@
 
 			//disable scrolling and hide navbar
 			$('nav').hide();
-			$('#lang').hide();
+			$('.languages').hide();
 			window.addEventListener('scroll', noscroll);
 
 			// initial animation
@@ -52,8 +52,7 @@
 				}
 				classie.add(document.body, 'layout-switch');
 				window.removeEventListener('scroll', noscroll);
-				$('nav').show();
-				$('#lang').show();
+				$('.languages').show();
 				$('.banner_text').removeClass('anim_bg');
 				$('.banner_text').addClass('animate-b-txt');
 				$('.loader').remove();
