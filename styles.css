@@ -498,9 +498,10 @@ main {
     left: 0;
     bottom: 0;
 }
-.members img{
+.members img {
     max-width: 100%;
     max-height: 90%;
+    width: 100%;
 }
 #m1 ul {
     position: relative;
