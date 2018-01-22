@@ -491,6 +491,9 @@ main {
 #m1, #m2 {
     padding-top: 70px; /* Location of the box */
 }
+#m1 .team-member h3 {
+    text-indent: 25px;
+}
 .members {
     overflow-y: scroll;
     position: absolute;
