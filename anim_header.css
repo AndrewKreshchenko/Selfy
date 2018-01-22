@@ -329,11 +329,11 @@
 }
 @media screen and (max-width: 350px) {
     #camera, #square {
-        top: 30%;
+        top: 40%;
     }
 }
 @media screen and (max-width: 320px) {
     #camera, #square {
-        top: 30%;
+        top: 40%;
     }
 }
