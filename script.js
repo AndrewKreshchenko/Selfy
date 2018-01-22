@@ -13,7 +13,7 @@ window.onbeforeunload = function(event) {
 }
 
 /* Languages (1) */
-var thislang = $('html')[0].lang, fm = false, fg = false, fn = false, fc = false, fa = false;
+var thislang = $('html')[0].lang, fm = false, fg = false, fn = true, fc = false, fa = false;
 $(function() {
     var elem = document.querySelector(".languages a:first-child");
     var p = document.createElement("span");
@@ -385,102 +385,113 @@ function onPh() {
 }
 function onNews() {
     var w = $("body").innerWidth();
-    if (fn === false) {
+    if (fn === false)
         showNews(w);
-        fn = true;
-    }
-    else {
+    else
         hideNews(w);
-        fn = false;
-    }
+}
+function hideAll() {
+    var w = $("body").innerWidth();
+    hideNews(w);
 }
 
 /* Functions for buttons */
+function arrowUp(a, b) {
+    a.css('display', 'none');
+    b.css('display', 'block');
+}
+function arrowDown(a, b) {
+    a.css('display', 'block');
+    b.css('display', 'none');
+}
+function arrowsAll() {
+    var ar1 = $('#news .more1'), ar2 = $('#news .less1');
+    ar1.css('display', 'block');
+    ar2.css('display', 'block');
+}
 function showPhotos(w1) {
     var slides = document.getElementsByClassName("gall-row");
     var ar1 = $('#gallery_block .more1'), ar2 = $('#gallery_block .less1');
     if ((w1 > 500) && (w1 < 768)) {
-        for (i = 9; i < slides.length; i++) {
+        for (var i = 9; i < slides.length; i++) {
             slides[i].style.display = "block";
         }
-        ar1.css('display', 'none');
-        ar2.css('display', 'block');
+        arrowUp(ar1, ar2);
     }
     if (w1 < 501) {
-        for (i = 9; i < slides.length; i++) {
+        for (var i = 9; i < slides.length; i++) {
             slides[i].style.display = "block";
         }
-        ar1.css('display', 'none');
-        ar2.css('display', 'block');
+        arrowUp(ar1, ar2);
     }
 }
 function hidePhotos(w1) {
     var slides = document.getElementsByClassName("gall-row");
     var ar1 = $('#gallery_block .more1'), ar2 = $('#gallery_block .less1');
     if ((w1 > 500) && (w1 < 768)) {
-        for (i = 9; i < slides.length; i++) {
+        for (var i = 9; i < slides.length; i++) {
             slides[i].style.display = "none";//Erase all rest images
         }
-        ar1.css('display', 'block');
-        ar2.css('display', 'none');
+        arrowDown(ar1, ar2);
         //var nav = document.getElementById('menu'), body = document.body;
         //$('#gallery_block button').show();
     }
     if (w1 < 501) {
-        for (i = 1; i < slides.length; i++) {
+        for (var i = 1; i < slides.length; i++) {
             slides[i].style.display = "none";
         }
-        ar1.css('display', 'block');
-        ar2.css('display', 'none');
+        arrowDown(ar1, ar2);
     }
 }
 function showNews(w1) {
     var news = document.getElementsByClassName("news_cell");
-    var ar1 = $('#news .more1'), ar2 = $('#news .less1');
-    if ((w1 > 500) && (w1 < 768)) {
-        for (i = 2; i < news.length; i++) {
+    var ar1 = $('#news .more1'), ar2 = $('#news .less1'), p = parseInt(news.length), c = parseInt(current);
+    var n = p-c, s = parseInt($("#news div").not(":visible").index());
+    if (n > 4) {
+        if (c == 1)
+            current = s;
+        if (($("body").innerWidth() > 767) && (c == 1))
+            current = 3;
+        for (var i = current; i < current + 3; i++) {
             news[i].style.display = "block";
         }
-        ar1.css('display', 'none');
-        ar2.css('display', 'block');
-    }
-    if (w1 < 501) {
-        for (i = 1; i < news.length; i++) {
-            news[i].style.display = "block";
-        }
-        ar1.css('display', 'none');
-        ar2.css('display', 'block');
+        current += 3;//console.log("news.length - " + p + ", current - " + current + ", l - " + n);
     }
     else {
-        for (i = 3; i < news.length; i++) {
+        for (var i = current; i < p; i++) {
             news[i].style.display = "block";
         }
-        ar1.css('display', 'none');
-        ar2.css('display', 'block');
+        current = p-1;
     }
+    if (current == p-1) {
+        arrowUp(ar1, ar2)
+        fn = true;
+    }
+    else
+        arrowsAll();
 }
 function hideNews(w1) {
     var ar1 = $('#news .more1'), ar2 = $('#news .less1');
     var news = document.getElementsByClassName("news_cell");
+    if (current == 0)
+        current = news.length-1;
     if ((w1 > 500) && (w1 < 768)) {
-        for (i = 2; i < news.length; i++) {
+        for (var i = 2; i <= current; i++) {
             news[i].style.display = "none";
         }
-        ar1.css('display', 'block');
-        ar2.css('display', 'none');
     }
     if (w1 < 501) {
-        for (i = 1; i < news.length; i++) {
+        for (var i = 1; i <= current; i++) {
             news[i].style.display = "none";
         }
-        ar1.css('display', 'block');
-        ar2.css('display', 'none');
     }
     else {
-        for (i = 3; i < news.length; i++) {
+        for (var i = 3; i <= current; i++) {
             news[i].style.display = "none";
         }
-        ar1.css('display', 'block');
-        ar2.css('display', 'none');
     }
+    arrowDown(ar1, ar2);
+    current = 1;
+    fn = false;
+    console.log("It's better to use AJAX for requests (method load()) to load news from the server.");
 }
