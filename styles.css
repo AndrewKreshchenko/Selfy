@@ -337,7 +337,6 @@ main {
     text-align: center;
 }
 .gallery img {
-    max-width: 300px;
     width: 100%;
     -webkit-transition: 0.5s;
 }
