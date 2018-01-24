@@ -64,9 +64,14 @@
         max-width: 400px;
     }
 }
-@media screen and (min-device-width: 800px) and (max-device-width: 1440px) and (orientation: landscape) {
+@media screen and (min-device-width: 1025px) and (max-device-width: 1280px) {
     .gallery img {
         max-width: 450px;
+    }
+}
+@media screen and (min-device-width: 800px) and (max-device-width: 1440px) and (orientation: portrait) {
+    .gallery img {
+        max-width: 500px;
     }
 }
 @media screen and (min-device-width: 800px) and (max-device-width: 1440px) and (orientation: portrait) {
