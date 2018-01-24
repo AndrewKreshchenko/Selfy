@@ -89,9 +89,14 @@
         max-width: 200px;
     }
 }
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1025px) and (max-width: 1679px) {
     .gallery img {
         max-width: 300px;
+    }
+}
+@media screen and (min-width: 1680px) {
+    .gallery img {
+        max-width: 550px;
     }
 }
 @media screen and (max-width: 1024px) {
