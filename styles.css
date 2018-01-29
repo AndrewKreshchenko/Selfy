@@ -164,7 +164,7 @@ main {
     float: left;
 }
 #banner li a,  #contact_block li a {
-    padding: 14px 16px;
+    padding: 10px;
     display: block;
     color: white;
     text-align: center;
