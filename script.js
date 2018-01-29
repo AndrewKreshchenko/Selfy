@@ -5,7 +5,6 @@ window.onbeforeunload = function(event) {
         event = window.event;
     }
     if (event) {
-        event.returnValue = message;
         if (fc !== true)
             localStorage.clickcount = 1;
     }
@@ -207,7 +206,7 @@ $('.languages a').not('first-child').click(function(event) {
         } else
             localStorage.clickcount = 1;
     } else
-		alert("Sorry, your browser doesn't support WebStorage");
+		console.log("Sorry, your browser doesn't support WebStorage");
 });
 $('.languages a:first-child').on('click', function () {
   if(!$(event.target).closest('.languages a').length) {
