@@ -8,6 +8,9 @@
 [class*="col-"] {
     padding: 15px;
 }
+[class^="news_cell"] {
+    padding-top: 0;
+}
 @media all and (min-width: 768px) and (max-width: 1024px) {
     .col-mb-2-3 {
         float: left;
