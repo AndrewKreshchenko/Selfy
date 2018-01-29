@@ -44,6 +44,8 @@ footer {
 iframe {
     border: 0;
     z-index: 7;
+    -webkit-transition: border;
+    transition: border;
 }
 h1, h2, h3, #menu a, .languages a {
     font-family: 'Alegreya Sans', sans-serif;
@@ -219,8 +221,9 @@ main {
 }
 .embed_container {
     position: relative;
+    margin-top: 10px;
     padding-bottom: 56.25%; /* 16/9 ratio */
-    padding-top: 25px; /* IE6 workaround*/
+    /*padding-top: 25px; /* IE6 workaround*/
     height: 0;
     overflow: hidden;
 }
@@ -228,7 +231,7 @@ main {
     position: absolute;
     width: 95%;
     height: 95%;
-    box-shadow: 3px 16px 16px rgba(0, 0, 0, 0.8), 3px 14px 14px rgba(0, 0, 0, 0.7);
+    box-shadow: 3px 10px 10px rgba(0, 0, 0, 0.8), 3px 14px 14px rgba(0, 0, 0, 0.7);
 }
 .embed_container iframe:hover {
     border: 5px solid rgba(255, 255, 255, 0.8);
@@ -564,7 +567,7 @@ main {
 .social_modal:hover {
     background-color: #de3e52;
 }
-#img_modal1, #img_modal2, .news_cell img {
+#img_modal1, #img_modal2 {
     border-radius: 7px;
 }
 #img_modal1, #img_modal2 {
@@ -651,7 +654,8 @@ main {
 .news_cell img {
     max-width: 100%;
     max-height: 350px;
-    border-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
     cursor: pointer;
     -webkit-transition: 0.5s;
 }
@@ -755,11 +759,11 @@ main {
 /* Footer */
 #page_footer, #page_footer p {
     margin: 0;
-    padding: 5px 0;
+    padding: 2px 0;
     background: #fff;
-    font-size: 12px;
+    font-size: 11px;
     font-style: italic;
-    color: #000;
+    color: #000
 }
 
 /* OnTop link */
