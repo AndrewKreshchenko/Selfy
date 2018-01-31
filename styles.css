@@ -25,13 +25,14 @@
 }
 
 /* global */
-body, div, ul, li, h1, h2, h3, h4, h5, h6, form, th, td {/*dl, dt, dd, ol, pre, blockquote*/
+body, div, ul, li, h1, h2, h3, h4, h5, h6, form, button, th, td {/*dl, dt, dd, ol, pre, blockquote*/
     margin: 0;
     padding: 0;
     direction: ltr;
     outline: none;
     color: #fff;
 }
+:focus {outline: none}
 body {
     background-color: #000;
 }
