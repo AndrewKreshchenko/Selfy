@@ -149,7 +149,7 @@ $(document).ready(function() {
     if (w_b < 768) {
         $(p1).css('width', '70%');
         if (window.innerWidth > window.innerHeight)
-            $(p1).css('width', '60%');//('-webkit-transform', 'translateY(-100px)');
+            $(p1).css('width', '38%');//('-webkit-transform', 'translateY(-100px)');
     }
     elem.appendChild(p1);
     setTimeout(function() {
