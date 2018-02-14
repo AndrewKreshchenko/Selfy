@@ -9,7 +9,7 @@
 (function() {
 	if (localStorage.clickcount > 1)
 		return;
-	if ((window.innerHeight < 721) && (window.innerWidth > window.innerHeight))
+	if ((window.innerHeight < 721) && (window.innerWidth > window.innerHeight) && ('ontouchstart' in window))
 		return;
 	else {
 		var support = { animations : Modernizr.cssanimations },
