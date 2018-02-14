@@ -126,7 +126,7 @@ $(document).ready(function() {
         noAnim();
         return;
     }
-    if ((window.innerHeight < 721) && (w > window.innerHeight)) {
+    if ((window.innerHeight < 721) && (w > window.innerHeight) && ('ontouchstart' in window)) {
         noAnim();
         return;
     }
