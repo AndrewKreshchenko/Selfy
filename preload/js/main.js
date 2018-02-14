@@ -9,6 +9,8 @@
 (function() {
 	if (localStorage.clickcount > 1)
 		return;
+	if ((window.innerHeight < 721) && (window.innerWidth > window.innerHeight))
+		return;
 	else {
 		var support = { animations : Modernizr.cssanimations },
 			container = document.getElementById('banner'),
