@@ -1,3 +1,3 @@
 # Selfy
-music group
-I think it would be better to have 2 variants of the same project.
+> music group
+This website was built using [GitHub Pages](andrewkreshchenko.github.io/Selfy/).
